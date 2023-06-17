@@ -1,0 +1,20 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/weapons/arc9/darsu_eft/mods/T_1P_AKALPHA_DM"
+	"$bumpmap" "models/weapons/arc9/darsu_eft/mods/T_1P_AKALPHA_NM"
+	"$PhongExponentTexture" "models/weapons/arc9/darsu_eft/mods/T_1P_AKALPHA_RM"
+	
+	$envmap						env_cubemap
+	$envmaptint					"[ .02 .02 .02 ]"
+	$normalmapalphaenvmapmask	"1"	
+	
+	$phong						1
+	$phongexponent				10
+	$phongboost					.1
+	$phongfresnelranges			"[5 10 10]"
+
+	"$rimlight" 	"1"
+	"$rimlightexponent" 	"80"	
+	"$rimlightboost"	"1"
+	"$rimmask" 	"1"
+}

@@ -1,0 +1,26 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/weapons/arc9/darsu_eft/mods\T_1P_M203_D"
+	"$bumpmap" "models/weapons/arc9/darsu_eft/mods\T_1P_M203_N"
+	"$phongexponenttexture" "models/weapons/arc9/darsu_eft/mods\T_1P_M203_M2"
+	
+	"$envmap" "models\weapons\ins2_sandstorm\envmap_unfuck"
+	// "$srgbtint" "[2 2 2]"
+    	"$detail"				"detail\metal_detail_01"
+    	"$detailscale"			"2"
+    	"$detailblendfactor"          		"0.5"
+    	"$detailblendmode"          		"0"
+ 
+ 
+    	//"$envmaptint"              		"[ .02 .02 .02 ]"
+ 
+   	"$phong"                    		"1"
+   	"$phongboost"               		"66"
+    	"$phongalbedotint"          		"1"
+    	"$phongalbedoboost"         		"1"
+ 
+   	"$rimlight"                 		"1"
+   	"$rimlightexponent"         		"80"   
+   	"$rimlightboost"            		"1"
+   	"$rimmask"                 		"1"
+}

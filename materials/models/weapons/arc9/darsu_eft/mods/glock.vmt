@@ -1,0 +1,8 @@
+"VertexLitGeneric"
+{
+	"$baseTexture" "models/weapons/arc9/darsu_eft/mods/Glock"
+	"$bumpmap" "models/weapons/arc9/darsu_eft/mods/Glock norm"
+    	"$envmap" "env_cubemap"
+    	"$normalmapalphaenvmapmask" 1
+
+}
