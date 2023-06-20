@@ -1354,7 +1354,7 @@ ARC9.LoadAttachment(ATT, "eft_ar_pgrip_colta1")
 ATT = {}
 
 ATT.PrintName = "AR-15 Colt A2 Stock"
-ATT.CompactName = "CS2"
+ATT.CompactName = "M16A2"
 ATT.Description = [[Colt A2 Stock, Mil-Spec diameter will fit any AR-15-based carbine or rifle.]]
 ATT.Icon = Material("entities/eft_attachments/stocks/a2.png", "mips smooth")
 
@@ -1381,44 +1381,56 @@ ARC9.LoadAttachment(ATT, "eft_ar_m16a2_stock")
 
 ATT = {}
 
-ATT.PrintName = "AR-15 Colt M4 Carbine Length handguard"
+ATT.PrintName = "AR-15 Colt m16a2 rifle Length handguard"
 ATT.CompactName = "M16A2 Rifle"
-ATT.Icon = Material("entities/eft_ar15_attachments/hg/ar15_daniel_defense_ris_ii_fsp_95_handguard_(coyote_brown).png", "mips smooth")
+ATT.Icon = Material("entities/eft_ar15_attachments/hg/ar15_colt_m4_carbine_length_handguard.png", "mips smooth")
 ATT.Description = [[A Rifle length handguard manufactured by Colt, a standard-issue handguard for the M16A2 assault rifles]]
 ATT.SortOrder = 0
 ATT.MenuCategory = "ARC9 - EFT Attachments"
 ATT.HasHG = true
 
 ATT.Model = "models/weapons/arc9/darsu_eft/mods/handguard_m16a2.mdl"
-ATT.LHIK = true 
+ATT.LHIK = false
 ATT.EFTErgoAdd = 7
 ATT.CustomPros = { Ergonomics = "+7" }
 ATT.RecoilMult = 0.99
 ATT.VisualRecoilMult = 0.99
 ATT.HeatCapacityMult = 0.988
 ATT.Category = {"eft_ar15_hguard"}
-
+ATT.ActivateElements = {"nostdgasblockpls"}
 ATT.Attachments = {
     {
         PrintName = "Lower HG",
         Category = {"eft_hglower_m16a2"},
-        Pos = Vector(0, 0.65, 0.1),
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),   
         Icon_Offset = Vector(0, 3.35, -1),
+	},
     {
         PrintName = "Gas block",
         Category = "eft_ar15_gasblock",
-        ExcludeElements = {"nocustomgasblockpls"},
-        Pos = Vector(-11.2, 0, 0.25),
-        Ang = Angle(0, 0, 0),
+        Pos = Vector(0,13.1, 0.25),
+        Ang = Angle(0, -90, 0),
     },
-
-    },
-
-
 }
-
 ARC9.LoadAttachment(ATT, "eft_hg_ar15_m16a2roo")
+
+ATT = {}
+ATT.PrintName = "AR-15 Colt M16A2 Rifle Length lower handguard"
+ATT.CompactName = "M16a2 Rifle"
+ATT.Icon = Material("entities/eft_ar15_attachments/hg/ar15_colt_m4_carbine_length_lower_handguard.png", "mips smooth")
+ATT.Description = [[A Rifle length lower handguard part manufactured by Colt, a standard-issue handguard for the M16A2 assault rifles.]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/handguard_m16a2_lower.mdl"
+ATT.LHIK = true
+ATT.LHIK_Priority = 1 -- lower
+ATT.EFTErgoAdd = 7
+ATT.CustomPros = { Ergonomics = "+7" }
+ATT.HeatCapacityMult = 1.029
+ATT.Category = {"eft_hglower_m16a2"}
+ARC9.LoadAttachment(ATT, "eft_hg_ar15_m16a2_roo_lower")
+
 local ATT = {}
 
 ATT.PrintName = [[M203 Grenade launcher Quadrant Sight]]
@@ -1585,4 +1597,169 @@ ATT.Attachments = {
 }
 
 ARC9.LoadAttachment(ATT, "eft_m203_railmount")
+
+
+ATT = {}
+
+ATT.PrintName = "Glock 47 9x19 MOS slide"
+ATT.CompactName = "G MOS"
+ATT.Icon = Material("entities/eft_glock_attachments/slide_mos.png", "mips smooth")
+ATT.Description = [[The Glock 47 MOS (Modular Optic System) slide designed to replace or be an alternative slide for the Glock 19 9x19 pistol. Manufactured by Glock For The United States Customs and Border Protection (CBP)enforcement 
+"Welcome to the United States
+...
+Are you coming from Mexico?"- From Soy De Rancho by El Komander.]]
+
+-- ATT.VisualRecoilMult = 0.99
+ATT.EFTErgoAdd = 4
+ATT.CustomPros = { Ergonomics = "+4" }
+
+ATT.HasSlide = true 
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.Category = {"eft_g19x_rec","eft_g19x_rec_backplate"}
+
+ATT.Attachments = {
+    {
+        PrintName = "Front sight",
+        Category = "eft_g17_fs",
+        Pos = Vector(0, 0, -0.02),
+        Icon_Offset = Vector(4.5, 0, 0.3),
+        Ang = Angle(0, -90, 0),
+    },
+    {
+        PrintName = "Rear sight",
+        Category = "eft_g17_rs",
+        Pos = Vector(0, -0.225, 0),
+        Icon_Offset = Vector(-2, 0, 0.3),
+        Ang = Angle(0, -90, 0),
+    },
+    {
+        PrintName = "Compensator",
+        Category = "eft_g17_g4",
+        Pos = Vector(0, 5, 0.6),
+        Ang = Angle(0, 0, 0),
+    },
+    {
+        PrintName = "Mount",
+        Category = "eft_g17_tangodown",
+        Pos = Vector(0, -0.92, -0.15),
+        Icon_Offset = Vector(0.5, 0, 0.3),
+        Ang = Angle(0, -90, 0),
+    },
+}
+
+
+ARC9.LoadAttachment(ATT, "eft_rec_g47_mos")
+
+ATT = {}
+
+ATT.PrintName = "Glock 47 9x19 barrel"
+ATT.CompactName = "G47"
+ATT.Icon = Material("entities/eft_glock_attachments/barrel.png", "mips smooth")
+ATT.Description = [[A standard barrel designed to replace or be an alternative slide for the Glock 19 9x19 pistol. Manufactured by Glock For the United States Customs and Border Protection (CBP) 
+"Siempre estoy listo para cruzar
+Polvo, ruedas y también cristal"- From PRC by Peso Pluma.]]
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/g19_slide_backplate_barrel.mdl"
+ATT.ModelBodygroups = "001"
+ATT.ModelOffset = Vector(10, -5, 5)
+ATT.ModelAngleOffset = Angle(0,-90, 0)
+
+ATT.EFTErgoAdd = -5
+ATT.CustomCons = { Ergonomics = "-5" }
+ATT.VisualRecoilMult = 0.97
+ATT.RecoilMult = 0.97
+ATT.PhysBulletMuzzleVelocityMult = 0.97
+
+ATT.HasBarrel = true 
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.Category = {"eft_g19x_barrel"}
+
+
+ARC9.LoadAttachment(ATT, "eft_barrel_g47_std")
+
+ATT = {}
+ATT.PrintName = "(NO IK)AR-15 Daniel Defense RIS II 9.5 lower handguard (Coyote Brown)"
+ATT.CompactName = "(NO IK)RIS II 12.25"
+ATT.Icon = Material("entities/eft_ar15_attachments/hg/ar15_daniel_defense_ris_ii_95_lower_handguard_(coyote_brown).png", "mips smooth")
+ATT.Description = [[(holds gun on the receiver instead of under the handguard)The Daniel Defense RIS II 9.5 lower handguard. Made with light but durable aircraft aluminum alloy. Equipped with RIS interface for installation of additional devices and accessories. Coyote Brown.]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/handguard_ar15_dd_ris_ii_9,5_lower.mdl"
+ATT.Category = {"eft_hglower_ddrisii95"}
+ATT.HasHG = true
+ATT.EFTErgoAdd = 5
+ATT.CustomPros = { Ergonomics = "+5" }
+ATT.RecoilMult = 0.99
+ATT.VisualRecoilMult = 0.99
+ATT.HeatCapacityMult = 0.992
+ATT.Attachments = {
+    {
+        PrintName = "Grip",
+        Category = {"eft_foregrip_small", "eft_foregrip_large"},
+        Pos = Vector(0, 3.4, 1.2),
+        Ang = Angle(0, -90, 0),
+        Icon_Offset = Vector(0, 0, -1),
+    },
+}
+ARC9.LoadAttachment(ATT, "eft_hg_ar15_ddrisii95_lower_b_NOIK")
+
+
+
+ATT = {}
+
+ATT.PrintName = "(AK)C-CLAMP"
+ATT.CompactName = "(AK)C-CLAMP"
+ATT.Icon = nil
+ATT.Description = [[A Method Of Gripping A Weapon. 
+]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.EFTErgoAdd = 1
+ATT.CustomPros = { Ergonomics = "+1" }
+ATT.RecoilMult = 0.99
+ATT.VisualRecoilMult = 0.99
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/ak_hg_magpul_moe.mdl"
+ATT.ModelAngleOffset = Angle(10,90, 0)
+ATT.ModelOffset = Vector(0.3, -03, 02)
+
+ATT.LHIK = true 
+ATT.LHIK_Priority = 2
+
+ATT.ModelMaterial = "models/weapons/saa/shared/unlit_transparent"
+
+ATT.Category = "eft_foregrip_small"
+ARC9.LoadAttachment(ATT, "eft_foregrip_c_clamp")
+
+ATT = {}
+
+ATT.PrintName = "(AR)C-CLAMP"
+ATT.CompactName = "(AR)C-CLAMP"
+ATT.Icon = nil
+ATT.Description = [[A Method Of Gripping A Weapon. 
+]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.EFTErgoAdd = 1
+ATT.CustomPros = { Ergonomics = "+1" }
+ATT.RecoilMult = 0.99
+ATT.VisualRecoilMult = 0.99
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/ak_hg_magpul_moe.mdl"
+ATT.ModelAngleOffset = Angle(10,90, 10)
+ATT.ModelOffset = Vector(0.3, -03, 01.5)
+ATT.ModelScale = .75
+
+ATT.LHIK = true 
+ATT.LHIK_Priority = 2
+
+ATT.ModelMaterial = "models/weapons/saa/shared/unlit_transparent"
+
+ATT.Category = "eft_foregrip_small"
+ARC9.LoadAttachment(ATT, "eft_foregrip_c_clampAR")
 

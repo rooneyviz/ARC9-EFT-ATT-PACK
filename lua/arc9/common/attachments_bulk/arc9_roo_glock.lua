@@ -1,86 +1,162 @@
-local ATT = {}
-
-///////////////////////////////////////      double aksu hg
-
-local ATT = {}
-
-
+local ATT
 
 ATT = {}
 
-ATT.PrintName = "Glock 47 9x19 MOS slide"
-ATT.CompactName = "G MOS"
-ATT.Icon = Material("entities/eft_glock_attachments/slide_mos.png", "mips smooth")
-ATT.Description = [[The Glock 47 MOS (Modular Optic System) slide designed to replace or be an alternative slide for the Glock 19 9x19 pistol. Manufactured by Glock For The United States Customs and Border Protection (CBP)enforcement 
-"Welcome to the United States
-...
-Are you coming from Mexico?"- From Soy De Rancho by El Komander.]]
+ATT.PrintName = "Arcbird"
+ATT.CompactName = "ARCBIRD"
+ATT.Description = [[
+The Darkness.
 
--- ATT.VisualRecoilMult = 0.99
-ATT.EFTErgoAdd = 4
-ATT.CustomPros = { Ergonomics = "+4" }
+Extra 1]]
+ATT.Icon = Material("stickers/official_arcbird_pack/arcbird")
 
-ATT.HasSlide = true 
-ATT.SortOrder = 0
-ATT.MenuCategory = "ARC9 - EFT Attachments"
+ATT.Free = true
 
-ATT.Category = {"eft_g19_rec","eft_g19_rec_backplate)}
+ATT.Category = "stickers"
+ATT.Folder = "Official Arcbird Pack"
 
-ATT.Attachments = {
-    {
-        PrintName = "Front sight",
-        Category = "eft_g17_fs",
-        Pos = Vector(0, 0, -0.02),
-        Icon_Offset = Vector(4.5, 0, 0.3),
-        Ang = Angle(0, -90, 0),
-    },
-    {
-        PrintName = "Rear sight",
-        Category = "eft_g17_rs",
-        Pos = Vector(0, -0.225, 0),
-        Icon_Offset = Vector(-2, 0, 0.3),
-        Ang = Angle(0, -90, 0),
-    },
-    {
-        PrintName = "Compensator",
-        Category = "eft_g17_g4",
-        Pos = Vector(0, 5, 0.6),
-        Ang = Angle(0, 0, 0),
-    },
-    {
-        PrintName = "Mount",
-        Category = "eft_g17_tangodown",
-        Pos = Vector(0, -0.92, -0.15),
-        Icon_Offset = Vector(0.5, 0, 0.3),
-        Ang = Angle(0, -90, 0),
-    },
-}
+ATT.StickerMaterial = "stickers/official_arcbird_pack/arcbird"
 
-
-ARC9.LoadAttachment(ATT, "eft_rec_g47_mos")
-
+ARC9.LoadAttachment(ATT, "sticker_official_arcbird_pack_arcbird")
 ATT = {}
 
-ATT.PrintName = "Glock 47 9x19 barrel"
-ATT.CompactName = "G17"
-ATT.Icon = Material("entities/eft_glock_attachments/barrel.png", "mips smooth")
-ATT.Description = [[A standard barrel designed to replace or be an alternative slide for the Glock 19 9x19 pistol. Manufactured by Glock For the United States Customs and Border Protection (CBP) 
-"Siempre estoy listo para cruzar
-Polvo, ruedas y tambi�n cristal"- From PRC by Peso Pluma.]]
+ATT.PrintName = "RK-62"
+ATT.CompactName = "RK62"
+ATT.Description = [[
+The Light.
 
-ATT.EFTErgoAdd = -5
-ATT.CustomCons = { Ergonomics = "-5" }
-ATT.VisualRecoilMult = 0.97
-ATT.RecoilMult = 0.97
-ATT.PhysBulletMuzzleVelocityMult = 0.97
+Extra 2
+Art by: Remanedur]]
+ATT.Icon = Material("stickers/official_arcbird_pack/rk62")
 
-ATT.HasBarrel = true 
-ATT.SortOrder = 0
-ATT.MenuCategory = "ARC9 - EFT Attachments"
+ATT.Free = true
 
-ATT.Category = {"eft_g47_barrel"}
+ATT.Category = "stickers"
+ATT.Folder = "Official Arcbird Pack"
 
+ATT.StickerMaterial = "stickers/official_arcbird_pack/rk62"
 
-ARC9.LoadAttachment(ATT, "eft_barrel_g47_std")
+ARC9.LoadAttachment(ATT, "sticker_official_arcbird_pack_rk62")
+ATT = {}
 
+ATT.PrintName = "Diamond Doves"
+ATT.CompactName = "DIAMONDDOVES"
+ATT.Description = [[
+Pinup 1/10]]
+ATT.Icon = Material("stickers/official_arcbird_pack/diamonddoves")
+
+ATT.Free = true
+
+ATT.Category = "stickers"
+ATT.Folder = "Official Arcbird Pack"
+
+ATT.StickerMaterial = "stickers/official_arcbird_pack/diamonddoves"
+
+ARC9.LoadAttachment(ATT, "sticker_official_arcbird_pack_diamonddoves")
+ATT = {}
+
+ATT.PrintName = "Nya~ctive Shooter"
+ATT.CompactName = "NYACTIVESHOOTER"
+ATT.Description = [[
+Chibi 1/10
+
+]]
+ATT.Icon = Material("stickers/official_arcbird_pack/nyactiveshooter")
+
+ATT.Free = true
+
+ATT.Category = "stickers"
+ATT.Folder = "Official Arcbird Pack"
+
+ATT.StickerMaterial = "stickers/official_arcbird_pack/nyactiveshooter"
+
+ARC9.LoadAttachment(ATT, "sticker_official_arcbird_pack_nyactiveshooter")
+ATT = {}
+
+ATT.PrintName = "What is CSS?"
+ATT.CompactName = "WHATISCSS"
+ATT.Description = [[
+Chibi 2/10
+
+Suggestion: Lamborghini]]
+ATT.Icon = Material("stickers/official_arcbird_pack/whatiscss")
+
+ATT.Free = true
+
+ATT.Category = "stickers"
+ATT.Folder = "Official Arcbird Pack"
+
+ATT.StickerMaterial = "stickers/official_arcbird_pack/whatiscss"
+
+ARC9.LoadAttachment(ATT, "sticker_official_arcbird_pack_whatiscss")
+ATT = {}
+
+ATT.PrintName = "Arcbirds"
+ATT.CompactName = "ARCBIRDS"
+ATT.Description = [[
+Pinup 2/10]]
+ATT.Icon = Material("stickers/official_arcbird_pack/arcbirds")
+
+ATT.Free = true
+
+ATT.Category = "stickers"
+ATT.Folder = "Official Arcbird Pack"
+
+ATT.StickerMaterial = "stickers/official_arcbird_pack/arcbirds"
+
+ARC9.LoadAttachment(ATT, "sticker_official_arcbird_pack_arcbirds")
+ATT = {}
+
+ATT.PrintName = "Lower 'Receiver'"
+ATT.CompactName = "LOWERRECEIVER"
+ATT.Description = [[
+Pinup 3/10
+
+Suggestion: Raven™]]
+ATT.Icon = Material("stickers/official_arcbird_pack/lowerreceiver")
+
+ATT.Free = true
+
+ATT.Category = "stickers"
+ATT.Folder = "Official Arcbird Pack"
+
+ATT.StickerMaterial = "stickers/official_arcbird_pack/lowerreceiver"
+
+ARC9.LoadAttachment(ATT, "sticker_official_arcbird_pack_lowerreceiver")
+ATT = {}
+
+ATT.PrintName = "Scoping Out the Goods"
+ATT.CompactName = "SCOPINGOUTTHEGOODS"
+ATT.Description = [[
+Chibi 3/10
+
+Suggestion: Raven™]]
+ATT.Icon = Material("stickers/official_arcbird_pack/scopingoutthegoods")
+
+ATT.Free = true
+
+ATT.Category = "stickers"
+ATT.Folder = "Official Arcbird Pack"
+
+ATT.StickerMaterial = "stickers/official_arcbird_pack/scopingoutthegoods"
+
+ARC9.LoadAttachment(ATT, "sticker_official_arcbird_pack_scopingoutthegoods")
+ATT = {}
+
+ATT.PrintName = "40MMS of Fun!!"
+ATT.CompactName = "40MMSOFFUN"
+ATT.Description = [[
+Pinup 4/10
+
+Suggestion: Vankoovur]]
+ATT.Icon = Material("stickers/official_arcbird_pack/40mmsoffun")
+
+ATT.Free = true
+
+ATT.Category = "stickers"
+ATT.Folder = "Official Arcbird Pack"
+
+ATT.StickerMaterial = "stickers/official_arcbird_pack/40mmsoffun"
+
+ARC9.LoadAttachment(ATT, "sticker_official_arcbird_pack_40mmsoffun")
 
