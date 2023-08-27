@@ -1,0 +1,26 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/weapons/arc9/darsu_eft/mods/gl7_d"
+	"$bumpmap" "models/weapons/arc9/darsu_eft/mods/gl7_n"
+	"$color2" "[0.7 0.7 0.7]"
+	"$nocull" "1"
+   	"$halflambert" "1"
+	"$nodecal" "1"
+	
+	"$selfillum" "1"
+	"$selfillummask" "models/weapons/arc9/darsu_eft/mods/gl7_sight_glow_mask"
+	"$selfillumtint" "[1 1 1]"
+
+	"$phong" "1"
+	"$phongboost" "3"
+	//"$phongexponent" "20"
+	"$phongfresnelranges"	"[0.8 1.5 3]"
+	"$phongexponenttexture" "models/weapons/arc9/darsu_eft/mods/gl7_e"
+	
+	"$envmap" 					 "env_cubemap"
+	"$normalmapalphaenvmapmask" "1"
+	"$envmaptint" "[0.008 0.008 0.008]"		
+	//"$phongtint" 			"[0.5 0.5 0.5]"			
+	"$PhongAlbedoTint" "1"		
+
+}

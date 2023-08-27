@@ -1,8 +1,8 @@
 "VertexlitGeneric"
 {
-	"$basetexture" "models/weapons/arc9/darsu_eft/mods/T_1P_AKALPHA_DM"
-	"$bumpmap" "models/weapons/arc9/darsu_eft/mods/T_1P_AKALPHA_NM"
-	"$PhongExponentTexture" "models/weapons/arc9/darsu_eft/mods/T_1P_AKALPHA_RM"
+	"$basetexture" "models/weapons/arc9/darsu_eft/mods/t_1p_akalpha_dm"
+	"$bumpmap" "models/weapons/arc9/darsu_eft/mods/t_1p_akalpha_nm"
+	"$PhongExponentTexture" "models/weapons/arc9/darsu_eft/mods/t_1p_akalpha_rm"
 	
 	$envmap						env_cubemap
 	$envmaptint					"[ .02 .02 .02 ]"
