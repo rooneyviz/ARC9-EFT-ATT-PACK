@@ -10,7 +10,8 @@
     	"$detailscale"			"2"
     	"$detailblendfactor"          		"0.5"
     	"$detailblendmode"          		"0"
- 
+    	"$color2"                 		"[ 1.5 1.5 1.5]"
+
  
     	//"$envmaptint"              		"[ .02 .02 .02 ]"
  

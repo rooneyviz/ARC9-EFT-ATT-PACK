@@ -2,16 +2,16 @@
 {
 	"$basetexture" "models/weapons/arc9/darsu_eft/mods/gl7_d"
 	"$bumpmap" "models/weapons/arc9/darsu_eft/mods/gl7_n"
-	"$color2" "[0.7 0.7 0.7]"
+	"$color2" "[.9 .9 .9]"
 	"$nocull" "1"
    	"$halflambert" "1"
 	"$nodecal" "1"
 
 	"$phong" "1"
 	"$phongboost" "10"
-	//"$phongexponent" "20"
+	"$phongexponent" "20"
 	"$phongfresnelranges"	"[0.8 2 4]"
-	"$phongexponenttexture" "models/re8_gl7/gl7_e"
+	"$phongexponenttexture" "models/weapons/arc9/darsu_eft/mods/gl7_e"
 	
 	"$envmap" 					 "env_cubemap"
 	"$normalmapalphaenvmapmask" "1"

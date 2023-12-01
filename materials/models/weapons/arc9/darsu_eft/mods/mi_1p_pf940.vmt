@@ -1,0 +1,16 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/weapons/arc9/darsu_eft/mods\T_1P_PF940_D"
+	"$bumpmap" "models/weapons/arc9/darsu_eft/mods\T_1P_PF940_N"
+	"$phongexponenttexture" "models/weapons/arc9/darsu_eft/mods\T_1P_PF940_M"
+	"$color2" "[ 0.95 0.95 0.95]"
+	"$phong" "1"
+	"$phongboost" "1"
+	"$phongexponent" "25"		
+	"$phongfresnelranges"	"[0.3 0.5 0.5]"
+	"$normalmapalphaenvmapmask" 	"1"
+	$rimmask	1
+	$rimlight               1
+	$rimlightexponent       60
+	$rimlightboost          0.2	
+}

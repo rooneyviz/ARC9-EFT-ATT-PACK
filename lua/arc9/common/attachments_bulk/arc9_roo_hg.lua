@@ -296,19 +296,10 @@ ATT.RecoilMult = 0.97
 ATT.VisualRecoilMult = 0.97
 ATT.HeatCapacityMult = 0.907698906
 
-ATT.ActivateElements = {"nodovetail"}
 
 ATT.Category = {"eft_aksu_Lhandguard"}
 
 ATT.Attachments = {
-    {
-        PrintName = "Optic",
-        Category = {"eft_optic_medium", "eft_optic_large", "eft_optic_small"},
-        Pos = Vector(0, -6.1, -1.55),
-        Ang = Angle(0, -90, 0),
-        Icon_Offset = Vector(0, 0, 1),
-        -- ExtraSightDistance = 8
-    },
     {
         PrintName = "Grip",
         Category = {"eft_foregrip_small"},
@@ -331,6 +322,50 @@ ATT.Attachments = {
         Icon_Offset = Vector(0, 0, 1),
     },
     {
+        PrintName = "Mount",
+        Category = {"eft_xrsu_47_mount"},
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+        Icon_Offset = Vector(0, 0, 2),
+    },
+
+}
+
+
+ARC9.LoadAttachment(ATT, "eft_Lhg_ak_xrsu47")
+
+ATT = {}
+
+ATT.PrintName = "Optic mount"
+ATT.CompactName = "XRSU47SU"
+ATT.Icon = Material("entities/eft_ak_attachments/su/xsu.png", "mips smooth")
+ATT.Description = [[the top mount part of the XRSU47SU handguard.]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/aksu_xrsu47_hg.mdl"
+ATT.ModelBodygroups = "10"
+
+ATT.EFTErgoAdd = 0
+ATT.CustomPros = { Ergonomics = "+0" }
+ATT.RecoilMult = 1
+ATT.VisualRecoilMult = 1
+ATT.HeatCapacityMult = 1
+
+ATT.ActivateElements = {"nodovetail"}
+
+ATT.Category = {"eft_xrsu_47_mount"}
+
+ATT.Attachments = {
+    {
+        PrintName = "Optic",
+        Category = {"eft_optic_medium", "eft_optic_large", "eft_optic_small"},
+        Pos = Vector(0, -6.1, -1.55),
+        Ang = Angle(0, -90, 0),
+        Icon_Offset = Vector(0, 0, 1),
+        -- ExtraSightDistance = 8
+    },
+    {
         PrintName = "Top Tactical",
         Category = {"eft_tactical_top"},
         Pos = Vector(0, 3, -1.55),
@@ -340,8 +375,7 @@ ATT.Attachments = {
 }
 
 
-ARC9.LoadAttachment(ATT, "eft_Lhg_ak_xrsu47")
-
+ARC9.LoadAttachment(ATT, "eft_Lhg_ak_xrsu47_mount")
 ATT = {}
 
 ATT.PrintName = "AK-74 polymer handguard (6P20 Sb.9)"
@@ -750,6 +784,8 @@ ATT.Description = [[The RK-1 foregrip can be installed on the lower part of hand
 ATT.SortOrder = 0
 
 ATT.MenuCategory = "ARC9 - EFT Attachments"
+ATT.RequireElements = {"eft_grip_ak_kocehvnim"}
+ATT.ActivateElements = {"nodovetail"}
 
 ATT.Category = {"eft_ak_handguard"}
 ATT.Icon = nil
@@ -757,7 +793,6 @@ ATT.HasHG = true
 ATT.Model = "models/weapons/arc9/darsu_eft/mods/ak_hg_kochevnik.mdl"
 ATT.ModelAngleOffset = Angle(0, -90, 0)
 ATT.ModelOffset = Vector(-20.25, -4.25, 3.0)
-
 ATT.IronSights = {
     Pos = Vector(-4.28, -10, 1.37),
     Ang = Angle(0, 0.09, 0),
@@ -769,7 +804,7 @@ ATT.IronSights = {
 ATT.ActivePos = Vector(-0.7, -12.5, -1)
 ATT.ActiveAng = Angle(0, 0, 0)
 
-ATT.SprintAng = Angle(1, 5, -1)
+ATT.SprintAng = Angle(2, -3, 0)
 ATT.SprintPos = Vector(-0.7, -12.5, -1)
 
 ATT.NearWallAng = Angle(0, 55, 0)
@@ -799,8 +834,8 @@ ATT.Attachments = {
         PrintName = "Grip",
         Category = "eft_ak_grip",
         Bone = "mod_pistol_grip",
-        Pos = Vector(0, 4.5, 1.32),
-        Ang = Angle(0, 0, 0),
+        Pos = Vector(0, 4.5, 1.62),
+        Ang = Angle(0, 0, 2),
         Installed = "eft_grip_ak_6p1sb8",
     },
 
@@ -816,7 +851,7 @@ ATT.Attachments = {
     {
         PrintName = "Foregrip",
         Category = {"eft_foregrip_small"},
-        Pos = Vector(0, 9, 1.50),
+        Pos = Vector(0, 8.9, 1.50),
         Ang = Angle(0, -90, 0),
         Icon_Offset = Vector(0, 0, -1),
     },
@@ -959,6 +994,68 @@ ATT.Category = {"eft_aksu_Lhandguard"}
 
 ARC9.LoadAttachment(ATT, "eft_slr106u_Lhg_ak_std")
 ///////////////////////////////////////      eft_aksu_hg_ak_std
+ATT = {}
+
+ATT.PrintName = "handguard grip"
+ATT.CompactName = "handguard grip"
+ATT.Icon = nil
+ATT.Description = [[makes you hold the handguard(if you arent already for some reason???).]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/handguard_ar15_precision_reflex_carbon_fiber_delta_gen_3.mdl"
+ATT.LHIK = true 
+-- ATT.LHIK_Priority = -22 -- needs lower hg
+ATT.EFTErgoAdd = 1
+ATT.CustomPros = { Ergonomics = "+1" }
+ATT.RecoilMult = 0.99
+ATT.VisualRecoilMult = 0.99
+ATT.Category = {"eft_ar15_hguard"}
+
+ATT.ModelMaterial = "models/weapons/saa/shared/unlit_transparent"
+ATT.LHIK_Priority = 2
+
+ATT.Attachments = {
+    {
+        PrintName = "Handguard",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+        Category = {"eft_ar15_hguard"},
+        IconOffset = Vector(0, 0, 1),
+    },
+}
+ARC9.LoadAttachment(ATT, "eft_hg_ar15_hold_hg_a")
+ATT = {}
+
+ATT.PrintName = "(AR) C-CLAMP"
+ATT.CompactName = "(AR) C-CLAMP"
+ATT.Icon = nil
+ATT.Description = [[idk]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/handguard_ar15_unique_ars_wing_and_skull_12_inch.mdl"
+ATT.LHIK = true 
+-- ATT.LHIK_Priority = -22 -- needs lower hg
+ATT.EFTErgoAdd = 1
+ATT.CustomPros = { Ergonomics = "+1" }
+ATT.RecoilMult = 0.99
+ATT.VisualRecoilMult = 0.99
+ATT.Category = {"eft_ar15_hguard"}
+
+ATT.ModelMaterial = "models/weapons/saa/shared/unlit_transparent"
+ATT.LHIK_Priority = 2
+
+ATT.Attachments = {
+    {
+        PrintName = "Handguard",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+        Category = {"eft_ar15_hguard"},
+        IconOffset = Vector(0, 0, 1),
+    },
+}
+ARC9.LoadAttachment(ATT, "eft_hg_ar15_hold_hg_b")
 
 
 ATT = {}
@@ -1007,7 +1104,7 @@ ATT.VisualRecoilMult = 0.99
 ATT.Category = {"eft_aksu_Lhandguard"}
 
 
-ARC9.LoadAttachment(ATT, "eft_aksu_Lhg_ak_std")
+ARC9.LoadAttachment(ATT, "eft_akmsu_Lhg_ak_std")
 
 ATT = {}
 
@@ -1318,7 +1415,7 @@ ATT.CustomPros = { Ergonomics = "+14" }
 ATT.RecoilMult = 0.99
 ATT.VisualRecoilMult = 0.99
 ATT.HeatCapacityMult = 1.072
-
+ATT.BoneMerge = true
 ATT.HasHG = true
 ATT.Model = "models/weapons/arc9/darsu_eft/mods/sg12_hg_zhukov.mdl"
 ATT.ModelSkin = 2
@@ -1356,4 +1453,566 @@ ARC9.LoadAttachment(ATT, "eft_hg_sg12_zh_plm")
 
 
 
+ATT = {}
 
+ATT.PrintName = "RPKT Handguard"
+ATT.CompactName = "RPKT"
+ATT.Icon = Material("entities/eft_ar15_attachments/hg/ar15_daniel_defense_ris_ii_1225_lower_handguard_(coyote_brown).png", "mips smooth")
+ATT.Description = [[Standard handguardfor the rpkt.
+
+
+(mounts foregrip on the side)]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.HasHG = true
+ATT.ActivateElements = {"hg_rpkt"}
+ATT.Category = {"eft_rpkt_hg"}
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/fg_b25u.mdl"
+ATT.ModelMaterial = "models/weapons/saa/shared/unlit_transparent"
+ATT.ModelOffset = Vector(1, 0, 0)
+ATT.ModelAngleOffset = Angle(0, -90, 15)
+
+ATT.LHIK = false
+
+ATT.EFTErgoAdd = 7
+ATT.CustomPros = { Ergonomics = "+7" }
+
+
+ATT.Attachments = {
+    {
+        PrintName = "Grip",
+        Category = {"eft_foregrip_small"},
+        Pos = Vector(0, 1.5, 2.25),
+        Ang = Angle(0, -90, 0),
+        Bone = "weapon",
+        Icon_Offset = Vector(-1, 0, 0.5),
+    },
+    {
+        PrintName = "L Tactical",
+        Category = {"eft_tactical", "eft_tactical_top"},
+        Pos = Vector(1.05, 1, 1),
+        Ang = Angle(0, -90, 90),
+        Icon_Offset = Vector(0, 0, 0.5),
+    },
+	{
+        PrintName = "R Tactical",
+        Category = {"eft_tactical"},
+        Pos = Vector(-1.05, 1, 1),
+        Ang = Angle(0, -90, 90),
+        Icon_Offset = Vector(0, 0, 0.5),
+    },
+
+
+}
+
+
+ARC9.LoadAttachment(ATT, "eft_hg_rpkt")
+
+ATT = {}
+
+ATT.PrintName = "RPKT Handguard(SIDE GRIP)"
+ATT.CompactName = "RPKT(SIDE)"
+ATT.Icon = Material("entities/eft_ar15_attachments/hg/ar15_daniel_defense_ris_ii_1225_lower_handguard_(coyote_brown).png", "mips smooth")
+ATT.Description = [[Standard handguardfor the rpkt.
+
+
+(mounts foregrip on the side)]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.HasHG = true
+ATT.ActivateElements = {"hg_rpkt"}
+ATT.Category = {"eft_rpkt_hg"}
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/fg_b25u.mdl"
+ATT.ModelMaterial = "models/weapons/saa/shared/unlit_transparent"
+ATT.ModelOffset = Vector(1, 0, 0)
+ATT.ModelAngleOffset = Angle(0, -90, 15)
+
+ATT.LHIK_Priority = 2
+ATT.LHIK = true
+
+ATT.EFTErgoAdd = 7
+ATT.CustomPros = { Ergonomics = "+7" }
+
+
+ATT.Attachments = {
+    {
+        PrintName = "B Tactical",
+        Category = {"eft_tactical"},
+        Pos = Vector(0, 4.5, 2.25),
+        Ang = Angle(0, -90, 0),
+        Bone = "weapon",
+        Icon_Offset = Vector(-1, 0, 0.5),
+    },
+    {
+        PrintName = "L Tactical",
+        Category = {"eft_tactical", "eft_tactical_top"},
+        Pos = Vector(1.05, 1, 1),
+        Ang = Angle(0, -90, 90),
+        Icon_Offset = Vector(0, 0, 0.5),
+    },
+	{
+        PrintName = "R Grip",
+        Category = {"eft_foregrip_small"},
+        Pos = Vector(-1.05, 1, 1),
+        Ang = Angle(0, -90, 90),
+        Icon_Offset = Vector(0, 0, 0.5),
+	   Integral = true,
+         Installed = "eft_foregrip_kac"
+    },
+
+
+}
+
+
+ARC9.LoadAttachment(ATT, "eft_hg_rpkt_side")
+
+ATT = {}
+
+ATT.PrintName = "AK Zenit Sport-1 handguard rail"
+ATT.CompactName = "Sport-1"
+ATT.Icon = nil
+ATT.Description = [[The all-milled Sport-1 handguard set is made of D16T aluminum alloy with a black coating, it is intended for installing on the AK assault rifle series 103, 104, 105, 74S, 74M, AKM, AKMS in the standard place of the handguard. 
+The Sport-1 kit contains the B10L handguard, the DL-1 handguard extension and the B31N upper handguard. 
+© «Zenit»]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+-- ATT.Folder = "ZENIT"
+
+ATT.EFTErgoAdd = 9
+ATT.CustomPros = { Ergonomics = "+9" }
+ATT.RecoilMult = 0.97
+ATT.VisualRecoilMult = 0.97
+ATT.HeatCapacityMult = 0.846
+
+ATT.HasHG = true
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/ak_hg_sport1.mdl"
+ATT.ModelBodygroups = "0"
+ATT.LHIK = true
+ATT.RequireElements = {"gasblock", "gasblock_vdmcs"}
+ATT.ExcludeElements = {"eft_vityaz_gas_std"}
+ATT.ActivateElements = {"nogp34","eft_hg_ak_b30b31s"}
+
+ATT.Category = {"eft_ak_handguard", "eft_ak_handguard_custom"}
+ATT.Attachments = {
+    {
+        PrintName = "Optic",
+        Category = {"eft_tactical_top", "eft_tactical_top_big", "eft_backupmount", "eft_optic_medium", "eft_optic_small"},
+        RejectAttachments = { ["eft_tactical_raptar"] = true },
+        Pos = Vector(0, 4, -1.12),
+        Ang = Angle(0, -90, 0),
+        Icon_Offset = Vector(0, 0, 0),
+        ExtraSightDistance = 8
+    },
+    {
+        PrintName = "Grip",
+        Category = {"eft_zenitb","eft_mount_mlok41"},
+        Pos = Vector(0, 4, 1.65),
+        Ang = Angle(0, -90, 0),
+        Icon_Offset = Vector(0, 0, -1),
+    },
+    {
+        PrintName = "R Tactical",
+        Category = {"eft_zenitr","eft_mount_mlok"},
+        RejectAttachments = { ["eft_tactical_raptar"] = true },
+        Pos = Vector(1.15, 9, 0.45),
+        Ang = Angle(0, -90, 90),
+        Icon_Offset = Vector(0, 0, 1),
+    },
+    {
+        PrintName = "L Tactical",
+        Category = {"eft_zenitl","eft_mount_mlok"},
+        RejectAttachments = { ["eft_tactical_raptar"] = true },
+        Pos = Vector(-1.15, 9, 0.45),
+        Ang = Angle(0, -90, -90),
+        Icon_Offset = Vector(0, 0, 1),
+    },
+    {
+        PrintName = "B Tactical",
+        Category = {"eft_mount_mlok"},
+        RejectAttachments = { ["eft_tactical_raptar"] = true },
+        Pos = Vector(0, 9, 1.45),
+        Ang = Angle(0, -90, -90),
+        Icon_Offset = Vector(0, 0, 1),
+    },
+}
+ARC9.LoadAttachment(ATT, "eft_hg_ak_sport1")
+
+ATT = {}
+
+ATT.PrintName = "AKS-74U Hexagon tubular handguard"
+ATT.CompactName = "Hexagon"
+ATT.Icon = Material("entities/eft_ak_attachments/hg/hexa.png", "mips smooth")
+ATT.Description = [[A tubular handguard for AK family automatic rifles, manufactured by Hexagon.]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.HasHG = true
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/aksu_hex_hg.mdl"
+ATT.LHIK = true
+
+ATT.EFTErgoAdd = 1
+ATT.CustomPros = { Ergonomics = "+1" }
+ATT.RecoilMult = 0.99
+ATT.VisualRecoilMult = 0.99
+ATT.HeatCapacityMult = 0.96912214
+
+ATT.Category = {"eft_aksu_Lhandguard"}
+ATT.Attachments = {
+{
+        PrintName = "L Hex. mount",
+        Category = {"eft_mount_hexagon"},
+        Pos = Vector(-1.1, 3.1, 0.5),
+        Ang = Angle(0, -90, 0),
+        Icon_Offset = Vector(0, 0.2, 0)
+    },
+    {
+        PrintName = "R Hex. mount",
+        Category = {"eft_mount_hexagon"},
+        Pos = Vector(1.1, 3.1, 0.5),
+        Ang = Angle(180, 90, 0),
+        Icon_Offset = Vector(0, 0.2, 0)
+    },
+    {
+        PrintName = "B Hex. mount",
+        Category = {"eft_mount_hexagon_m"},
+        Pos = Vector(0, 3, 1.65),
+        Ang = Angle(0, -90, -90)
+    }
+}
+
+
+ARC9.LoadAttachment(ATT, "eft_Lhg_ak_hex")
+
+ATT = {}
+
+ATT.PrintName = "AKS-74U Hexagon tubular handguard (Anodized Red)"
+ATT.CompactName = "Hexagon (AR)"
+ATT.Icon = Material("entities/eft_ak_attachments/hg/hexar.png", "mips smooth")
+ATT.Description = [[A tubular handguard for AK family automatic rifles, manufactured by Hexagon.
+
+DA RED GOEZ FASTA!]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.HasHG = true
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/aksu_hex_hg.mdl"
+ATT.LHIK = true
+ATT.ModelSkin = "1"
+
+ATT.EFTErgoAdd = 1
+ATT.CustomPros = { Ergonomics = "+1" }
+ATT.RecoilMult = 0.99
+ATT.VisualRecoilMult = 0.99
+ATT.HeatCapacityMult = 0.96912214
+
+ATT.Category = {"eft_aksu_Lhandguard"}
+ATT.Attachments = {
+{
+        PrintName = "L Hex. mount",
+        Category = {"eft_mount_hexagon"},
+        Pos = Vector(-1.1, 3.1, 0.5),
+        Ang = Angle(0, -90, 0),
+        Icon_Offset = Vector(0, 0.2, 0)
+    },
+    {
+        PrintName = "R Hex. mount",
+        Category = {"eft_mount_hexagon"},
+        Pos = Vector(1.1, 3.1, 0.5),
+        Ang = Angle(180, 90, 0),
+        Icon_Offset = Vector(0, 0.2, 0)
+    },
+    {
+        PrintName = "B Hex. mount",
+        Category = {"eft_mount_hexagon_m"},
+        Pos = Vector(0, 3, 1.65),
+        Ang = Angle(0, -90, -90)
+    }
+}
+
+
+ARC9.LoadAttachment(ATT, "eft_Lhg_ak_hex_r")
+
+ATT = {}
+
+ATT.PrintName = "AR-15 BCM KMR 17\" handguard"
+ATT.CompactName = "BCM KMR 17\" "
+ATT.Icon = nil
+ATT.Description = [[Lightweight handguard BCM KMR 17\" for use with sport rifles based on AR-15.]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+ATT.HasHG = true
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/handguard_ar15_bcm_km_17.mdl"
+ATT.LHIK = true 
+ATT.EFTErgoAdd = 11
+ATT.CustomPros = { Ergonomics = "+11" }
+ATT.RecoilMult = 0.99
+ATT.VisualRecoilMult = 0.99
+ATT.SpreadMult = 0.99
+ATT.HeatCapacityMult = 0.961
+ATT.Category = {"eft_ar15_hguard"}
+
+ATT.ExcludeElements = {"barrel_260mm","barrel_370mm","barrel_406mm", "eft_gas_ar15_rg", "eft_gas_ar15_jp", "eft_gas_ar15_m4fs"}
+ATT.Folder = "BCM"
+	
+ATT.Attachments = {
+    {
+        PrintName = "Backup",
+        Category = {"eft_backupmount"},
+        Pos = Vector(0, 3.3, -1.15),
+        Ang = Angle(0, -90, 0),
+        Icon_Offset = Vector(0, 0, 0),
+        ExtraSightDistance = 8
+    },
+    {
+        PrintName = "Front sight",
+        Category = {"eft_frontsight"},
+        Pos = Vector(0, 14.8+1.2, -1.1),
+        Ang = Angle(0, -90, 0),
+        Icon_Offset = Vector(0, 0, 0),
+        ExtraSightDistance = 8
+    },
+    {
+        PrintName = "Top Tactical",
+        Category = {"eft_tactical_top", "eft_tactical_top_big"},
+        Pos = Vector(0, 11.5, -1.1),
+        Ang = Angle(0, -90, 0),
+        Icon_Offset = Vector(0, 0, 0),
+    },
+    {
+        PrintName = "M-LOK R",
+        Category = {"eft_mount_mlok", "eft_mount_mlokoffset"}, -- no canti
+        Pos = Vector(0.85, 10.5, 0.12),
+        Ang = Angle(180, 90, 0),
+        Icon_Offset = Vector(0, 0, 0),
+    },
+    {
+        PrintName = "M-LOK L",
+        Category = {"eft_mount_mlok", "eft_mount_mlokcanti", "eft_mount_mlokoffset"},
+        Pos = Vector(-0.85, 10.5, 0.12),
+        Ang = Angle(0, -90, 0),
+        Icon_Offset = Vector(0, 0, 0),
+    },
+    {
+        PrintName = "M-LOK B Tac",
+        Category = {"eft_mount_mlok", "eft_mount_mlokcanti", "eft_mount_mlokoffset"},
+        Pos = Vector(0, 10.5, 0.85),
+        Ang = Angle(0, -90, -90),
+        Icon_Offset = Vector(0, 0, 0),
+    },
+    {
+        PrintName = "M-LOK B",
+        Category = {"eft_mount_mlok41", "eft_foregrip_mlok"},
+        Pos = Vector(0, 5.5, 0.85),
+        Ang = Angle(0, -90, -90),
+        Icon_Offset = Vector(0, 0, 0),
+    },
+    {
+        PrintName = "M-LOK R2",
+        Category = {"eft_mount_mlok", "eft_mount_mlokcanti", "eft_mount_mlokoffset"},
+        Pos = Vector(0.5, 14, 0.5),
+        Ang = Angle(180, 90, 45),
+        Icon_Offset = Vector(0, 0, 0),
+    },
+    {
+        PrintName = "M-LOK L2",
+        Category = {"eft_mount_mlok", "eft_mount_mlokcanti", "eft_mount_mlokoffset"},
+        Pos = Vector(-0.5, 14, 0.5),
+        Ang = Angle(0, -90, -45),
+        Icon_Offset = Vector(0, 0, 0),
+    },
+}
+
+ARC9.LoadAttachment(ATT, "eft_hg_ar15_bcm_kmr_17")
+ATT = {}
+
+ATT.PrintName = "AR-15 BCM KMR 10\" handguard"
+ATT.CompactName = "BCM KMR 10\" "
+ATT.Icon = nil
+ATT.Description = [[Lightweight handguard BCM KMR 7\" for use with sport rifles based on AR-15.]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+ATT.HasHG = true
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/handguard_ar15_bcm_km_10.mdl"
+ATT.LHIK = true 
+ATT.EFTErgoAdd = 11
+ATT.CustomPros = { Ergonomics = "+11" }
+ATT.RecoilMult = 0.99
+ATT.VisualRecoilMult = 0.99
+ATT.SpreadMult = 0.99
+ATT.HeatCapacityMult = 0.961
+ATT.Category = {"eft_ar15_hguard"}
+
+ATT.Folder = "BCM"
+	
+ATT.Attachments = {
+    {
+        PrintName = "Backup",
+        Category = {"eft_backupmount"},
+        Pos = Vector(0, 3.3, -1.15),
+        Ang = Angle(0, -90, 0),
+        Icon_Offset = Vector(0, 0, 0),
+        ExtraSightDistance = 8
+    },
+    {
+        PrintName = "Front sight",
+        Category = {"eft_frontsight"},
+        Pos = Vector(0, 14.8+1.2, -1.1),
+        Ang = Angle(0, -90, 0),
+        Icon_Offset = Vector(0, 0, 0),
+        ExtraSightDistance = 8
+    },
+    {
+        PrintName = "Top Tactical",
+        Category = {"eft_tactical_top", "eft_tactical_top_big"},
+        Pos = Vector(0, 11.5, -1.1),
+        Ang = Angle(0, -90, 0),
+        Icon_Offset = Vector(0, 0, 0),
+    },
+    {
+        PrintName = "M-LOK R",
+        Category = {"eft_mount_mlok", "eft_mount_mlokoffset"}, -- no canti
+        Pos = Vector(0.85, 10.5, 0.12),
+        Ang = Angle(180, 90, 0),
+        Icon_Offset = Vector(0, 0, 0),
+    },
+    {
+        PrintName = "M-LOK L",
+        Category = {"eft_mount_mlok", "eft_mount_mlokcanti", "eft_mount_mlokoffset"},
+        Pos = Vector(-0.85, 10.5, 0.12),
+        Ang = Angle(0, -90, 0),
+        Icon_Offset = Vector(0, 0, 0),
+    },
+    {
+        PrintName = "M-LOK B Tac",
+        Category = {"eft_mount_mlok", "eft_mount_mlokcanti", "eft_mount_mlokoffset"},
+        Pos = Vector(0, 10.5, 0.85),
+        Ang = Angle(0, -90, -90),
+        Icon_Offset = Vector(0, 0, 0),
+    },
+    {
+        PrintName = "M-LOK B",
+        Category = {"eft_mount_mlok41", "eft_foregrip_mlok"},
+        Pos = Vector(0, 5.5, 0.85),
+        Ang = Angle(0, -90, -90),
+        Icon_Offset = Vector(0, 0, 0),
+    },
+    {
+        PrintName = "M-LOK R2",
+        Category = {"eft_mount_mlok", "eft_mount_mlokcanti", "eft_mount_mlokoffset"},
+        Pos = Vector(0.5, 14, 0.5),
+        Ang = Angle(180, 90, 45),
+        Icon_Offset = Vector(0, 0, 0),
+    },
+    {
+        PrintName = "M-LOK L2",
+        Category = {"eft_mount_mlok", "eft_mount_mlokcanti", "eft_mount_mlokoffset"},
+        Pos = Vector(-0.5, 14, 0.5),
+        Ang = Angle(0, -90, -45),
+        Icon_Offset = Vector(0, 0, 0),
+    },
+}
+
+ARC9.LoadAttachment(ATT, "eft_hg_ar15_bcm_kmr_10")
+ATT = {}
+
+ATT.PrintName = "AKS-74U Alfa Arms Goliaf handguard"
+ATT.CompactName = "Goliaf"
+ATT.Icon = Material("entities/eft_ak_attachments/su/goliaf.png", "mips smooth")
+ATT.Description = [[This integrally machined handguard is manufactured from aluminum alloy D16T with coyote brown coating and can be installed instead of the standard-issue foregrip on the AKS-74U. It comes fitted with Picatinny rail mounts on three sides, allowing for the installation of additional equipment such as tactical foregrips, flashlights, and laser designators.]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.HasHG = true
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/aksu_goliaf_hg.mdl"
+ATT.LHIK = true
+
+ATT.EFTErgoAdd = 1.5
+ATT.CustomPros = { Ergonomics = "+1.5" }
+ATT.RecoilMult = 0.994987437
+ATT.VisualRecoilMult = 0.994987437
+ATT.HeatCapacityMult = 1.00498756
+ATT.ModelSkin = "1"
+
+ATT.Category = {"eft_aksu_Lhandguard"}
+ATT.Attachments = {
+        {
+        PrintName = "Grip",
+        Category = {"eft_foregrip_small"},
+        Pos = Vector(0, 3, 1.695),
+        Ang = Angle(0, -90, 0),
+        Icon_Offset = Vector(0, 0, -1),
+    },
+    {
+        PrintName = "R Tactical",
+        Category = {"eft_tactical_top"},
+        Pos = Vector(1.15, 8, 0.52),
+        Ang = Angle(0, -90, 90),
+        Icon_Offset = Vector(0, 0, 0),
+    },
+    {
+        PrintName = "L Tactical",
+        Category = {"eft_tactical_top"},
+        Pos = Vector(-1.15, 8, 0.52),
+        Ang = Angle(0, -90, -90),
+        Icon_Offset = Vector(0, 0, 0),
+    },
+    {
+        PrintName = "B Tactical",
+        Category = {"eft_tactical_top"},
+        Pos = Vector(0, 8.1, 1.7),
+        Ang = Angle(0, -90, 180),
+        Icon_Offset = Vector(0, 0, 0),
+    },
+    {
+        PrintName = "Top Tactical",
+        Category = {"eft_tactical_top"},
+        Pos = Vector(0, 8.1, -0.7),
+        Ang = Angle(0, -90, 0),
+        Icon_Offset = Vector(0, 0, 0),
+    },
+
+}
+
+
+ARC9.LoadAttachment(ATT, "eft_Lhg_ak_goliaf_b")
+///////////////////////////////////////      eft_hg_ak_goliaf
+
+
+ATT = {}
+
+ATT.PrintName = "AKS-74U Alfa Arms Goliaf Gas Tube Cover"
+ATT.CompactName = "Goliaf"
+ATT.Icon = Material("entities/eft_ak_attachments/su/goliaf.png", "mips smooth")
+ATT.Description = [[This integrally machined handguard is manufactured from aluminum alloy D16T with coyote brown coating and can be installed instead of the standard-issue foregrip on the AKS-74U. It comes fitted with Picatinny rail mounts on three sides, allowing for the installation of additional equipment such as tactical foregrips, flashlights, and laser designators.]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.HasHG = true
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/aksu_goliaf_gascover.mdl"
+
+ATT.EFTErgoAdd = 1.5
+ATT.CustomPros = { Ergonomics = "+1.5" }
+ATT.RecoilMult = 0.994987437
+ATT.VisualRecoilMult = 0.994987437
+ATT.HeatCapacityMult = 1.00498756
+ATT.ModelSkin = "1"
+
+ATT.Category = {"eft_aksu_gascover"}
+ATT.Attachments = {
+    {
+        PrintName = "Optic",
+        Category = {"eft_optic_medium", "eft_optic_small", "eft_tactical_top"},
+        Pos = Vector(0, 3, -1.3),
+        Ang = Angle(0, -90, 0),
+        Icon_Offset = Vector(0, 0, 0),
+        ExtraSightDistance = 8
+    },
+
+}
+
+
+ARC9.LoadAttachment(ATT, "eft_gc_ak_goliaf_b")

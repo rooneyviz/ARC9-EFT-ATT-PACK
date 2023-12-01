@@ -165,7 +165,7 @@ ATT.HasGranataAmmo = true
 
 
 ATT.ShootEntUBGL = "roo_flare"
-ATT.ShootEntForce = 100000
+ATT.ShootEntForceUBGL = 1000000
 ATT.UBGLClipSize = 1
 
 
@@ -199,20 +199,20 @@ ATT.Description = [[M1029 is a 40mm Rubber ball shot shell. CRWD-DSPRSL stands f
 ATT.SortOrder = 0
 ATT.MenuCategory = "ARC9 - EFT Attachments"
 
-ATT.DamageMaxUBGL = .75 * mult1270
-ATT.DamageMinUBGL = .5 * mult1270
+ATT.DamageMaxUBGL = .1875 * mult1270
+ATT.DamageMinUBGL = 1 * mult1270
 ATT.PhysBulletMuzzleVelocityUBGL = 215 /0.0254
 
 ATT.RangeMinUBGL = 10
-ATT.RangeMaxUBGL = 30 /0.0254 * dmgrangesg
+ATT.RangeMaxUBGL = 300 /0.0254 * dmgrangesg
 
-ATT.PenetrationUBGL =      .05 *2.54/100/0.0254
-ATT.PenetrationDeltaUBGL = 95/100
+ATT.PenetrationUBGL =      .005 *2.54/100/0.0254
+ATT.PenetrationDeltaUBGL = 50/100
 ATT.ArmorPiercingUBGL =    1/100
 ATT.RicochetChanceUBGL =   0
 
 ATT.NumUBGL = 48
-ATT.SpreadUBGL = 0.09
+ATT.SpreadUBGL = 0
 
 ATT.UBGLClipSize = 1
 ATT.ShootEntUBGL = false
@@ -228,6 +228,7 @@ ATT.Icon = Material("entities/eft_attachments/ammo/40x46/40x46mm_m381.png", "mip
 ATT.Description = [[A 40-mm shell That has a hole to place A single 12 gauge round.]]
 ATT.SortOrder = 0
 ATT.MenuCategory = "ARC9 - EFT Attachments"
+ATT.ShootEnt = false
 
 ATT.CustomPros = {
 }
@@ -245,6 +246,6 @@ ATT.Attachments = {
 
 ATT.UBGLClipSize = 1
 
-ATT.Category = {"eft_ammo_40x46"}
+ATT.Category = {"eft_ammo_40x46_nonubgl"}
 
 ARC9.LoadAttachment(ATT, "eft_ammo_40x46_12x70")

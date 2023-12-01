@@ -1,0 +1,25 @@
+"VertexlitGeneric"
+{
+	"$basetexture"				"models/weapons/arc9/darsu_eft/mods/butts1_c"
+	"$bumpmap" 					"models/weapons/arc9/darsu_eft/mods/butts1_n"	
+	"$phongexponenttexture"		"models/weapons/arc9/darsu_eft/mods/butts1_m"
+
+	"$blendtintbybasealpha" "1"
+	"$normalmapalphaenvmapmask" "0"
+	"$basemapalphaenvmapmask" "1"
+
+	"$phong" "1"
+	"$phongboost" "15"
+	"$phongalbedotint" "1"
+	"$phongfresnelranges" "[0.5 1 1]"
+	
+	"$rimlight" "1"
+	"$rimlightexponent" "4"
+	"$rimmask" "1"
+	
+	"$envmap" "env_cubemap"
+	"$envmapfresnel" "0.1"
+
+	"$envmaptint" "[0.125 0.125 0.125]"
+	"$color2" "[0.88 0.88 0.88]"
+}

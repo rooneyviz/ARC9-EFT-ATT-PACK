@@ -120,7 +120,7 @@ local rik_long = {
     { t = 0, lhik = 1, rhik = 1 },
     { t = 0.15, lhik = 0, rhik = 1 },
     { t = 0.61, lhik = 0, rhik = 1 },
-    { t = 0.75, lhik = 1, rhik = 1 },
+    { t = 0.75, lhik = 1, rhik = 0 },
 }
 
 local rik_empty = {
@@ -302,8 +302,8 @@ ARC9EFT.AK_Anims = {
     ["ready"] = {
         Source = {"ready0", "ready1", "ready2"},
         IKTimeLine = {
-            { t = 0, lhik = 0, rhik = 1 },
-            { t = 0.75, lhik = 0, rhik = 1 },
+            { t = 0, lhik = 0, rhik = 0 },
+            { t = 0.75, lhik = 0, rhik = 0 },
             { t = 1, lhik = 1, rhik = 1 },
         },
         EventTable = {
@@ -879,8 +879,8 @@ local rik_single = {
 
 local rik_def = {
     { t = 0, lhik = 1, rhik = 1 },
-    { t = 0.2, lhik = 0, rhik = 1 },
-    { t = 0.91, lhik = 0, rhik = 1 },
+    { t = 0.2, lhik = 0, rhik = .5 },
+    { t = 0.91, lhik = 0, rhik = 0 },
     { t = 1, lhik = 1, rhik = 1 },
 }
 
