@@ -2,7 +2,7 @@
 {
 	"$basetexture"				"models/weapons/arc9/darsu_eft/mods/butts1_c"
 	"$bumpmap" 					"models/weapons/arc9/darsu_eft/mods/butts1_n"	
-	"$phongexponenttexture"		"models/weapons/arc9/darsu_eft/mods/butts1_m"
+	"$phongexponenttexture"		"models/weapons/arc9/darsu_eft/mods/magwell_slr_s"
 
 	"$color2" "[1.15 1.15 1.15]"
 

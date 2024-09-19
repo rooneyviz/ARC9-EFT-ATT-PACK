@@ -137,34 +137,37 @@ SWEP.VisualRecoilSpringMagnitude = 1.2
 SWEP.VisualRecoilPositionBumpUp = -0.13
 SWEP.VisualRecoilPositionBumpUpRTScope = -0.04
 SWEP.VisualRecoilPositionBumpUpHipFire = 0.001
+local EFT_VisualRecoilUp_BURST_SEMI   = 0.1   -- up/down tilt when semi/bursts
+SWEP.VisualRecoilUp                   = 0.5   --   when fullautoing
+local EFT_VisualRecoilSide_BURST_SEMI = -0.005 -- left/right tilt when semi/burst
+local EFT_ShotsToSwitchToFullAutoBehaviur = 3 -- how many shots for switch to fullauto stats from semi/burst, + 2 shots afterwards are lerping. you probably should not touch this but ok
 
 
-SWEP.VisualRecoilThinkFunc = function(springconstant, VisualRecoilSpringMagnitude, PUNCH_DAMPING, recamount)
-    if recamount > 2 then
-        recamount = math.Clamp((recamount - 2) / 6, 0, 1)
-        return springconstant * math.max(1, 1.15 * recamount) * 1.25, VisualRecoilSpringMagnitude, PUNCH_DAMPING
-    elseif recamount == 1 then
-        return springconstant * 0.75, VisualRecoilSpringMagnitude, PUNCH_DAMPING
+
+
+SWEP.Hook_ModifyRecoilDir = function(self, dir) return (dir < 0 and -dir*0.25 or dir*1.25) end -- ak101 specific thing - recoil leans to left
+
+-- SWEP.VisualRecoilThinkFunc = function(springconstant, VisualRecoilSpringMagnitude, PUNCH_DAMPING, recamount)
+--     return springconstant, VisualRecoilSpringMagnitude, PUNCH_DAMPING
+-- end
+
+SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount, self)
+    local fullauto = math.Clamp(recamount - EFT_ShotsToSwitchToFullAutoBehaviur, 0, 3) * 0.33333333
+    up = Lerp(fullauto, EFT_VisualRecoilUp_BURST_SEMI, up)
+    side = Lerp(fullauto, EFT_VisualRecoilSide_BURST_SEMI, side)
+
+    side = (side > 0 and side * 0.5 or side * 1.1) -- ak101 specific thing - recoil leans to left
+
+    if recamount < 2 then
+        if self:GetSightAmount() < 0.2 then up = 1 end -- only for visual when hipfiring
     end
-
-    return springconstant, VisualRecoilSpringMagnitude, PUNCH_DAMPING
-end
-
-
-SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
-    if recamount > 2 then
-        recamount = 1.6 - math.Clamp((recamount - 4) / 4, 0, 1)
-        
-        local fakerandom = 1 + (((69+recamount%5*CurTime()%3)*2420)%6)/5 
-        
-        return up * recamount * fakerandom, side * 0.8, roll, punch * 0.5
-    elseif recamount == 1 then
-        return up * 4, side * 1.5, roll, punch
-    end
+    
+    if self:GetUBGL() then up = 4 end -- ubgl!
 
     return up, side, roll, punch
 end
 
+SWEP.RecoilKickAffectPitch = true
 
 SWEP.RecoilKick = 0
 SWEP.RecoilKickDamping = 10
@@ -401,6 +404,7 @@ SWEP.AttachmentElements = {
     ["eft_aksu_gas_ak"] = { Bodygroups = { {2, 1} } },
     ["eft_aksu_rec_ak_std"] = { Bodygroups = { {3, 1} } },
     ["eft_aksu_rec_ak_b"] = { Bodygroups = { {3, 2} } },
+    ["eft_aksu_rec_piligrim"] = { Bodygroups = { {3, 3} } },
     ["eft_aksu_mount_b18"] = { Bodygroups = { {5, 1} } },
 }
 
@@ -409,7 +413,14 @@ function SWEP:HookP_BlockFire() return ARC9EFT.AK_MissingParts(self) end
 function SWEP:Hook_RedPrintName() return ARC9EFT.AK_RedName(self) end
 
 
-
+local sposoffset, sangoffset = Vector(0.02, 0, -0.2), Angle(0, 0.37, 0)
+function SWEP:GetSightPositions()
+    local s = self:GetSight()
+    if !self:GetValue("FoldSights") and self:GetElements()["eft_aksu_rec_piligrim"] then
+        return s.Pos + sposoffset, s.Ang + sangoffset
+    end
+    return s.Pos, s.Ang
+end
 SWEP.Attachments = {
     {
         PrintName = "Muzzle",

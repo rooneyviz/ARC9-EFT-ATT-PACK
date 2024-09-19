@@ -27,7 +27,7 @@ ATT.ChamberSize = 1
 ATT.ClipSize = 31
 ATT.DropMagazineAmount = "1"
 ATT.SuppressEmptySuffix = false 
-ATT.ActivateElements = {"hasmag","eft_g17_bigstick31"}
+ATT.ActivateElements = {"hasmag","eft_mag_bigstick31"}
 
 ATT.Category = {"eft_g17_mag"}
 ATT.Attachments = {
@@ -67,7 +67,7 @@ ATT.ChamberSize = 1
 ATT.ClipSize = 24
 ATT.DropMagazineAmount = 1
 ATT.SuppressEmptySuffix = false 
-ATT.ActivateElements = {"hasmag","eft_g17_bigstick24"}
+ATT.ActivateElements = {"hasmag","eft_mag_bigstick31"}
 
 ATT.Category = {"eft_g17_mag"}
 ATT.Attachments = {
@@ -146,7 +146,7 @@ ATT.MenuCategory = "ARC9 - EFT Attachments"
 
 
 ATT.Model = "models/weapons/arc9/darsu_eft/mods/roomag_sys.mdl"
-ATT.ActivateElements = {"eft_mag_g17_std_17"}
+
 
 ATT.DropMagazineModel = "models/weapons/arc9/darsu_eft/mods/roomag_sys.mdl"
 
@@ -154,7 +154,7 @@ ATT.ModelBodygroups = "04"
 ATT.ClipSizeAdd = 0
 
 ATT.Category = {"eft_glock_magplate"}
-
+ATT.ActivateElements = {"eft_mag_g17_std_17"}
 
 ARC9.LoadAttachment(ATT, "eft_roosys_magplate_oem")
 
@@ -213,7 +213,7 @@ ATT.PrintName = "Glock KRISS +23 Magazine Plate"
 ATT.CompactName = "Glock KRISS +23"
 ATT.Icon = Material("entities/eft_glock_attachments/mag.png", "mips smooth")
 ATT.Description = [[An Aftermarket Glock Magazine Plate for Glock pistols That Adds 23 Rounds.]]
-ATT.ActivateElements = {"eft_mag_g17_bigstick31"}
+ATT.ActivateElements = {"eft_mag_bigstick31"}
 
 ATT.MenuCategory = "ARC9 - EFT Attachments"
 ATT.EFTErgoAdd = -4
@@ -864,3 +864,389 @@ end
 
 ARC9.LoadAttachment(ATT, "eft_mag_ak_romanian_762_77")
 
+
+ATT = {}
+
+ATT.PrintName = "AK-19 5.56x45 30-round magazine"
+ATT.CompactName = "AK-19"
+ATT.Icon = Material("entities/eft_ak_attachments/mag/545ak12.png", "mips smooth")
+ATT.Description = [[An early model of 30-round polymer magazine with windows for ammunition control, for 5.56x45 cartridge for AK-19 and compatible rifles. Manufactured by Kalishnikov.]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/mag_ak_izhmash_ak159_std_30_new.mdl"
+ATT.DropMagazineModel = "models/weapons/arc9/darsu_eft/mods/mag_ak_izhmash_ak159_std_30_new.mdl"
+ATT.ModelBodygroups = "100"
+ATT.DropMagazineModelBodygroups = "100"
+
+ATT.CustomPros = { ["Improved check accuracy"] = "Yes" }
+ATT.EFTErgoAdd = -2
+ATT.EFTImprovedMagCheck = true
+ATT.CustomCons = { Ergonomics = "-2" }
+
+ATT.Category = {
+    "eft_ak_556_mag",
+}
+
+ATT.ActivateElements = {"556"}
+
+ATT.ChamberSize = 1
+ATT.ClipSize = 30
+
+
+ARC9.LoadAttachment(ATT, "eft_mag_ak_ak19_556_30_2023")
+
+ATT = {}
+
+ATT.PrintName = "AK-15 7.62x39 30-round magazine"
+ATT.CompactName = "AK-15"
+ATT.Icon = Material("entities/eft_ak_attachments/mag/545ak12.png", "mips smooth")
+ATT.Description = [[An early model of 30-round polymer magazine with windows for ammunition control, for 7.62x39 cartridge for AK-15 and compatible rifles. Manufactured by Kalishnikov.]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/mag_ak_izhmash_ak159_std_30_new.mdl"
+ATT.DropMagazineModel = "models/weapons/arc9/darsu_eft/mods/mag_ak_izhmash_ak159_std_30_new.mdl"
+
+ATT.CustomPros = { ["Improved check accuracy"] = "Yes" }
+ATT.EFTErgoAdd = -2
+ATT.EFTImprovedMagCheck = true
+ATT.CustomCons = { Ergonomics = "-2" }
+
+ATT.Category = {
+    "eft_ak_762_mag",
+}
+
+ATT.ActivateElements = {"762"}
+
+ATT.ChamberSize = 1
+ATT.ClipSize = 30
+
+
+ARC9.LoadAttachment(ATT, "eft_mag_ak_ak15_762_30_2023")
+
+
+ATT = {}
+
+ATT.PrintName = "5.56x45 STANAG 20-round magazine"
+ATT.CompactName = "STANAG 20"
+ATT.Icon = nil
+ATT.Description = [[20-round steel STANAG magazine, for 5.56x45 ammunition.]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/m16_mag_20.mdl"
+ATT.DropMagazineModel = "models/weapons/arc9/darsu_eft/mods/m16_mag_20.mdl"
+
+ATT.Category = {"eft_ar15_mag"}
+ATT.SuppressEmptySuffix = false 
+
+ATT.EFTErgoAdd = 3
+ATT.CustomPros = { Ergonomics = "+3" }
+
+ATT.MalfunctionMeanShotsToFailMult = 0.96
+
+ATT.ActivateElements = {"20rnd"}
+
+ATT.ChamberSize = 1
+ATT.ClipSize = 20
+
+ARC9.LoadAttachment(ATT, "eft_mag_ar15_stanag_20")
+
+
+ATT = {}
+
+ATT.PrintName = "5.56x45 Steel STANAG 40-round magazine"
+ATT.CompactName = "Steel 40"
+ATT.Icon = nil
+ATT.Description = [[40-round Stainless Steel magazine, for 5.56x45 ammunition.]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/m16_mag_40.mdl"
+ATT.DropMagazineModel = "models/weapons/arc9/darsu_eft/mods/m16_mag_40.mdl"
+
+ATT.Category = {"eft_ar15_mag"}
+ATT.SuppressEmptySuffix = false 
+
+ATT.EFTErgoAdd = -7
+ATT.CustomCons = { Ergonomics = "-7" }
+
+ATT.MalfunctionMeanShotsToFailMult = 0.83
+
+ATT.ActivateElements = {"40rnd"}
+
+ATT.ChamberSize = 1
+ATT.ClipSize = 40
+
+ARC9.LoadAttachment(ATT, "eft_mag_ar15_STANAG_40")
+
+ATT = {}
+
+ATT.PrintName = "5.56x45 X Products X-15 STANAG 60-round magazine"
+ATT.CompactName = "X-15 5.56"
+ATT.Icon = Material("entities/eft_ak_attachments/mag/762x47.png", "mips smooth")
+ATT.Description = [[The X-15 is a 50-round drum magazine for assault rifles that take STANAG mags. Manufactured by X Products. ]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/mag_stanag_x15_556x45_50.mdl"
+ATT.DropMagazineModel = "models/weapons/arc9/darsu_eft/mods/mag_stanag_x15_556x45_50.mdl"
+ATT.ModelOffset = Vector(0, 0,-.035)
+ATT.Category = {"eft_ar15_mag"}
+ATT.SuppressEmptySuffix = false 
+
+ATT.EFTErgoAdd = -15
+ATT.CustomCons = { Ergonomics = "-15" }
+
+ATT.MalfunctionMeanShotsToFailMult = 0.7
+
+ATT.ActivateElements = {"drum"}
+
+ATT.ChamberSize = 1
+ATT.ClipSize = 60
+
+ARC9.LoadAttachment(ATT, "eft_mag_ar15_x15_60")
+
+
+ATT = {}
+
+ATT.PrintName = "5.56x45 Magpul EMAG 30 STANAG 30-round magazine"
+ATT.CompactName = "EMAG 30"
+ATT.Icon = nil
+ATT.Description = [[30-round polymer Magpul EMAG 30 magazine, for 5.56x45 ammunition, optimized for use with european 5.56x45 carbines.]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/mag_stanag_magpul_emag_gen_m3_window_556x45_30.mdl"
+ATT.DropMagazineModel = "models/weapons/arc9/darsu_eft/mods/mag_stanag_magpul_emag_gen_m3_window_556x45_30.mdl"
+
+ATT.Category = {"eft_ar15_mag"}
+ATT.SuppressEmptySuffix = false 
+
+
+ATT.EFTErgoAdd = -3
+ATT.CustomCons = { Ergonomics = "-3" }
+ATT.CustomPros = { ["Improved check accuracy"] = "Yes" }
+ATT.EFTImprovedMagCheck = true
+
+ATT.MalfunctionMeanShotsToFailMult = 0.93
+
+ATT.ActivateElements = {"30rnd"}
+
+ATT.ChamberSize = 1
+ATT.ClipSize = 30
+
+ARC9.LoadAttachment(ATT, "eft_mag_ar15_emag_w_30")
+ATT = {}
+
+ATT.PrintName = "5.56x45 L5AWM STANAG 30-round magazine"
+ATT.CompactName = "L5AWM"
+ATT.Icon = nil
+ATT.Description = [[30-round L5AWM magazine, for 5.56x45 ammunition.
+smoke transparent]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/l5awm_30.mdl"
+ATT.DropMagazineModel = "models/weapons/arc9/darsu_eft/mods/l5awm_30.mdl"
+
+ATT.Category = {"eft_ar15_mag"}
+ATT.SuppressEmptySuffix = false 
+ATT.Folder = "Lancer"
+
+
+ATT.EFTErgoAdd = -2.5
+ATT.CustomCons = { Ergonomics = "-2.5" }
+ATT.CustomPros = { ["Improved check accuracy"] = "Yes" }
+ATT.EFTImprovedMagCheck = true
+
+ATT.MalfunctionMeanShotsToFailMult = 0.93
+
+ATT.ActivateElements = {"30rnd"}
+
+ATT.ChamberSize = 1
+ATT.ClipSize = 30
+
+ARC9.LoadAttachment(ATT, "eft_mag_ar15_l5awm_w_30")
+ATT = {}
+
+ATT.PrintName = "5.56x45 L5AWM STANAG 30-round magazine"
+ATT.CompactName = "L5AWM"
+ATT.Icon = nil
+ATT.Description = [[30-round L5AWM magazine, for 5.56x45 ammunition.
+black opaque]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/l5awm_30.mdl"
+ATT.DropMagazineModel = "models/weapons/arc9/darsu_eft/mods/l5awm_30.mdl"
+ATT.Folder = "Lancer"
+ATT.Category = {"eft_ar15_mag"}
+ATT.SuppressEmptySuffix = false 
+ATT.ModelSkin = 1
+
+
+ATT.EFTErgoAdd = -2.5
+ATT.CustomCons = { Ergonomics = "-2.5" }
+
+ATT.MalfunctionMeanShotsToFailMult = 0.93
+
+ATT.ActivateElements = {"30rnd"}
+
+ATT.ChamberSize = 1
+ATT.ClipSize = 30
+
+ARC9.LoadAttachment(ATT, "eft_mag_ar15_emag_w_30_black_opaque")
+
+ATT = {}
+
+ATT.PrintName = "5.56x45 L5AWM STANAG 30-round magazine"
+ATT.CompactName = "L5AWM"
+ATT.Icon = nil
+ATT.Description = [[30-round L5AWM magazine, for 5.56x45 ammunition.
+smoke transparent]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/l5awm_30.mdl"
+ATT.DropMagazineModel = "models/weapons/arc9/darsu_eft/mods/l5awm_30.mdl"
+
+ATT.Category = {"eft_ar15_mag"}
+ATT.SuppressEmptySuffix = false 
+ATT.Folder = "Lancer"
+ATT.ModelSkin = 4
+
+
+ATT.EFTErgoAdd = -2.5
+ATT.CustomCons = { Ergonomics = "-2.5" }
+ATT.CustomPros = { ["Improved check accuracy"] = "Yes" }
+ATT.EFTImprovedMagCheck = true
+
+ATT.MalfunctionMeanShotsToFailMult = 0.93
+
+ATT.ActivateElements = {"30rnd"}
+
+ATT.ChamberSize = 1
+ATT.ClipSize = 30
+
+ARC9.LoadAttachment(ATT, "eft_mag_ar15_emag_w_30_pink_trans")
+ATT = {}
+
+ATT.PrintName = "5.56x45 L5AWM STANAG 30-round magazine"
+ATT.CompactName = "L5AWM"
+ATT.Icon = nil
+ATT.Description = [[30-round L5AWM magazine, for 5.56x45 ammunition.
+smoke transparent]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/l5awm_30.mdl"
+ATT.DropMagazineModel = "models/weapons/arc9/darsu_eft/mods/l5awm_30.mdl"
+
+ATT.Category = {"eft_ar15_mag"}
+ATT.SuppressEmptySuffix = false 
+ATT.Folder = "Lancer"
+ATT.ModelSkin = 5
+
+
+ATT.EFTErgoAdd = -2.5
+ATT.CustomCons = { Ergonomics = "-2.5" }
+ATT.CustomPros = { ["Improved check accuracy"] = "Yes" }
+ATT.EFTImprovedMagCheck = true
+
+ATT.MalfunctionMeanShotsToFailMult = 0.93
+
+ATT.ActivateElements = {"30rnd"}
+
+ATT.ChamberSize = 1
+ATT.ClipSize = 30
+
+ARC9.LoadAttachment(ATT, "eft_mag_ar15_emag_w_30_purple_trans")
+ATT = {}
+
+ATT.PrintName = "5.56x45 L5AWM STANAG 30-round magazine"
+ATT.CompactName = "L5AWM"
+ATT.Icon = nil
+ATT.Description = [[30-round L5AWM magazine, for 5.56x45 ammunition.
+smoke transparent]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/l5awm_30.mdl"
+ATT.DropMagazineModel = "models/weapons/arc9/darsu_eft/mods/l5awm_30.mdl"
+
+ATT.Category = {"eft_ar15_mag"}
+ATT.SuppressEmptySuffix = false 
+ATT.Folder = "Lancer"
+ATT.ModelSkin = 6
+
+
+ATT.EFTErgoAdd = -2.5
+ATT.CustomCons = { Ergonomics = "-2.5" }
+ATT.CustomPros = { ["Improved check accuracy"] = "Yes" }
+ATT.EFTImprovedMagCheck = true
+
+ATT.MalfunctionMeanShotsToFailMult = 0.93
+
+ATT.ActivateElements = {"30rnd"}
+
+ATT.ChamberSize = 1
+ATT.ClipSize = 30
+
+ARC9.LoadAttachment(ATT, "eft_mag_ar15_emag_w_30_orange_trans")
+
+ATT = {}
+
+ATT.PrintName = "5.56x45 L5AWM STANAG 30-round magazine"
+ATT.CompactName = "L5AWM"
+ATT.Icon = nil
+ATT.Description = [[30-round L5AWM magazine, for 5.56x45 ammunition.
+smoke transparent]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/l5awm_30.mdl"
+ATT.DropMagazineModel = "models/weapons/arc9/darsu_eft/mods/l5awm_30.mdl"
+
+ATT.Category = {"eft_ar15_mag"}
+ATT.SuppressEmptySuffix = false 
+ATT.Folder = "Lancer"
+ATT.ModelSkin = 7
+
+
+ATT.EFTErgoAdd = -2.5
+ATT.CustomCons = { Ergonomics = "-2.5" }
+ATT.CustomPros = { ["Improved check accuracy"] = "Yes" }
+ATT.EFTImprovedMagCheck = true
+
+ATT.MalfunctionMeanShotsToFailMult = 0.93
+
+ATT.ActivateElements = {"30rnd"}
+
+ATT.ChamberSize = 1
+ATT.ClipSize = 30
+
+ARC9.LoadAttachment(ATT, "eft_mag_ar15_emag_w_30_red_trans")
+
+ATT = {}
+
+ATT.PrintName = "SA-58/FAL 7.62x51 X Products X-FAL 50-round drum magazine"
+ATT.CompactName = "X308 50"
+ATT.Icon = Material("entities/eft_sa58_attachments/50.png", "mips smooth")
+ATT.Description = [[X308 is a 50-round drum magazine for AR107.62x51 NATO rounds. Manufactured by X Products.]]
+
+ATT.EFTErgoAdd = -20
+ATT.CustomCons = { Ergonomics = "-20" }
+ATT.MalfunctionMeanShotsToFailMult = 0.774
+
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.Category = {"eft_ar10_mag"}
+
+ATT.ActivateElements = {"eft_ar10_mag_l7_25"}
+ATT.ModelOffset = Vector(.8,0,-3)
+
+ATT.ClipSize = 50
+ATT.ChamberSize = 1
+ATT.SuppressEmptySuffix = false 
+ATT.DropMagazineAmount = 1
+ATT.DropMagazineModel = "models/weapons/arc9/darsu_eft/mods/mag_fal_x_products_x_fal_762x51_50.mdl"
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/mag_fal_x_products_x_fal_762x51_50.mdl"
+
+ARC9.LoadAttachment(ATT, "eft_ar10_mag_50")

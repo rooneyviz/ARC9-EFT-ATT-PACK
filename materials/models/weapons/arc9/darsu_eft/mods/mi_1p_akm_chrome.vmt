@@ -1,0 +1,25 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/weapons/arc9/darsu_eft/mods/T_1P_AKM_CHROME_BC"
+	"$bumpmap" "models/weapons/arc9/darsu_eft/mods/T_1P_AKM_CHROME_N"
+	"$phongexponenttexture" "models/weapons/arc9/darsu_eft/mods/T_1P_AKM_CHROME_M"
+
+	"$blendtintbybasealpha" "1"
+	"$normalmapalphaenvmapmask" "0"
+	"$basemapalphaenvmapmask" "1"
+
+	"$phong" "1"
+	"$phongboost" "5"
+	"$phongalbedotint" "1"
+	"$phongfresnelranges" "[0.5 1 1]"
+	
+	"$rimlight" "1"
+	"$rimlightexponent" "4"
+	"$rimmask" "1"
+	
+	"$envmap" "env_cubemap"
+	"$envmapfresnel" "0.1"
+
+	"$envmaptint" "[0.025 0.025 0.025]"
+	"$color2" "[0.88 0.88 0.88]"
+}

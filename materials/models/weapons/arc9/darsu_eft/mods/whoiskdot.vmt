@@ -1,0 +1,22 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/weapons/arc9/darsu_eft/mods\ismcar15_blk_diff"
+	"$bumpmap" "models/weapons/arc9/darsu_eft/mods/ismcar15_normal"
+	"$phongexponenttexture" "models/weapons/arc9/darsu_eft/mods/t_1p_hb_m"
+	"$phong" "1"
+	"$phongboost" ".08"
+	"$phongalbedotint" "1"
+	"$phongfresnelranges" "[0.15 0.6 0.6]"
+
+
+	"$metal" "1"
+	"$roughnessmultiplier" "100"
+	
+	"$fuzz" "1"
+	"$fuzzmultiplier" ".2"
+	"$color2" "[.66 .64 .64]"
+	"$envmap" "env_cubemap"
+	// "$srgbtint" "[1.5 1.5 1.5]"
+	
+	"$nocull" "1"
+}

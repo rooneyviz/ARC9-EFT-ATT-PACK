@@ -1,20 +1,20 @@
 ENT.Type = "anim"
-ENT.Base = "base_entity"
+ENT.Base 				= "arc9_eft_grenade_base"
 ENT.PrintName = "Flare Round"
 ENT.Author = ""
 ENT.Information = ""
 ENT.Spawnable = false
 ENT.AdminSpawnable = true
 
-ENT.Model ="models/weapons/arc9/darsu_eft/40x46_m381.mdl"
-
+ENT.Model = "models/weapons/arc9/darsu_eft/40x46_m386.mdl"
+ENT.Flare = true
 ENT.FuseTime = 60
 ENT.ArmTime = 0
 AddCSLuaFile()
 local mult1270 = GetConVar("arc9_eft_mult_shotgun"):GetFloat() or 0.5
 
 function ENT:Initialize()
-    if SERVER then
+   if SERVER then
         self:SetModel( self.Model )
         self:SetMoveType( MOVETYPE_VPHYSICS )
         self:SetSolid( SOLID_VPHYSICS )
@@ -31,7 +31,6 @@ function ENT:Initialize()
 
     self.kt = CurTime() + self.FuseTime
     self.at = CurTime() + self.ArmTime
-	self:SetGravity( 0.1 )
 end
 
 function ENT:PhysicsCollide(data, physobj)
@@ -48,7 +47,7 @@ function ENT:PhysicsCollide(data, physobj)
         elseif data.HitEntity:GetName(npc_helicopter) then
             data.HitEntity:TakeDamage( 2500 *   2.4 * mult1270)
 		 else
-  		     data.HitEntity:TakeDamage( 25*   2.4 * mult1270)
+  		     data.HitEntity:TakeDamage( 5*   2.4 * mult1270)
              data.HitEntity:Ignite( delta * 15 )
 
         end

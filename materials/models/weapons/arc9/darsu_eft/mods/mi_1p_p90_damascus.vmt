@@ -1,0 +1,23 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/weapons/arc9/darsu_eft/mods\t_p90_damascus_bc"
+	"$bumpmap" "models/weapons/arc9/darsu_eft/mods\t_p90_n"
+	"$phongexponenttexture" "models/weapons/arc9/darsu_eft/mods\t_p90_m"
+	"$phong" "1"
+	"$phongboost" ".2"
+	"$phongalbedotint" "1"
+	"$phongfresnelranges" "[0.5 1 1]"
+
+	"$color2" "[0.88 0.88 0.88]"
+
+	"$metal" "1"
+	"$roughnessmultiplier" "1"
+	
+	"$fuzz" "1"
+	"$fuzzmultiplier" ".2"
+	
+	"$envmap" "env_cubemap"
+	// "$srgbtint" "[1.5 1.5 1.5]"
+	
+	"$nocull" "1"
+}

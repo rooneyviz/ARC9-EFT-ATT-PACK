@@ -17,4 +17,16 @@
 	"$rimlightexponent" 	"80"	
 	"$rimlightboost"	"1"
 	"$rimmask" 	"1"
+
+    	"$detail" "arc9/fullheat"
+           	"$detailscale" "1"
+           	"$detailblendfactor" "0"
+           	"$detailblendmode" "5"
+
+    	Proxies {
+        		"ARC9_Heat" {
+			blend $detailblendfactor
+        		}
+    	}
+
 }

@@ -41,13 +41,13 @@ ATT.Attachments = {
 
 
 ARC9.LoadAttachment(ATT, "eft_aksu_seperate_hg")
-
+--[[
 ATT = {}
 
 ATT.PrintName = "seperate gas tube cover and handguard"
 ATT.CompactName = "seperate cover and handguard"
 ATT.Icon = Material("entities/eft_ak_attachments/su/hg.png", "mips smooth")
-ATT.Description = [[Allows you to mix and match handguards and gas covers instead of only being able to use matching ones.]]
+ATT.Description = Allows you to mix and match handguards and gas covers instead of only being able to use matching ones.
 ATT.SortOrder = 0
 ATT.MenuCategory = "ARC9 - EFT Attachments"
 
@@ -75,7 +75,7 @@ ATT.Attachments = {
 
 
 ARC9.LoadAttachment(ATT, "eft_ak_seperate_hg")
-
+]]
 ATT = {}
 
 ATT.PrintName = "AKS-74U wooden handguard"
@@ -697,7 +697,7 @@ ATT.Attachments = {
     {
         PrintName = "Gas block",
         Category = "eft_ar15_gasblock",
-        Pos = Vector(0,13.1, 0.25),
+        Pos = Vector(0,13.1, 0.35),
         Ang = Angle(0, -90, 0),
     },
 }
@@ -769,7 +769,7 @@ ATT.Attachments = {
     {
         PrintName = "Gas block",
         Category = "eft_ar15_gasblock",
-        Pos = Vector(0,13.1, 0.25),
+        Pos = Vector(0,13.1, 0.35),
         Ang = Angle(0, -90, 0),
     },
 }
@@ -786,8 +786,10 @@ ATT.SortOrder = 0
 ATT.MenuCategory = "ARC9 - EFT Attachments"
 ATT.RequireElements = {"eft_grip_ak_kocehvnim"}
 ATT.ActivateElements = {"nodovetail"}
-
-ATT.Category = {"eft_ak_handguard"}
+ATT.BarrelLengthAdd = -13
+ATT.ReloadTimeMult = 1.1
+ATT.Category = {"eft_ak_handguard","eft_vityaz_handguard"}
+//funny vityaz
 ATT.Icon = nil
 ATT.HasHG = true
 ATT.Model = "models/weapons/arc9/darsu_eft/mods/ak_hg_kochevnik.mdl"
@@ -817,7 +819,7 @@ ATT.CustomizeAng = Angle(90, 0, 0)
 ATT.CustomizePos = Vector(19, 22, 3)
 ATT.CustomizeSnapshotFOV = 50
 ATT.CustomizeRotateAnchor = Vector(19, -4.28, -4.23)
-ATT.VisualRecoilCenter = Vector(2, 20, 2)
+ATT.VisualRecoilCenter = Vector(0, 1.5, 3.5)
 
 ATT.LHIK_Priority = 1
 ATT.LHIK = true
@@ -825,7 +827,7 @@ ATT.RHIK_Priority = 10000000000000000000000000000000
 ATT.RHIK = true
 
 ATT.EFTErgoAdd = -10
-ATT.CustomPros = { Ergonomics = "-10" }
+ATT.CustomCons = { Ergonomics = "-10" }
 ATT.RecoilMult = 0.67
 ATT.VisualRecoilMult = 0.67
 ATT.Attachments = {
@@ -834,7 +836,7 @@ ATT.Attachments = {
         PrintName = "Grip",
         Category = "eft_ak_grip",
         Bone = "mod_pistol_grip",
-        Pos = Vector(0, 4.5, 1.62),
+        Pos = Vector(0, 4.5, 1.59),
         Ang = Angle(0, 0, 2),
         Installed = "eft_grip_ak_6p1sb8",
     },
@@ -859,7 +861,7 @@ ATT.Attachments = {
         PrintName = "R Tactical",
         Category = {"eft_tactical", "eft_tactical_top"},
         RejectAttachments = { ["eft_tactical_raptar"] = true },
-        Pos = Vector(1.15, 9, 0.55),
+        Pos = Vector(1.07, 9, 0.39),
         Ang = Angle(0, -90, 90),
         Icon_Offset = Vector(0, 0, 1),
     },
@@ -867,7 +869,7 @@ ATT.Attachments = {
         PrintName = "L Tactical",
         Category = {"eft_tactical", "eft_tactical_top"},
         RejectAttachments = { ["eft_tactical_raptar"] = true },
-        Pos = Vector(-1.15, 9, 0.55),
+        Pos = Vector(-1.07, 9, 0.39),
         Ang = Angle(0, -90, -90),
         Icon_Offset = Vector(0, 0, 1),
     },
@@ -1299,7 +1301,7 @@ ATT.HeatCapacityMult = 1.072
 ATT.HasHG = true
 ATT.Model = "models/weapons/arc9/darsu_eft/mods/sg12_hg_zhukov.mdl"
 ATT.ModelSkin = 0
-ATT.LHIK = true
+//ATT.LHIK = true
 ATT.BoneMerge = true
 
 
@@ -1359,7 +1361,7 @@ ATT.HeatCapacityMult = 1.072
 ATT.HasHG = true
 ATT.Model = "models/weapons/arc9/darsu_eft/mods/sg12_hg_zhukov.mdl"
 ATT.ModelSkin = 1
-ATT.LHIK = true
+//ATT.LHIK = true
 ATT.BoneMerge = true
 
 
@@ -1419,7 +1421,7 @@ ATT.BoneMerge = true
 ATT.HasHG = true
 ATT.Model = "models/weapons/arc9/darsu_eft/mods/sg12_hg_zhukov.mdl"
 ATT.ModelSkin = 2
-ATT.LHIK = true
+//ATT.LHIK = true
 ATT.BoneMerge = true
 
 ATT.ActivateElements = {"nogp34"}
@@ -1607,8 +1609,8 @@ ATT.Attachments = {
     },
     {
         PrintName = "Grip",
-        Category = {"eft_zenitb","eft_mount_mlok41"},
-        Pos = Vector(0, 4, 1.65),
+        Category = {"eft_zenitb"},
+        Pos = Vector(0, 4, 1.1),
         Ang = Angle(0, -90, 0),
         Icon_Offset = Vector(0, 0, -1),
     },
@@ -1616,16 +1618,16 @@ ATT.Attachments = {
         PrintName = "R Tactical",
         Category = {"eft_zenitr","eft_mount_mlok"},
         RejectAttachments = { ["eft_tactical_raptar"] = true },
-        Pos = Vector(1.15, 9, 0.45),
-        Ang = Angle(0, -90, 90),
+        Pos = Vector(0.7, 9, 0.45),
+        Ang = Angle(0, -90, 180),
         Icon_Offset = Vector(0, 0, 1),
     },
     {
         PrintName = "L Tactical",
         Category = {"eft_zenitl","eft_mount_mlok"},
         RejectAttachments = { ["eft_tactical_raptar"] = true },
-        Pos = Vector(-1.15, 9, 0.45),
-        Ang = Angle(0, -90, -90),
+        Pos = Vector(-0.7, 9, 0.45),
+        Ang = Angle(0, -90, 0),
         Icon_Offset = Vector(0, 0, 1),
     },
     {
@@ -1647,7 +1649,7 @@ ATT.Icon = Material("entities/eft_ak_attachments/hg/hexa.png", "mips smooth")
 ATT.Description = [[A tubular handguard for AK family automatic rifles, manufactured by Hexagon.]]
 ATT.SortOrder = 0
 ATT.MenuCategory = "ARC9 - EFT Attachments"
-
+ATT.ModelOffset = Vector(0, -.1,0)
 ATT.HasHG = true
 ATT.Model = "models/weapons/arc9/darsu_eft/mods/aksu_hex_hg.mdl"
 ATT.LHIK = true
@@ -1695,6 +1697,7 @@ ATT.Description = [[A tubular handguard for AK family automatic rifles, manufact
 DA RED GOEZ FASTA!]]
 ATT.SortOrder = 0
 ATT.MenuCategory = "ARC9 - EFT Attachments"
+ATT.ModelOffset = Vector(0, -.1,0)
 
 ATT.HasHG = true
 ATT.Model = "models/weapons/arc9/darsu_eft/mods/aksu_hex_hg.mdl"
@@ -1733,13 +1736,13 @@ ATT.Attachments = {
 
 
 ARC9.LoadAttachment(ATT, "eft_Lhg_ak_hex_r")
-
+--[[
 ATT = {}
 
 ATT.PrintName = "AR-15 BCM KMR 17\" handguard"
 ATT.CompactName = "BCM KMR 17\" "
 ATT.Icon = nil
-ATT.Description = [[Lightweight handguard BCM KMR 17\" for use with sport rifles based on AR-15.]]
+ATT.Description = [[Lightweight handguard BCM KMR 17\" for use with sport rifles based on AR-15.
 ATT.SortOrder = 0
 ATT.MenuCategory = "ARC9 - EFT Attachments"
 ATT.HasHG = true
@@ -1831,7 +1834,7 @@ ATT = {}
 ATT.PrintName = "AR-15 BCM KMR 10\" handguard"
 ATT.CompactName = "BCM KMR 10\" "
 ATT.Icon = nil
-ATT.Description = [[Lightweight handguard BCM KMR 7\" for use with sport rifles based on AR-15.]]
+ATT.Description = [[Lightweight handguard BCM KMR 7\" for use with sport rifles based on AR-15.
 ATT.SortOrder = 0
 ATT.MenuCategory = "ARC9 - EFT Attachments"
 ATT.HasHG = true
@@ -1917,6 +1920,7 @@ ATT.Attachments = {
 }
 
 ARC9.LoadAttachment(ATT, "eft_hg_ar15_bcm_kmr_10")
+]]
 ATT = {}
 
 ATT.PrintName = "AKS-74U Alfa Arms Goliaf handguard"
@@ -2016,3 +2020,689 @@ ATT.Attachments = {
 
 
 ARC9.LoadAttachment(ATT, "eft_gc_ak_goliaf_b")
+
+ATT = {}
+
+ATT.PrintName = "(AK)C-CLAMP"
+ATT.CompactName = "(AK)C-CLAMP"
+ATT.Icon = nil
+ATT.Description = [[A Method Of Gripping A Weapon. 
+]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/ak_hg_magpul_moe.mdl"
+ATT.ModelAngleOffset = Angle(0,0, 0)
+ATT.ModelOffset = Vector(0, 0, 0)
+
+ATT.LHIK = true 
+ATT.LHIK_Priority = 2
+
+ATT.ModelMaterial = "models/weapons/saa/shared/unlit_transparent"
+ATT.Category = {"eft_aksu_Lhandguard"}
+ATT.Attachments = {
+    {
+        PrintName = "actual handguard",
+        Pos = Vector(0, 0, 0),
+        IconOffset = Vector(1, 1, 1),
+        Ang = Angle(0, 0, 0),
+        Category = {"eft_aksu_Lhandguard"}
+    },
+}
+
+ARC9.LoadAttachment(ATT, "eft_aksuLforegrip_c_clamp")
+
+
+ATT = {}
+
+ATT.PrintName = "AKSU RS Regulate GKR-5M handguard"
+ATT.CompactName = "GKR-5M"
+ATT.Icon = Material("entities/eft_ak_attachments/hg/akml.png", "mips smooth")
+ATT.Description = [[The RS Regulate GKR-5M can be installed on AKSU compatible weapon systems.
+Equipped with M-LOK mounts for installation of additional devices or rails.]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+ATT.Folder = "RSR"
+
+ATT.HasHG = true
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/aksu_rsr_hg.mdl"
+ATT.ModelSkin = "0"
+ATT.LHIK = true
+
+ATT.EFTErgoAdd = 3
+ATT.CustomPros = { Ergonomics = "+3" }
+ATT.HeatCapacityMult = 0.946
+
+
+ATT.ActivateElements = {"nogp34"}
+ATT.Category = {"eft_aksu_Lhandguard"}
+ATT.Attachments = {
+    {
+        PrintName = "M-LOK B",
+        Category = {"eft_mount_mlok41", "eft_foregrip_mlok"},
+        Pos = Vector(0, 3, 1.6),
+        Ang = Angle(0, -90, -90),
+        Icon_Offset = Vector(0, 0, 0),
+    },
+    {
+        PrintName = "M-LOK R",
+        Category = {"eft_mount_mlok"},
+        Pos = Vector(0.75, 4.8, 0.6),
+        Ang = Angle(180, 90, 0),
+        Icon_Offset = Vector(0, 0, -0.5),
+    },
+    {
+        PrintName = "M-LOK L",
+        Category = {"eft_mount_mlok"},
+        Pos = Vector(-0.75, 4.8, 0.6),
+        Ang = Angle(0, -90, 0),
+        Icon_Offset = Vector(0, 0, -0.5),
+    },
+}
+
+
+
+ARC9.LoadAttachment(ATT, "eft_hg_aksu_rsr")
+
+ATT = {}
+
+ATT.PrintName = "AKSU RS Regulate GKR-5M handguard(Anodized Bronze)"
+ATT.CompactName = "GKR-5M(AB)"
+ATT.Icon = Material("entities/eft_ak_attachments/hg/akmlo.png", "mips smooth")
+ATT.Description = [[The RS Regulate GKR-5M can be installed on AKSU compatible weapon systems.
+Equipped with M-LOK mounts for installation of additional devices or rails.]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+ATT.Folder = "RSR"
+
+ATT.HasHG = true
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/aksu_rsr_hg.mdl"
+ATT.ModelSkin = "1"
+ATT.LHIK = true
+
+ATT.EFTErgoAdd = 3
+ATT.CustomPros = { Ergonomics = "+3" }
+ATT.HeatCapacityMult = 0.946
+
+
+ATT.ActivateElements = {"nogp34"}
+ATT.Category = {"eft_aksu_Lhandguard"}
+ATT.Attachments = {
+    {
+        PrintName = "M-LOK B",
+        Category = {"eft_mount_mlok41", "eft_foregrip_mlok"},
+        Pos = Vector(0, 3, 1.6),
+        Ang = Angle(0, -90, -90),
+        Icon_Offset = Vector(0, 0, 0),
+    },
+    {
+        PrintName = "M-LOK R",
+        Category = {"eft_mount_mlok"},
+        Pos = Vector(0.75, 4.8, 0.6),
+        Ang = Angle(180, 90, 0),
+        Icon_Offset = Vector(0, 0, -0.5),
+    },
+    {
+        PrintName = "M-LOK L",
+        Category = {"eft_mount_mlok"},
+        Pos = Vector(-0.75, 4.8, 0.6),
+        Ang = Angle(0, -90, 0),
+        Icon_Offset = Vector(0, 0, -0.5),
+    },
+}
+
+
+
+ARC9.LoadAttachment(ATT, "eft_hg_aksu_rsr_2")
+
+
+ATT = {}
+
+ATT.PrintName = "AKSU RS Regulate GKR-5M handguard(Anodized Red)"
+ATT.CompactName = "GKR-5M(AR)"
+ATT.Icon = Material("entities/eft_ak_attachments/hg/akmlr.png", "mips smooth")
+ATT.Description = [[The RS Regulate GKR-5M can be installed on AKSU compatible weapon systems.
+Equipped with M-LOK mounts for installation of additional devices or rails.]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+ATT.Folder = "RSR"
+
+ATT.HasHG = true
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/aksu_rsr_hg.mdl"
+ATT.ModelSkin = "2"
+ATT.LHIK = true
+
+ATT.EFTErgoAdd = 3
+ATT.CustomPros = { Ergonomics = "+3" }
+ATT.HeatCapacityMult = 0.946
+
+
+ATT.ActivateElements = {"nogp34"}
+ATT.Category = {"eft_aksu_Lhandguard"}
+ATT.Attachments = {
+    {
+        PrintName = "M-LOK B",
+        Category = {"eft_mount_mlok41", "eft_foregrip_mlok"},
+        Pos = Vector(0, 3, 1.6),
+        Ang = Angle(0, -90, -90),
+        Icon_Offset = Vector(0, 0, 0),
+    },
+    {
+        PrintName = "M-LOK R",
+        Category = {"eft_mount_mlok"},
+        Pos = Vector(0.75, 4.8, 0.6),
+        Ang = Angle(180, 90, 0),
+        Icon_Offset = Vector(0, 0, -0.5),
+    },
+    {
+        PrintName = "M-LOK L",
+        Category = {"eft_mount_mlok"},
+        Pos = Vector(-0.75, 4.8, 0.6),
+        Ang = Angle(0, -90, 0),
+        Icon_Offset = Vector(0, 0, -0.5),
+    },
+}
+
+
+
+ARC9.LoadAttachment(ATT, "eft_hg_aksu_rsr_3")
+
+ATT = {}
+
+ATT.PrintName = "AKS-74U Alfa Arms Goliaf M-LOK handguard"
+ATT.CompactName = "Goliaf MLOK"
+ATT.Icon = Material("entities/eft_ak_attachments/su/goliafmlok.png", "mips smooth")
+ATT.Description = [[This integrally machined handguard can be installed instead of the standard-issue foregrip on the AKS-74U. It comes fitted with place for M-LOK rail mounts on three sides, allowing for the installation of additional equipment such as tactical foregrips, flashlights, and laser designators.]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.HasHG = true
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/aksu_goliaf_mlok_hg.mdl"
+ATT.LHIK = true
+
+ATT.EFTErgoAdd = 4
+ATT.CustomPros = { Ergonomics = "+4" }
+ATT.RecoilMult = 0.99
+ATT.VisualRecoilMult = 0.99
+ATT.HeatCapacityMult = 0.9743
+
+
+
+ATT.Category = {"eft_aksu_Lhandguard"}
+ATT.Attachments = {
+    {
+        PrintName = "M-LOK B",
+        Category = {"eft_mount_mlok41", "eft_foregrip_mlok"},
+        Pos = Vector(0, 3, 1.52),
+        Ang = Angle(0, -90, -90),
+        Icon_Offset = Vector(0, 0, -1),
+    },
+    {
+        PrintName = "M-LOK R",
+        Category = {"eft_mount_mlok"},
+        Pos = Vector(1.02, 8, 0.52),
+        Ang = Angle(180, 90, 0),
+        Icon_Offset = Vector(0, 0, 0),
+    },
+    {
+        PrintName = "M-LOK L",
+        Category = {"eft_mount_mlok"},
+        Pos = Vector(-1.02, 8, 0.52),
+        Ang = Angle(0, -90, 0),
+        Icon_Offset = Vector(0, 0, 0),
+    },
+    {
+        PrintName = "M-LOK B Tac",
+        Category = {"eft_mount_mlok"},
+        Pos = Vector(0, 8.1, 1.52),
+        Ang = Angle(0, -90, -90),
+        Icon_Offset = Vector(0, 0, 0),
+    },
+}
+
+
+ARC9.LoadAttachment(ATT, "eft_Lhg_ak_goliaf_mlok")
+
+ATT = {}
+
+ATT.PrintName = "Plum Bulgarian AKS-74U Polymer gas tube cover"
+ATT.CompactName = "Plum Bulgaria"
+ATT.Icon = Material("entities/eft_ak_attachments/su/hg.png", "mips smooth")
+ATT.Description = [[A Bulgarian standard-issue Polymer handguard for AKS-74U, AKS-74UN, and AKS-74UB. Made out of plum-colored polymer, for which has earned the nickname "Sliva" ("Plum").]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.HasHG = true
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/aksu_slr106u_gb.mdl"
+ATT.ModelSkin = "1"
+
+ATT.EFTErgoAdd = 2.5
+ATT.CustomPros = { Ergonomics = "+2.5" }
+ATT.HeatCapacityMult = 1.02567051
+
+
+ATT.Category = {"eft_aksu_gascover"}
+
+
+ARC9.LoadAttachment(ATT, "eft_blgaksu_gc_ak_std")
+
+
+ATT = {}
+
+ATT.PrintName = "Plum Bulgarian AKS-74U Polymer handguard"
+ATT.CompactName = "Plum Bulgaria"
+ATT.Icon = Material("entities/eft_ak_attachments/su/hg.png", "mips smooth")
+ATT.Description = [[A Bulgarian standard-issue Polymer handguard for AKS-74U, AKS-74UN, and AKS-74UB. Made out of plum-colored polymer, for which has earned the nickname "Sliva" ("Plum").]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.HasHG = true
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/aksu_slr106u_hg.mdl"
+ATT.LHIK = true
+ATT.ModelSkin = "1"
+
+ATT.EFTErgoAdd = 2.5
+ATT.CustomPros = { Ergonomics = "+2.5" }
+ATT.HeatCapacityMult = 1.02567051
+
+
+ATT.Category = {"eft_aksu_Lhandguard"}
+ARC9.LoadAttachment(ATT, "eft_blgaksu_Lhg_ak_std")
+ATT = {}
+
+ATT.PrintName = "AKS-74U wooden dong handguard"
+ATT.CompactName = "dong"
+ATT.Icon = nil
+ATT.Description = [[Custom grip handguard with a "dong" style grip.]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.HasHG = true
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/ak_hg_aksu_dong.mdl"
+ATT.LHIK = true
+ATT.ModelOffset = Vector(0, -.085,.11)
+
+ATT.EFTErgoAdd = 1
+ATT.CustomPros = { Ergonomics = "+1" }
+ATT.HeatCapacityMult = 1.02167051
+ATT.RecoilMult = 0.99
+ATT.VisualRecoilMult = 0.99
+
+
+ATT.Category = {"eft_aksu_Lhandguard"}
+
+
+ARC9.LoadAttachment(ATT, "eft_aksu_Lhg_ak_dong")
+
+
+ATT = {}
+
+ATT.PrintName = "AR-15 Q Honey Badger handguard 7\""
+ATT.CompactName = "Honey Badger 7\""
+ATT.Icon = nil
+ATT.Description = [[Standard Handguard for the Q Honey Badger, with a lightweight design and MLOK interface.]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+ATT.HasHG = true
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/handguard_ar15_hbadger.mdl"
+ATT.LHIK = true 
+ATT.EFTErgoAdd = 11
+ATT.CustomPros = { Ergonomics = "+11" }
+ATT.HeatCapacityMult = 0.961
+ATT.Category = {"eft_ar15_hguard"}
+ATT.ModelBodygroups = "2"
+
+ATT.ExcludeElements = { "eft_gas_ar15_rg", "eft_gas_ar15_jp", "eft_gas_ar15_m4fs"}
+
+ATT.Attachments = {
+    {
+        PrintName = "Front sight",
+        Category = {"eft_frontsight"},
+        Pos = Vector(0, 3.7+1.5, -1.1),
+        Ang = Angle(0, -90, 0),
+        Icon_Offset = Vector(0, 0, 0),
+        ExtraSightDistance = 8
+    },
+    {
+        PrintName = "Top Tactical",
+        Category = {"eft_tactical_top", "eft_tactical_top_big","eft_backupmount"},
+        Pos = Vector(0, 2.5, -1.1),
+        Ang = Angle(0, -90, 0),
+        Icon_Offset = Vector(0, 0, 0.5),
+        ExtraSightDistance = 8
+
+    },
+    {
+        PrintName = "M-LOK R",
+        Category = {"eft_mount_mlok", "eft_mount_mlokcanti", "eft_mount_mlokoffset"},
+        Pos = Vector(0.9, 2.1+1.5, 0.1),
+        Ang = Angle(180, 90, 0),
+        Icon_Offset = Vector(0, 0, 0),
+    },
+    {
+        PrintName = "M-LOK L",
+        Category = {"eft_mount_mlok", "eft_mount_mlokcanti", "eft_mount_mlokoffset"},
+        Pos = Vector(-0.9, 2.1+1.5, 0.1),
+        Ang = Angle(0, -90, 0),
+        Icon_Offset = Vector(0, 0, 0),
+    },
+    {
+        PrintName = "Foregrip",
+        Category = {"eft_mount_mlok41", "eft_foregrip_mlok","eft_mount_mlok", "eft_mount_mlokcanti", "eft_mount_mlokoffset"},
+        Pos = Vector(0, 3.44, .93),
+        Ang = Angle(0, -90, -90),
+        Icon_Offset = Vector(0, 0, 0),
+    },
+
+}
+
+ARC9.LoadAttachment(ATT, "eft_hg_ar15_hbadger7")
+
+ATT = {}
+
+ATT.PrintName = "AR-15 Q Honey Badger handguard 12\""
+ATT.CompactName = "Honey Badger 12\""
+ATT.Icon = nil
+ATT.Description = [[Standard Handguard for the Q Honey Badger, with a lightweight design and MLOK interface.]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+ATT.HasHG = true
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/handguard_ar15_hbadger.mdl"
+ATT.LHIK = true 
+ATT.EFTErgoAdd = 10
+ATT.CustomPros = { Ergonomics = "+10" }
+ATT.RecoilMult = 0.99
+ATT.VisualRecoilMult = 0.99
+ATT.HeatCapacityMult = 0.965
+ATT.Category = {"eft_ar15_hguard"}
+
+ATT.ExcludeElements = { "eft_gas_ar15_rg", "eft_gas_ar15_jp", "eft_gas_ar15_m4fs"}
+
+ATT.Attachments = {
+    {
+        PrintName = "Backup",
+        Category = {"eft_backupmount"},
+        Pos = Vector(0, 2.3, -1.1),
+        Ang = Angle(0, -90, 0),
+        Icon_Offset = Vector(0, 0, 0),
+        ExtraSightDistance = 8
+    },
+    {
+        PrintName = "Front sight",
+        Category = {"eft_frontsight"},
+        Pos = Vector(0, 9.8+1.5, -1.1),
+        Ang = Angle(0, -90, 0),
+        Icon_Offset = Vector(0, 0, 0),
+        ExtraSightDistance = 8
+    },
+    {
+        PrintName = "Top Tactical",
+        Category = {"eft_tactical_top", "eft_tactical_top_big"},
+        Pos = Vector(0, 6.5, -1.1),
+        Ang = Angle(0, -90, 0),
+        Icon_Offset = Vector(0, 0, 0.5),
+    },
+    {
+        PrintName = "M-LOK R",
+        Category = {"eft_mount_mlok", "eft_mount_mlokcanti", "eft_mount_mlokoffset"},
+        Pos = Vector(0.9, 9.2+1.5, 0.1),
+        Ang = Angle(180, 90, 0),
+        Icon_Offset = Vector(0, 0, 0),
+    },
+    {
+        PrintName = "M-LOK L",
+        Category = {"eft_mount_mlok", "eft_mount_mlokcanti", "eft_mount_mlokoffset"},
+        Pos = Vector(-0.9, 9.2+1.5, 0.1),
+        Ang = Angle(0, -90, 0),
+        Icon_Offset = Vector(0, 0, 0),
+    },
+    {
+        PrintName = "Foregrip",
+        Category = {"eft_mount_mlok41", "eft_foregrip_mlok"},
+        Pos = Vector(0, 4.44, .93),
+        Ang = Angle(0, -90, -90),
+        Icon_Offset = Vector(0, 0, 0),
+    },
+{
+        PrintName = "M-LOK B",
+        Category = {"eft_mount_mlok", "eft_mount_mlokcanti", "eft_mount_mlokoffset"},
+        Pos = Vector(0, 9.2, .93),
+        Ang = Angle(0, -90, -90),
+        Icon_Offset = Vector(0, 0, 0),
+    },
+
+}
+
+ARC9.LoadAttachment(ATT, "eft_hg_ar15_hbadger")
+
+ATT = {}
+
+ATT.PrintName = "AR-15 Q Sugar Weasel 556 handguard 16\""
+ATT.CompactName = "Q SW 16\""
+ATT.Icon = nil
+ATT.Description = [[Standard Handguard for the Q Sugar Weasel, with a lightweight design and MLOK interface.]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+ATT.HasHG = true
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/handguard_ar15_hbadger.mdl"
+ATT.LHIK = true 
+ATT.EFTErgoAdd = 9
+ATT.CustomPros = { Ergonomics = "+9" }
+ATT.RecoilMult = 0.98
+ATT.VisualRecoilMult = 0.98
+ATT.HeatCapacityMult = 0.969
+ATT.Category = {"eft_ar15_hguard"}
+ATT.ModelBodygroups = "1"
+ATT.ExcludeElements = { "eft_gas_ar15_rg", "eft_gas_ar15_jp", "eft_gas_ar15_m4fs"}
+
+ATT.Attachments = {
+    {
+        PrintName = "Backup",
+        Category = {"eft_backupmount"},
+        Pos = Vector(0, 2.3, -1.1),
+        Ang = Angle(0, -90, 0),
+        Icon_Offset = Vector(0, 0, 0),
+        ExtraSightDistance = 8
+    },
+    {
+        PrintName = "Front sight",
+        Category = {"eft_frontsight"},
+        Pos = Vector(0, 12.9+1.5, -1.1),
+        Ang = Angle(0, -90, 0),
+        Icon_Offset = Vector(0, 0, 0),
+        ExtraSightDistance = 8
+    },
+    {
+        PrintName = "Top Tactical",
+        Category = {"eft_tactical_top", "eft_tactical_top_big"},
+        Pos = Vector(0, 6.5, -1.1),
+        Ang = Angle(0, -90, 0),
+        Icon_Offset = Vector(0, 0, 0.5),
+    },
+    {
+        PrintName = "M-LOK R",
+        Category = {"eft_mount_mlok", "eft_mount_mlokcanti", "eft_mount_mlokoffset"},
+        Pos = Vector(0.9, 12.3+1.5, 0.1),
+        Ang = Angle(180, 90, 0),
+        Icon_Offset = Vector(0, 0, 0),
+    },
+    {
+        PrintName = "M-LOK L",
+        Category = {"eft_mount_mlok", "eft_mount_mlokcanti", "eft_mount_mlokoffset"},
+        Pos = Vector(-0.9, 12.3+1.5, 0.1),
+        Ang = Angle(0, -90, 0),
+        Icon_Offset = Vector(0, 0, 0),
+    },
+    {
+        PrintName = "Foregrip",
+        Category = {"eft_mount_mlok41", "eft_foregrip_mlok"},
+        Pos = Vector(0, 4.44, .93),
+        Ang = Angle(0, -90, -90),
+        Icon_Offset = Vector(0, 0, 0),
+    },
+{
+        PrintName = "M-LOK B",
+        Category = {"eft_mount_mlok", "eft_mount_mlokcanti", "eft_mount_mlokoffset"},
+        Pos = Vector(0, 12.3, .93),
+        Ang = Angle(0, -90, -90),
+        Icon_Offset = Vector(0, 0, 0),
+    },
+
+}
+
+ARC9.LoadAttachment(ATT, "eft_hg_ar15_hbadger16")
+
+ATT = {}
+
+ATT.PrintName = "AKS-74U engraved handguard"
+ATT.CompactName = "engraved"
+ATT.Icon = nil
+ATT.Description = [[An engraved handguard made for a khyber pass krinkov.]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.HasHG = true
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/aksu_std_hg.mdl"
+ATT.LHIK = true
+ATT.ModelBodygroups = "1"
+
+ATT.EFTErgoAdd = 2
+ATT.CustomPros = { Ergonomics = "+2" }
+ATT.HeatCapacityMult = 1.02567051
+
+
+ATT.Category = {"eft_aksu_Lhandguard"}
+
+
+ARC9.LoadAttachment(ATT, "eft_aksu_Lhg_dak")
+///////////////////////////////////////      eft_aksu_hg_ak_std
+
+
+ATT = {}
+
+ATT.PrintName = "AKS-74U engraved gas tube cover"
+ATT.CompactName = "engraved"
+ATT.Icon = Material("entities/eft_ak_attachments/su/hg.png", "mips smooth")
+ATT.Description = [[An engraved handguard made for a khyber pass krinkov.]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.HasHG = true
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/aksu_std_gascover.mdl"
+ATT.ModelSkin = "1"
+
+ATT.EFTErgoAdd = 2
+ATT.CustomPros = { Ergonomics = "+2" }
+ATT.HeatCapacityMult = 1.02567051
+
+
+ATT.Category = {"eft_aksu_gascover"}
+
+
+ARC9.LoadAttachment(ATT, "eft_aksu_gc_dak")
+
+
+ATT = {}
+
+ATT.PrintName = "AR-15 Colt m16a2 rifle Length handguard"
+ATT.CompactName = "M203"
+ATT.Icon = nil
+ATT.Description = [[A Rifle length handguard manufactured by Colt, a standard-issue handguard for the M16A1 and M16A2 assault rifles mounted with M203 grenade launchers]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+ATT.HasHG = true
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/handguard_ar15_m203 heatshield.mdl"
+ATT.LHIK = true
+ATT.EFTErgoAdd = 7
+ATT.CustomPros = { Ergonomics = "+7" }
+ATT.RecoilMult = 0.99
+ATT.VisualRecoilMult = 0.99
+ATT.HeatCapacityMult = 0.988
+ATT.Category = {"eft_ar15_hguard"}
+ATT.ActivateElements = {"nostdgasblockpls","eft_barrel_ar15_370mm"}
+ATT.Attachments = {
+  --[=====[
+{
+        PrintName = "Lower HG",
+        Category = "eft_m4a1_m203",
+        Pos = Vector(0, 1.467,1.583 ),
+        Bone = "weapon",
+        Ang = Angle(0, 90, 0),
+        Icon_Offset = Vector(0, 3.35, -1),
+	},
+--]=====]
+    {
+        PrintName = "Gas block",
+        Category = "eft_ar15_gasblock",
+        Pos = Vector(0,13.1, 0.35),
+        Ang = Angle(0, -90, 0),
+    },
+}
+ARC9.LoadAttachment(ATT, "eft_hg_ar15_m16_grenadier_roo")
+
+ATT = {}
+
+ATT.PrintName = "FN PS90 Quadrail barrel shroud"
+ATT.CompactName = "FN PS90 QR"
+ATT.Icon = nil
+ATT.Description = [[A barrel shroud for the FN PS90 with 4 picatinny rails for modularity. produced by Fabrique Nationale Herstal.]]
+ATT.Free = true
+ATT.Max = 1
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/p90_custom_atts.mdl"
+ATT.ModelBodygroups = "10"
+ATT.BoneMerge = true
+ATT.Category = {"eft_custom_slot_p90"}
+ATT.SortOrder = -99
+ATT.EFTErgoAdd = 5
+ATT.RequireElements = {"eft_p90_barrel_407"}
+ATT.CustomPros = { Ergonomics = "+5"}
+ATT.HeatCapacityMult = 1.06
+ATT.Attachments = {
+    {
+        PrintName = "Custom slot",
+        Pos = Vector(0, 0, 1),
+        Ang = Angle(0, 0, 0),
+        Category = {"eft_custom_slot","eft_custom_slot_p90"},
+    },        {
+        PrintName = "Grip",
+        Category = {"eft_foregrip_small"},
+        Pos = Vector(0, 23.385, .05),
+        Ang = Angle(0, -90, 0),
+        Icon_Offset = Vector(0, 0, -1),
+    },
+    {
+        PrintName = "R Tactical",
+        Category = {"eft_tactical_top"},
+        Pos = Vector(1.15, 8, 0.52),
+        Ang = Angle(0, -90, 90),
+        Icon_Offset = Vector(0, 0, 0),
+    },
+    {
+        PrintName = "L Tactical",
+        Category = {"eft_tactical_top"},
+        Pos = Vector(-1.15, 8, 0.52),
+        Ang = Angle(0, -90, -90),
+        Icon_Offset = Vector(0, 0, 0),
+    },
+    {
+        PrintName = "B Tactical",
+        Category = {"eft_tactical_top"},
+        Pos = Vector(0, 8.1, 1.7),
+        Ang = Angle(0, -90, 180),
+        Icon_Offset = Vector(0, 0, 0),
+    },
+    {
+        PrintName = "Top Tactical",
+        Category = {"eft_tactical_top"},
+        Pos = Vector(0, 23.77, -1.75),
+        Ang = Angle(0, -90, 0),
+        Icon_Offset = Vector(0, 0, 0),
+    },
+
+}
+ARC9.LoadAttachment(ATT, "eft_ps90_quadrail")

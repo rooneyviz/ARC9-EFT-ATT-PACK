@@ -2,22 +2,21 @@
 {
 	"$basetexture" "models/weapons/arc9/darsu_eft/mods\T_1P_M203_D"
 	"$bumpmap" "models/weapons/arc9/darsu_eft/mods\T_1P_M203_N"
-	"$phongexponenttexture" "models/weapons/arc9/darsu_eft/mods\T_1P_M203_M2"
+	"$phongexponenttexture" "models/weapons/arc9/darsu_eft/mods\t_1p_m203_m"
 	
-	"$envmap" "models\weapons\ins2_sandstorm\envmap_unfuck"
 	// "$srgbtint" "[2 2 2]"
-    	"$detail"				"detail\metal_detail_01"
-    	"$detailscale"			"2"
-    	"$detailblendfactor"          		"0.5"
-    	"$detailblendmode"          		"0"
-    	"$color2"                 		"[ 1.5 1.5 1.5]"
+	"$color2"                 		"[4 4 4]"
+	"$phongfresnelranges" "[0.5 1 2]"
 
  
     	//"$envmaptint"              		"[ .02 .02 .02 ]"
  
    	"$phong"                    		"1"
-   	"$phongboost"               		"66"
+   	"$phongboost"               		"1"
+   	"$phongexponent"               		"1"
+
     	"$phongalbedotint"          		"1"
+
     	"$phongalbedoboost"         		"1"
  
    	"$rimlight"                 		"1"

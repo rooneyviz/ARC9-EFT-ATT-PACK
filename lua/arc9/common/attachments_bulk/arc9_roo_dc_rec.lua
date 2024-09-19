@@ -94,12 +94,11 @@ ATT.Attachments = {
         Icon_Offset = Vector(0, 0, 0),
     },
         {
-        PrintName = "nil",
-        Category = {"nothing"},
-        Ignore = true,
+        PrintName = "Rear sight",
+        Category = {"eft_roo_a2_rs"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-        Icon_Offset = Vector(100, 100, 100),
+        Icon_Offset = Vector(-5.5, 0, 3),
     },
 
     {
@@ -112,7 +111,7 @@ ATT.Attachments = {
     {
         PrintName = "Handguard",
         Category = "eft_ar15_hguard",
-        Pos = Vector(-0.15, 0, -1),
+        Pos = Vector(-0.22, 0, -0.99),
         Ang = Angle(0, 90, 0),
         Icon_Offset = Vector(0, 4, 0),
     },
@@ -163,7 +162,7 @@ ATT.Attachments = {
     {
         PrintName = "Handguard",
         Category = "eft_ar15_hguard",
-        Pos = Vector(-0.15, 0, -1),
+        Pos = Vector(-0.22, 0, -0.99),
         Ang = Angle(0, 90, 0),
         Icon_Offset = Vector(0, 4, 0),
     },
@@ -993,3 +992,373 @@ ATT.Attachments = {
 
 ARC9.LoadAttachment(ATT, "eft_rec_g17_pfc19")
 
+
+
+ATT = {}
+
+ATT.PrintName = "AKMSU dust cover"
+ATT.CompactName = "AKMSU"
+ATT.Icon = Material("entities/eft_ak_attachments/su/dc.png", "mips smooth")
+ATT.Description = [[A Custom made dust cover for the AKMSU, it consists of an AKM dust cover welded to a AKS-74U hinge plate.]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.ExcludeElements = {"nolongrear", "eft_mount_dovetail_b13v", "eft_mount_dovetail_b13", "eft_scope_dovetail_pso1", "eft_scope_dovetail_pso1m2", "eft_scope_dovetail_okp7"}
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/aksu_dc_new_steamhappy.mdl"
+ATT.BoneMerge = true
+
+ATT.EFTErgoAdd = 5
+ATT.CustomPros = { Ergonomics = "+5" }
+ATT.ModelBodygroups = "0"
+
+ATT.Category = {"eft_aksu_dustcover"}
+
+ATT.Attachments = {
+    {
+        PrintName = "Mount",
+        Category = "eft_b18",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+        Icon_Offset = Vector(0, -1, 0),
+    },
+}
+
+
+ARC9.LoadAttachment(ATT, "eft_aksu_rec_akmsu_std")
+
+ATT = {}
+
+ATT.PrintName = "Arsenal New Generation dust cover"
+ATT.CompactName = "New Gen."
+ATT.Icon = Material("entities/eft_ak_attachments/su/dc.png", "mips smooth")
+ATT.Description = [[A dust cover made by arsenal, used by some of their krinkov style weapons.]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.ExcludeElements = {"nolongrear", "eft_mount_dovetail_b13v", "eft_mount_dovetail_b13", "eft_scope_dovetail_pso1", "eft_scope_dovetail_pso1m2","eft_mount_dovetail_sagbit"}
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/aksu_dc_new_steamhappy.mdl"
+ATT.BoneMerge = true
+
+ATT.EFTErgoAdd = 5
+ATT.CustomPros = { Ergonomics = "+5" }
+ATT.ModelBodygroups = "1"
+
+ATT.Category = {"eft_aksu_dustcover"}
+
+
+ARC9.LoadAttachment(ATT, "eft_aksu_rec_arsenal_std")
+ATT = {}
+
+ATT.PrintName = "Flat AKS-74U dust cover"
+ATT.CompactName = "Flat"
+ATT.Icon = Material("entities/eft_ak_attachments/su/dc.png", "mips smooth")
+ATT.Description = [[A Custom made dust cover for Krinkov style weapons, it consists of an AKS-74U dust cover with the rear sight part removed.]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/aksu_dc_new_steamhappy.mdl"
+ATT.BoneMerge = true
+
+ATT.EFTErgoAdd = 5
+ATT.CustomPros = { Ergonomics = "+5" }
+ATT.ModelBodygroups = "2"
+
+ATT.Category = {"eft_aksu_dustcover"}
+
+
+ARC9.LoadAttachment(ATT, "eft_aksu_rec_aks74u_flat_std")
+
+ATT = {}
+
+ATT.PrintName = "AR-15 Q Honey Badger upper receiver"
+ATT.CompactName = "Honey Badger"
+ATT.Icon = nil
+ATT.Description = [[Standard upper receiver for the Q Honey Badger.]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+ATT.HasReceiver = true
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/reciever_ar15_hbadger.mdl"
+
+ATT.Category = {"eft_m4a1_upper"}
+
+ATT.EFTErgoAdd = 8
+ATT.CustomPros = { Ergonomics = "+8" }
+ATT.RecoilMult = 0.96
+ATT.VisualRecoilMult = 0.96
+ATT.HeatCapacityMult = 0.975
+
+ATT.EFTAR15NoFwdAssist = true
+
+ATT.Attachments = {
+    {
+        PrintName = "Optic",
+        Category = {"eft_optic_large", "eft_optic_medium", "eft_optic_small"},
+        Pos = Vector(2.2, 0, -2.1),
+        Ang = Angle(0, 0, 0),
+        ExcludeElements = {"IronsBlockingSight"},
+    },
+    {
+        PrintName = "Rear sight",
+        Category = {"eft_ar_rearsight", "eft_rearsight", "eft_rearsight_hk416"},
+        Pos = Vector(4.75, 0, -2.13),
+        Ang = Angle(0, 0, 0),
+    },
+    {
+        PrintName = "Barrel",
+        Category = "eft_m4a1_barrel",
+        Pos = Vector(-0.175, 0, -0.9),
+        Ang = Angle(0, 0, 0),
+        Icon_Offset = Vector(-0.2, 0, 0),
+    },
+    {
+        PrintName = "Handguard",
+        Category = "eft_ar15_hguard",
+        Pos = Vector(-0.22, 0, -0.99),
+        Ang = Angle(0, 90, 0),
+        Icon_Offset = Vector(0, 4, 0),
+    },
+}
+ATT.ToggleStats = {
+    {
+        PrintName = "dustcover",
+        ModelBodygroups = "00"
+
+    },
+    {
+        PrintName = "you dont need it",
+        ModelBodygroups = "01"
+
+
+    },
+}
+
+ARC9.LoadAttachment(ATT, "eft_rec_ar15_hbadger")
+
+ATT = {}
+
+ATT.PrintName = "AR-15 Q Honey Badger upper receiver(Black)"
+ATT.CompactName = "Honey Badger(blk)"
+ATT.Icon = nil
+ATT.Description = [[Standard upper receiver for the Q Honey Badger. Black version.]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+ATT.HasReceiver = true
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/reciever_ar15_hbadger.mdl"
+ATT.ModelSkin = 3
+ATT.Category = {"eft_m4a1_upper"}
+
+ATT.EFTErgoAdd = 8
+ATT.CustomPros = { Ergonomics = "+8" }
+ATT.RecoilMult = 0.96
+ATT.VisualRecoilMult = 0.96
+ATT.HeatCapacityMult = 0.975
+
+ATT.EFTAR15NoFwdAssist = true
+
+ATT.Attachments = {
+    {
+        PrintName = "Optic",
+        Category = {"eft_optic_large", "eft_optic_medium", "eft_optic_small"},
+        Pos = Vector(2.2, 0, -2.1),
+        Ang = Angle(0, 0, 0),
+        ExcludeElements = {"IronsBlockingSight"},
+    },
+    {
+        PrintName = "Rear sight",
+        Category = {"eft_ar_rearsight", "eft_rearsight", "eft_rearsight_hk416"},
+        Pos = Vector(4.75, 0, -2.13),
+        Ang = Angle(0, 0, 0),
+    },
+    {
+        PrintName = "Barrel",
+        Category = "eft_m4a1_barrel",
+        Pos = Vector(-0.175, 0, -0.9),
+        Ang = Angle(0, 0, 0),
+        Icon_Offset = Vector(-0.2, 0, 0),
+    },
+    {
+        PrintName = "Handguard",
+        Category = "eft_ar15_hguard",
+        Pos = Vector(-0.22, 0, -0.99),
+        Ang = Angle(0, 90, 0),
+        Icon_Offset = Vector(0, 4, 0),
+    },
+}
+
+ATT.ToggleStats = {
+    {
+        PrintName = "dustcover",
+        ModelBodygroups = "00"
+
+    },
+    {
+        PrintName = "you dont need it",
+        ModelBodygroups = "01"
+
+
+    },
+}
+
+ARC9.LoadAttachment(ATT, "eft_rec_ar15_hbadger_blk")
+
+
+ATT = {}
+
+ATT.PrintName = "AR15 5.56x45 upper receiver with no forward assist"
+ATT.CompactName = "NO FA"
+ATT.Icon = Material("entities/eft_ar15_attachments/rec/m4a1_556x45_upper_receiver.png", "mips smooth")
+ATT.Description = [[Upper receiver for ar15 rifles. Equipped with a mount for attaching additional devices. No forward assist]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+ATT.HasReceiver = true
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/reciever_ar15_no_fw_as.mdl"
+
+ATT.Category = {"eft_m4a1_upper"}
+ATT.EFTAR15NoFwdAssist = true
+
+ATT.EFTErgoAdd = 5
+ATT.CustomPros = { Ergonomics = "+5" }
+ATT.RecoilMult = 0.99
+ATT.VisualRecoilMult = 0.99
+ATT.HeatCapacityMult = 0.989
+
+ATT.Attachments = {
+    {
+        PrintName = "Optic",
+        Category = {"eft_optic_large", "eft_optic_medium", "eft_optic_small"},
+        Pos = Vector(2.2, 0, -2.1),
+        Ang = Angle(0, 0, 0),
+        ExcludeElements = {"IronsBlockingSight"},
+    },
+    {
+        PrintName = "Rear sight",
+        Category = {"eft_ar_rearsight", "eft_rearsight", "eft_rearsight_hk416"},
+        Pos = Vector(4.75, 0, -2.13),
+        Ang = Angle(0, 0, 0),
+    },
+    {
+        PrintName = "Barrel",
+        Category = "eft_m4a1_barrel",
+        Pos = Vector(-0.175, 0, -0.9),
+        Ang = Angle(0, 0, 0),
+        Icon_Offset = Vector(-0.2, 0, 0),
+    },
+    {
+        PrintName = "Handguard",
+        Category = "eft_ar15_hguard",
+        Pos = Vector(-0.15, 0, -1),
+        Ang = Angle(0, 90, 0),
+        Icon_Offset = Vector(0, 4, 0),
+    },
+}
+
+ARC9.LoadAttachment(ATT, "eft_rec_ar15_m4a1_assistless")
+ATT = {}
+
+ATT.PrintName = "AR-15 Q Sugar Weasel upper receiver"
+ATT.CompactName = "Q SW"
+ATT.Icon = Material("entities/eft_ar15_attachments/rec/m4a1_556x45_upper_receiver.png", "mips smooth")
+ATT.Description = [[Standard upper receiver for the Q Sugar Weasel.]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+ATT.HasReceiver = true
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/reciever_ar15_no_fw_as.mdl"
+
+ATT.Category = {"eft_m4a1_upper"}
+ATT.EFTAR15NoFwdAssist = true
+
+ATT.EFTErgoAdd = 5
+ATT.CustomPros = { Ergonomics = "+5" }
+ATT.RecoilMult = 0.99
+ATT.VisualRecoilMult = 0.99
+ATT.HeatCapacityMult = 0.989
+ATT.ModelSkin = 1
+ 
+ATT.Attachments = {
+    {
+        PrintName = "Optic",
+        Category = {"eft_optic_large", "eft_optic_medium", "eft_optic_small"},
+        Pos = Vector(2.2, 0, -2.1),
+        Ang = Angle(0, 0, 0),
+        ExcludeElements = {"IronsBlockingSight"},
+    },
+    {
+        PrintName = "Rear sight",
+        Category = {"eft_ar_rearsight", "eft_rearsight", "eft_rearsight_hk416"},
+        Pos = Vector(4.75, 0, -2.13),
+        Ang = Angle(0, 0, 0),
+    },
+    {
+        PrintName = "Barrel",
+        Category = "eft_m4a1_barrel",
+        Pos = Vector(-0.175, 0, -0.9),
+        Ang = Angle(0, 0, 0),
+        Icon_Offset = Vector(-0.2, 0, 0),
+    },
+    {
+        PrintName = "Handguard",
+        Category = "eft_ar15_hguard",
+        Pos = Vector(-0.15, 0, -1),
+        Ang = Angle(0, 90, 0),
+        Icon_Offset = Vector(0, 4, 0),
+    },
+}
+
+ARC9.LoadAttachment(ATT, "eft_rec_ar15_q_sugar_weasel")
+ATT = {}
+
+ATT.PrintName = "AR9 upper receiver"
+ATT.CompactName = "AR9"
+ATT.Icon = Material("entities/eft_ar15_attachments/rec/m4a1_556x45_upper_receiver.png", "mips smooth")
+ATT.Description = [[Upper receiver for the AR9. Equipped with a mount for attaching additional devices.]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+ATT.HasReceiver = true
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/reciever_ar15_no_fw_as.mdl"
+
+ATT.Category = {"eft_stm9_upper"}
+ATT.ModelBodygroups = "01"
+ATT.EFTErgoAdd = 5
+ATT.CustomPros = { Ergonomics = "+5" }
+ATT.RecoilMult = 0.99
+ATT.VisualRecoilMult = 0.99
+ATT.HeatCapacityMult = 0.989
+
+ATT.Attachments = {
+    {
+        PrintName = "Optic",
+        Category = {"eft_optic_large", "eft_optic_medium", "eft_optic_small"},
+        Pos = Vector(2.2, 0, -2.1),
+        Ang = Angle(0, 0, 0),
+        ExcludeElements = {"IronsBlockingSight"},
+    },
+    {
+        PrintName = "Rear sight",
+        Category = {"eft_ar_rearsight", "eft_rearsight", "eft_rearsight_hk416"},
+        Pos = Vector(4.75, 0, -2.13),
+        Ang = Angle(0, 0, 0),
+    },
+    {
+        PrintName = "Barrel",
+        Category = "eft_stm9_barrel",
+        Pos = Vector(-0.175, 0, -0.9),
+        Ang = Angle(0, 0, 0),
+        Icon_Offset = Vector(-0.2, 0, 0),
+    },
+    {
+        PrintName = "Handguard",
+        Category = "eft_ar15_hguard",
+        Pos = Vector(-0.15, 0, -1),
+        Ang = Angle(0, 90, 0),
+        Icon_Offset = Vector(0, 4, 0),
+    },
+}
+
+ARC9.LoadAttachment(ATT, "eft_rec_ar15_ar9")

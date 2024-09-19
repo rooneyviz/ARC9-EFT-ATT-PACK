@@ -90,15 +90,15 @@ ATT.RangeMin = 10
 ATT.RangeMax = 100 /0.0254 * dmgrangesg
 
 ATT.Penetration =      3 *2.54/100/0.0254
-ATT.PenetrationDelta = 26/100
-ATT.ArmorPiercing =    26/100
-ATT.RicochetChance =   0
+ATT.PenetrationDelta = 5/100
+ATT.ArmorPiercing =    5/100
+ATT.RicochetChance =   50
 
 ATT.Num = 9
--- ATT.RecoilMult = 1.15
--- ATT.VisualRecoilMult = 1.25
+ATT.RecoilMult = 1.15
+ATT.VisualRecoilMult = 1.25
 -- ATT.SpreadMult = 0.85
- ATT.SpreadMult = 1
+ ATT.SpreadMult = 1.1
 
 ATT.ActivateElements = {"eft_ammo_12x70_std"}
 ATT.Category = {"eft_ammo_12x70"}
@@ -108,18 +108,22 @@ ATT.DamageType = DMG_BURN + DMG_BULLET + DMG_BLAST
 ATT.Override_DamageType = DMG_BURN + DMG_BULLET + DMG_BLAST
 
 ATT.ImpactDecal = "FadingScorch"
-
+ATT.MuzzleEffect = "sparks"
 local cov = 1 -- ??
 ATT.ExplosionDamage = 6.25*5
-ATT.ExplosionRadius = 5
- ATT.TracerNum = 1
-ATT.TracerColor = Color(255, 127, 0)
-ATT.ExplosionEffect = "eft_explosion_round"
+ATT.ExplosionRadius = .1
+ATT.TracerNum = 8
+ATT.TracerColor = Color(255, 200, 150)
+ATT.ExplosionEffect = "StunstickImpact"
+ATT.RicochetAngleMax = 60
+ATT.AfterShotEffect = "sparks"
+ATT.AfterShotParticleDelay = 0.1 -- Delay before spawning the particle
 
 local badblood = { -- it's actually the good type
     [-1] = true,
     [3] = true,
 }
+
 
 ATT.Hook_BulletImpact = function(wep,data)
     local ent = data.tr.Entity
@@ -139,7 +143,9 @@ ATT.Hook_BulletImpact = function(wep,data)
         data.dmg:SetDamage(data.dmg:GetDamage() * cov)
         local eff = EffectData()
         eff:SetOrigin(data.tr.HitPos)
-        util.Effect("cball_bounce", eff)
+        util.Effect("cball_explode", eff)
+        util.Effect("sparks", eff)
+
     end
 end
 
@@ -157,6 +163,24 @@ ATT.SortOrder = 0
 ATT.CustomPros = {
     ["Damage"] = 39
 }
+ATT.MuzzleParticle = "grenade_flash"
+
+
+ATT.Hook_PrimaryAttack = function(self)
+    if CLIENT then return end
+    local owner = self:GetOwner()
+
+    -- print("bang!")
+    local flashpos = self:GetShootPos()
+    net.Start("arc9eftflasbangdlight")
+    net.WriteUInt(self:EntIndex(), 14)
+    net.WriteVector(flashpos)
+    net.Broadcast()
+
+
+
+  
+end
 
 ATT.Category = {"eft_ammo_40x46"}
 
@@ -199,9 +223,9 @@ ATT.Description = [[M1029 is a 40mm Rubber ball shot shell. CRWD-DSPRSL stands f
 ATT.SortOrder = 0
 ATT.MenuCategory = "ARC9 - EFT Attachments"
 
-ATT.DamageMaxUBGL = .1875 * mult1270
-ATT.DamageMinUBGL = 1 * mult1270
-ATT.PhysBulletMuzzleVelocityUBGL = 215 /0.0254
+ATT.DamageMaxUBGL = .25 * mult1270
+ATT.DamageMinUBGL = 0.01 * mult1270
+ATT.PhysBulletMuzzleVelocityUBGL = 115 /0.0254
 
 ATT.RangeMinUBGL = 10
 ATT.RangeMaxUBGL = 300 /0.0254 * dmgrangesg
@@ -210,9 +234,10 @@ ATT.PenetrationUBGL =      .005 *2.54/100/0.0254
 ATT.PenetrationDeltaUBGL = 50/100
 ATT.ArmorPiercingUBGL =    1/100
 ATT.RicochetChanceUBGL =   0
-
+ATT.DamageLookupTableUBGL = false
 ATT.NumUBGL = 48
-ATT.SpreadUBGL = 0
+ATT.SpreadUBGL = .05
+
 
 ATT.UBGLClipSize = 1
 ATT.ShootEntUBGL = false
@@ -249,3 +274,345 @@ ATT.UBGLClipSize = 1
 ATT.Category = {"eft_ammo_40x46_nonubgl"}
 
 ARC9.LoadAttachment(ATT, "eft_ammo_40x46_12x70")
+ATT = {}
+
+ATT.PrintName = "Signal z"
+ATT.CompactName = "Flare"
+ATT.Icon = Material("entities/eft_attachments/ammo/12x70/def.png", "mips smooth")
+ATT.Description = [[Low pressure shell containing an illuminating flare burning at a high temperature.
+Usually used for signalling, but can also light things up in a pinch, Be careful at close ranges as it can and probably will ricochet.]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+ATT.CustomPros = {
+    ["Damage"] = 39
+}
+
+ATT.ShellModel = "models/weapons/arc9/darsu_eft/shells/patron_12x70_shell.mdl"
+ATT.ShootEnt = "roo_flare"
+ATT.ShootEntForce = 1000000
+
+ATT.MuzzleParticle = "grenade_flash"
+
+
+ATT.Hook_PrimaryAttack = function(self)
+    if CLIENT then return end
+    local owner = self:GetOwner()
+
+    -- print("bang!")
+    local flashpos = self:GetShootPos()
+    net.Start("arc9eftflasbangdlight")
+    net.WriteUInt(self:EntIndex(), 14)
+    net.WriteVector(flashpos)
+    net.Broadcast()
+
+
+
+  
+end
+
+
+ATT.HasMag = true 
+ATT.HasAmmoooooooo = true 
+
+ATT.ChamberSizeOverride = 0 -- no mag
+ATT.ClipSizeOverride = 1 -- actual chamber (no mag)
+
+
+ATT.HasAmmoooooooo = true 
+
+ATT.EFTRoundName = "12/70 Flare Round"
+
+ATT.Num = 1
+
+ATT.ActivateElements = {"eft_ammo_12x70_std"}
+ATT.Category = {"eft_ammo_12x70"}
+
+ARC9.LoadAttachment(ATT, "eft_ammo_12x70_flame")
+ATT = {}
+
+ATT.PrintName = "12x70mm flashbang round"
+ATT.CompactName = "flashbang"
+ATT.Icon = Material("entities/eft_ks23_attachments/z.png", "mips smooth")
+ATT.Description = [[A 12x70mm flash-bang grenade cartridge made for psychological effect on the enemy.]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+
+ATT.ShellModel = "models/weapons/arc9/darsu_eft/shells/patron_12x70_shell.mdl"
+
+ATT.HasAmmoooooooo = true 
+
+
+ATT.DamageMax = 2
+ATT.DamageMin = .1
+ATT.PhysBulletMuzzleVelocity = 80 /0.0254
+
+ATT.RangeMin = 10
+ATT.RangeMax = 300 /0.0254 * dmgrange
+
+ATT.Penetration =      0
+ATT.PenetrationDelta = 0
+ATT.ArmorPiercing =    0
+ATT.RicochetChance =   0
+
+ATT.Num = 1
+ATT.RecoilMult = .9
+ATT.VisualRecoilMult = .9
+ATT.HeatPerShotMult = 2.5
+
+ATT.MuzzleParticle = "grenade_flash"
+
+
+ATT.Hook_PrimaryAttack = function(self)
+    if CLIENT then return end
+    local owner = self:GetOwner()
+
+    -- print("bang!")
+    local flashpos = self:GetShootPos()
+    net.Start("arc9eftflasbangdlight")
+    net.WriteUInt(self:EntIndex(), 14)
+    net.WriteVector(flashpos)
+    net.Broadcast()
+
+
+    local shakeradiusM = 15
+    local contusionLength = 15
+
+    if !GetConVar("arc9_eft_enable_concussion"):GetBool() then
+        contusionLength = 0
+    end
+
+    -- local potentionalcontusioned = ents.FindInSphere(flashpos, shakeradiusM / 0.0254)
+    local potentionalcontusioned = ents.FindInCone(flashpos, owner:GetAimVector(), shakeradiusM / 0.0254, 0.1) -- 
+    for i = 1, #potentionalcontusioned do
+        local ply = potentionalcontusioned[i]
+        if ply == self:GetOwner() then continue end
+
+        if ply:IsPlayer() or ply:IsNPC() then
+            local contmult = (shakeradiusM - flashpos:Distance(ply:GetPos()) * 0.0254) / shakeradiusM * 2 -- how close we are
+            
+            if ply:IsPlayer() then
+                net.Start("arc9eftexplosion")
+                net.WriteFloat(contmult)
+                net.WriteUInt(contusionLength, 9)
+                net.WriteBool(true)
+                net.WriteEntity(self)
+                net.Send(ply)
+
+                ply:ViewPunch(Angle(1.5, 0, -7.5) * contmult)
+            elseif ply:IsNPC() then
+                ply:SetNPCState(NPC_STATE_PLAYDEAD)
+                ply:SetSchedule(SCHED_COWER)
+
+                timer.Simple(contmult * contusionLength, function()
+                    if not IsValid(ply) then return end
+                    ply:SetNPCState(NPC_STATE_ALERT)
+                    ply:SetSchedule(SCHED_ALERT_WALK)
+                end)
+            end
+        end
+    end
+end
+
+
+ATT.Category = {"eft_ammo_12x70"}
+
+ARC9.LoadAttachment(ATT, "eft_ammo_12x70_zvezda")
+ATT = {}
+
+ATT.PrintName = "23x75mm \"Zvezda\" flashbang round + shrapenl 10"
+ATT.CompactName = "Zvezda + shrap10"
+ATT.Icon = Material("entities/eft_ks23_attachments/z.png", "mips smooth")
+ATT.Description = [[A 23x75 mmR "Zvezda" ("Star") flash-bang grenade cartridge made for psychological effect on the enemy.]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+ATT.ShellModelEvenShot = "models/weapons/arc9/darsu_eft/shells/patron_23x75_sh10.mdl"
+
+
+
+ATT.DamageMaxEvenShot = 87 * mult1270
+ATT.DamageMinEvenShot = 66 * mult1270
+ATT.PhysBulletMuzzleVelocityEvenShot = 270 /0.0254
+
+ATT.RangeMinEvenShot = 10
+ATT.RangeMaxEvenShot = 100 /0.0254 * dmgrangesg
+
+ATT.PenetrationEvenShot =      11 *2.54/100/0.0254
+ATT.PenetrationDeltaEvenShot = 20/100
+ATT.ArmorPiercingEvenShot =    20/100
+ATT.RicochetChanceEvenShot =   20
+
+ATT.NumEvenShot = 8
+-- ATT.VisualRecoilMult = 1.25
+-- ATT.SpreadMult = 0.1
+ATT.HeatPerShotMultEvenShot = 1.8
+
+ATT.ShellModelOddShot = "models/weapons/arc9/darsu_eft/shells/patron_23x75_zvezda.mdl"
+
+ATT.HasAmmoooooooo = true 
+
+
+ATT.DamageMaxOddShot = 0
+ATT.DamageMinOddShot = 0
+ATT.PhysBulletMuzzleVelocityOddShot = 80 /0.0254
+
+ATT.RangeMinOddShot = 10
+ATT.RangeMaxOddShot = 300 /0.0254 * dmgrange
+
+ATT.PenetrationOddShot =      0
+ATT.PenetrationDeltaOddShot = 0
+ATT.ArmorPiercingOddShot =    0
+ATT.RicochetChanceOddShot =   0
+
+ATT.NumOddShot = 0
+ATT.RecoilMultOddShot = 1.2
+ATT.VisualRecoilMultOddShot = 1.2
+ATT.HeatPerShotMultOddShot = 2.5
+
+ATT.MuzzleParticleOddShot = "grenade_flash"
+
+
+ATT.Hook_PrimaryAttack = function(self)
+if ATT.OddShot then
+    if CLIENT then return end
+    local owner = self:GetOwner()
+
+    -- print("bang!")
+    local flashpos = self:GetShootPos()
+    net.Start("arc9eftflasbangdlight")
+    net.WriteUInt(self:EntIndex(), 14)
+    net.WriteVector(flashpos)
+    net.Broadcast()
+
+
+    local shakeradiusM = 15
+    local contusionLength = 15
+
+    if !GetConVar("arc9_eft_enable_concussion"):GetBool() then
+        contusionLength = 0
+    end
+
+    -- local potentionalcontusioned = ents.FindInSphere(flashpos, shakeradiusM / 0.0254)
+    local potentionalcontusioned = ents.FindInCone(flashpos, owner:GetAimVector(), shakeradiusM / 0.0254, 0.1) -- 
+    for i = 1, #potentionalcontusioned do
+        local ply = potentionalcontusioned[i]
+        if ply == self:GetOwner() then continue end
+
+        if ply:IsPlayer() or ply:IsNPC() then
+            local contmult = (shakeradiusM - flashpos:Distance(ply:GetPos()) * 0.0254) / shakeradiusM * 2 -- how close we are
+            
+            if ply:IsPlayer() then
+                net.Start("arc9eftexplosion")
+                net.WriteFloat(contmult)
+                net.WriteUInt(contusionLength, 9)
+                net.WriteBool(true)
+                net.WriteEntity(self)
+                net.Send(ply)
+
+                ply:ViewPunch(Angle(1.5, 0, -7.5) * contmult)
+            elseif ply:IsNPC() then
+                ply:SetNPCState(NPC_STATE_PLAYDEAD)
+                ply:SetSchedule(SCHED_COWER)
+
+                timer.Simple(contmult * contusionLength, function()
+                    if not IsValid(ply) then return end
+                    ply:SetNPCState(NPC_STATE_ALERT)
+                    ply:SetSchedule(SCHED_ALERT_WALK)
+                end)
+            end
+        end
+    end
+end
+end
+
+ATT.Category = {"eft_ammo_23x75"}
+
+ARC9.LoadAttachment(ATT, "eft_ammo_23x75_zvezda_shrap10")
+ATT = {}
+ATT.PrintName = "40x46mm M715 (SMOKE) grenade"
+ATT.CompactName = "M715"
+ATT.Icon = Material("entities/eft_attachments/ammo/40x46/40x46mm_m381.png", "mips smooth")
+ATT.Description = [[A 40-mm M715 (SMOKE) shot with a fragmentation grenade equipped with an instantaneous fuse, which is cocked after the shot, at a distance of 8-10 feet from the muzzle.]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.HasGranataAmmo = true 
+
+ATT.CustomPros = {
+    ["Fuse time"] = "0.04 s"
+}
+
+ATT.UBGLClipSize = 1
+ATT.ShootEntUBGL = "arc9_eft_40mm_m715"
+
+ATT.Category = {"eft_ammo_40x46"}
+
+ARC9.LoadAttachment(ATT, "eft_ammo_40x46_m715")
+
+
+ATT = {}
+ATT.PrintName = "300 blk conversion"
+ATT.CompactName = "300blk"
+ATT.Icon = Material("entities/eft_attachments/ammo/40x46/40x46mm_m381.png", "mips smooth")
+ATT.Description = [[converts you 556 weapon to 300blk, requires a 300blk barrel.]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.CustomPros = {
+}
+ATT.DamageMaxMult = 60/54
+ATT.DamageMinMult = 42.11/34.1
+ATT.PhysBulletMuzzleVelocityMult = 605/957
+ATT.DamageLookupTable = false
+ATT.PenetrationMult =      30/23
+ATT.HeatPerShotMult = 1.3
+ATT.RicochetChanceMult = 30/26
+ATT.ArmourPiercingMult = 36/33
+ATT.PenetrationDeltaMult = 36/33
+ATT.RecoilUpMult   = 4.5/3.25
+ATT.RecoilSideMult   = 0.8/0.6
+ATT.RecoilUpRandomMult   = 0.3/0.55
+ATT.RecoilSideRandomMult   = 0.5/0.65
+ATT.RecoilAutoControlMult = 3.7/3.6 
+ATT.VisualRecoilPunchSightsMult = 15/10
+ATT.VisualRecoilPositionBumpUpMult = 0.05/-0.15
+ATT.RecoilKickMult = 0.65/0.3
+ATT.ShellModel = "models/weapons/arc9/darsu_eft/shells/300blk.mdl"
+local path = "weapons/darsu_eft/mcxmpx/"
+
+ATT.ShootPitchVariation = 0
+ATT.DistantShootVolume = 0.05
+ATT.DistantShootVolumeActual = 0.05
+
+ATT.ShootSound = { path .. "fire_new/mcx_outdoor_close1.ogg", path .. "fire_new/mcx_outdoor_close2.ogg", path .. "fire_new/mcx_outdoor_close3.ogg", path .. "fire_new/mcx_outdoor_close4.ogg" }
+ATT.LayerSound = path .. "fire_new/mcx_outdoor_close_tail.ogg"
+
+ATT.ShootSoundSilenced = { path .. "fire_new/mcx_outdoor_silenced_close1.ogg", path .. "fire_new/mcx_outdoor_silenced_close2.ogg", path .. "fire_new/mcx_outdoor_silenced_close3.ogg", path .. "fire_new/mcx_outdoor_silenced_close4.ogg" }
+ATT.LayerSoundSilenced = path .. "fire_new/mcx_outdoor_silenced_close_tail.ogg"
+
+ATT.ShootSoundIndoor = { path .. "fire_new/mcx_indoor_close1.ogg", path .. "fire_new/mcx_indoor_close2.ogg", path .. "fire_new/mcx_indoor_close3.ogg", path .. "fire_new/mcx_indoor_close4.ogg" }
+ATT.LayerSoundIndoor = path .. "fire_new/mcx_indoor_close_tail.ogg"
+
+ATT.ShootSoundSilencedIndoor = { path .. "fire_new/mcx_indoor_silenced_close1.ogg", path .. "fire_new/mcx_indoor_silenced_close2.ogg", path .. "fire_new/mcx_indoor_silenced_close3.ogg", path .. "fire_new/mcx_indoor_silenced_close4.ogg" }
+ATT.LayerSoundSilencedIndoor = path .. "fire_new/mcx_indoor_silenced_close_tail.ogg"
+
+ATT.DistantShootSound = { path .. "fire_new/mcx_outdoor_distant1.ogg", path .. "fire_new/mcx_outdoor_distant2.ogg" }
+ATT.DistantShootSoundSilenced = { path .. "fire_new/mcx_outdoor_silenced_distant1.ogg", path .. "fire_new/mcx_outdoor_silenced_distant2.ogg" }
+ATT.DistantShootSoundIndoor = { path .. "fire_new/mcx_indoor_distant1.ogg", path .. "fire_new/mcx_indoor_distant2.ogg" }
+ATT.DistantShootSoundSilencedIndoor = { path .. "fire_new/mcx_indoor_silenced_distant1.ogg", path .. "fire_new/mcx_indoor_silenced_distant2.ogg" }
+ATT.Ammo = "ar2"
+
+ATT.Attachments = {
+    {
+        PrintName = "Custom slot",
+        Pos = Vector(0, 0, 1),
+        Ang = Angle(0, 0, 0),
+        Category = "eft_ammo_300blk",
+        Integral = true
+    },
+}
+
+
+ATT.Category = {"eft_ammo_556"}
+
+ARC9.LoadAttachment(ATT, "eft_ammo_556to300")

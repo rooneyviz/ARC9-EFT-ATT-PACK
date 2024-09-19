@@ -17,12 +17,12 @@ ARC9EFT.AK_AnimsHook = function(swep, anim)
     -- 2 - chamber
     -- 3 - mag
 
-    if elements["545"] then ending = "545"
+    if elements["long545"] then ending = "long545"
     elseif elements["556"] then ending = "556"
     elseif elements["762"] then ending = "762"
     elseif elements["60rnd"] then ending = "60rnd"
     elseif elements["10rnd"] then ending = "10rnd"
-    elseif elements["long545"] then ending = "long545"
+    elseif elements["545"] then ending = "545"
     elseif elements["long762"] then ending = "long762"
     elseif elements["smalldrum"] then ending = "smalldrum"
     elseif elements["bigdrum"] then ending = "bigdrum"

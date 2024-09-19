@@ -21,31 +21,6 @@ local ATT = {}
 
 
 
-
-ATT = {}
-
-
-ATT.PrintName = "ARSENAL 4 Piece Flash Hider"
-ATT.CompactName = "4 piece"
-ATT.Icon = nil
-ATT.Description = [[Bell shaped flash hider intended for M43 and 5.45 usage. Reduces muzzle flash while deeply heavening the barrel.]]
-ATT.Category = {"eft_ak74_muzzle", "eft_ak103_muzzle", "eft_ak_ttak", "eft_rpk16_muzzle","eft_ak101_muzzle"}
-ATT.SortOrder = 1
-ATT.MuzzleParticleOverride = "muzzleflash_mp5"
-
-ATT.Model = "models/weapons/arc9/darsu_eft/mods/ak104_flash.mdl"
-ATT.Scale = 1.25
-ATT.ModelOffset = Vector(0, 0, 0)
-ATT.ModelAngleOffset = Angle(0,0, 0)
-ATT.EFTErgoAdd = -2
-ATT.CustomCons = { Ergonomics = "-2" }
-
-ATT.RecoilMult = 0.95
-ATT.VisualRecoilMult = 0.95
-ATT.PhysBulletMuzzleVelocityMult = 1.015
-ATT.NoFlash = true
-
-ARC9.LoadAttachment(ATT, "eft_muz_4pc")
 ///////////////////////////////////////      eft_frontsight
 
 
@@ -123,12 +98,15 @@ ATT.MenuCategory = "ARC9 - EFT Attachments"
 
 
 
-ATT.Category = {"eft_tactical_top","eft_tactical_top_big","eft_optic_small","eft_optic_large"}
+ATT.Category = {"eft_tactical_top","eft_tactical_top_big","eft_optic_small","eft_optic_large","eft_optic_medium","eft_rearsight"}
+
+
 
 ATT.Attachments = {
 		{
+	
         PrintName = "Tactical",
-        Category = {"eft_tactical_top","eft_tactical_top_big","eft_optic_small","eft_optic_large","eft_optic_medium"},
+        Category = {"eft_tactical_top","eft_tactical_top_big","eft_optic_small","eft_optic_large","eft_optic_medium","eft_rearsight"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0,0),
         Icon_Offset = Vector(1, 0, 0),
@@ -137,7 +115,7 @@ ATT.Attachments = {
     },
 }
 
-ARC9.LoadAttachment(ATT, "eft_optic_distance")
+ARC9.LoadAttachment(ATT, "eft_optic_distancea")
 
 ATT = {}
 
@@ -301,30 +279,6 @@ ARC9.LoadAttachment(ATT, "eft_ak100_rearsightblock")
 
 
 
-ATT = {}
-
-ATT.PrintName = "XM177 5.56x45 flash hider"
-ATT.CompactName = "XM177"
-ATT.Icon = nil
-ATT.Description = [[Flash hider designed for special forces operations at night.]]
-ATT.SortOrder = 0
-ATT.MenuCategory = "ARC9 - EFT Attachments"
-
-ATT.Model = "models/weapons/arc9_eft_shared/atts/muzzle/muzzle_xm177.mdl"
-ATT.MuzzleParticle = "muzzleflash_suppressed"
-ATT.NoFlash = true
-ATT.EFTErgoAdd = -10
-ATT.CustomCons = { Ergonomics = "-10" }
-ATT.ShootSound = { "weapons/darsu_eft/ak/fire_new/akm_close_loop_1.ogg", "weapons/darsu_eft/ak/fire_new/akm_close_loop_2.ogg", "weapons/darsu_eft/ak/fire_new/akm_close_loop_3.ogg", "weapons/darsu_eft/ak/fire_new/akm_close_loop_4.ogg" }
-ATT.CustomPros = { Changes_sound = True }
-
-ATT.RecoilMult = 0.96
-ATT.VisualRecoilMult = 0.96
-
-ATT.Category = {"eft_ar15_muzzle", "eft_ak101_muzzle"}
-
-ARC9.LoadAttachment(ATT, "eft_muzzle_xm177")
-
 
 
 ATT = {}
@@ -432,13 +386,7 @@ ATT.IKAnimationProxy = {
         }
     }
 } -- When an animation event plays, override it with one based on this LHIK model.
-ATT.IKGunMotionQCA = 2
 
-ATT.IKGunMotionMult = 0.5
-ATT.IKGunMotionAngleMult = 0.5
-
-ATT.IKCameraMotionQCA = 3
-ATT.IKCameraMotionOffsetAngle = Angle(0, 90, 2.5)
 
 ATT.CamCoolViewUBGL = false
 
@@ -527,28 +475,6 @@ ATT.Attachments = {
 
 ARC9.LoadAttachment(ATT, "eft_m203_rail")
 
-ATT = {}
-
-ATT.PrintName = "AR-15 Colt A1 pistol grip"
-ATT.CompactName = "Colt A1"
-ATT.Description = [[Colt A1 polymer pistol grip can be installed on any weapon compatible with AR-15 grips. Standard service grip for all AR-15-based weapons of US Army and USMC.]]
-ATT.Icon = Material("entities/eft_attachments/pgrips/ar15grips/a2.png", "mips smooth")
-
-ATT.Model = "models/weapons/arc9/darsu_eft/mods/pistolgrip_ar15_colt_a1.mdl"
-
-ATT.HasGrip = true
-
-ATT.EFTErgoAdd = 4
-ATT.CustomPros = { Ergonomics = "+4" }
-
-ATT.SortOrder = 0
-ATT.Category = "eft_ar15_pgrip"
-ATT.MenuCategory = "ARC9 - EFT Attachments"
-
-
-ARC9.LoadAttachment(ATT, "eft_ar_pgrip_colta1")
-
-
 
 
 ATT = {}
@@ -561,7 +487,7 @@ ATT.Pros = {}
 ATT.Cons = {}
 ATT.SortOrder = 0
 
-
+ATT.Max = 1
 
 
 ATT.Model = "models/weapons/arc9_eft_shared/atts/muzzle/ar15_glsight.mdl"
@@ -583,14 +509,26 @@ ATT.Category = {"ar15_glsight"}
 
 
 ATT.ModelOffset = Vector(3.65, -15,2)
-ATT.ModelAngleOffset = Angle(-90, 0, 90)
+ATT.ModelAngleOffset = Angle(0, 90, 90)
 
 ATT.AimDownSightsTimeUBGL = 0.4
 
 ATT.Sights = {
     {
-        Pos = Vector(2.3, 12, -3.3),
-        Ang = Angle(0.29, -2.5+0.35-90, -2),
+        Pos = Vector(2.4, 2.397, -.7),
+        Ang = Angle(0, -95, 0),
+        Magnification = 1.1,
+        ViewModelFOV = 50,
+        UBGLOnly = true,
+        CrosshairInSights = false,
+        OnSwitchToSight = function(self, slottbl)
+            if CLIENT then ARC9EFTdrawnumber(0) end
+        end,
+    },
+
+    {
+        Pos = Vector(2.4, 2.397, -.7),
+        Ang = Angle(0, -95, 0),
         Magnification = 1.1,
         ViewModelFOV = 50,
         UBGLOnly = true,
@@ -601,8 +539,8 @@ ATT.Sights = {
     },
 
     {
-        Pos = Vector(2.3, 12, -4.3),
-        Ang = Angle(0.3, -5+0.35-90, -2),
+        Pos = Vector(2.4, 2.397, -.7),
+        Ang = Angle(0, -95, 0),
         Magnification = 1.1,
         ViewModelFOV = 50,
         UBGLOnly = true,
@@ -612,8 +550,8 @@ ATT.Sights = {
         end,
     },
     {
-        Pos = Vector(2.375, 12, -6.15),
-        Ang = Angle(0.48, -5-4.6+0.3-90, -2),
+        Pos = Vector(2.4, 2.397, -.7),
+        Ang = Angle(0, -95, 0),
         Magnification = 1.1,
         ViewModelFOV = 50,
         UBGLOnly = true,
@@ -623,8 +561,8 @@ ATT.Sights = {
         end,
     },
     {
-        Pos = Vector(2.45, 12, -8.15),
-        Ang = Angle(0.7, -5-9.45+0.3-90, -2),
+        Pos = Vector(2.4, 2.397, -.7),
+        Ang = Angle(0, -95, 0),
         Magnification = 1.1,
         ViewModelFOV = 50,
         UBGLOnly = true,
@@ -634,8 +572,8 @@ ATT.Sights = {
         end,
     },
     {
-        Pos = Vector(2.54, 12, -10.1),
-        Ang = Angle(0.95, -5-14.1+0.4-90, -2),
+        Pos = Vector(2.4, 2.397, -.7),
+        Ang = Angle(0, -95, 0),
         Magnification = 1.1,
         ViewModelFOV = 50,
         UBGLOnly = true,
@@ -645,8 +583,8 @@ ATT.Sights = {
         end,
     },
     {
-        Pos = Vector(2.61, 12, -12.65),
-        Ang = Angle(1.17, -5-19.6+0.35-90, -2),
+        Pos = Vector(2.4, 2.397, -.7),
+        Ang = Angle(0, -95, 0),
         Magnification = 1.1,
         ViewModelFOV = 50,
         UBGLOnly = true,
@@ -656,8 +594,8 @@ ATT.Sights = {
         end,
     },
     {
-        Pos = Vector(2.75, 12-5, -23.7+5),
-        Ang = Angle(2.5, -5-37.8+0.3-90, -4),
+        Pos = Vector(2.4, 2.397, -.7),
+        Ang = Angle(0, -95, 0),
         Magnification = 1.1,
         ViewModelFOV = 50,
         UBGLOnly = true,
@@ -668,7 +606,7 @@ ATT.Sights = {
     },
 }
 
-local gp25zeroing = {-5, -6.9, -9.6, -13.45, -14.1, -24.6, -45} -- negro
+local gp25zeroing = {0,-5, -6.9, -9.6, -13.45, -14.1, -24.6, -45} 
 
 ATT.ShootAngOffsetHook = function(swep, val) 
     if swep:GetUBGL() and swep:GetInSights() then
@@ -686,7 +624,7 @@ end
 ATT.UBGLExclusiveSightsUBGL = true
 
 ARC9.LoadAttachment(ATT, "eft_m203_sight")
-local ATT = {}
+ATT = {}
 
 ATT.PrintName = [[M203 quadrant sight mount ]]
 ATT.CompactName = [[quadrant sight mount]]
@@ -703,13 +641,13 @@ ATT.Category = {"eft_tactical", }
 
 ATT.Model = "models/weapons/arc9_eft_shared/atts/muzzle/ar15_rail_glsight_mount.mdl"
 ATT.ModelOffset = Vector(3.33, -3.17, 19.75)
-ATT.ModelAngleOffset = Angle(-90, 90, 180)
+ATT.ModelAngleOffset = Angle(90, 90, 0)
 ATT.Attachments = {
     {
         PrintName = "Quadrant Sight",
         Category = {"ar15_glsight"},
         Bone = "weapon",
-        Pos = Vector(0, 0, 0),
+        Pos = Vector(-.1, .3, -.05),
         Ang = Angle(0, 0, 0),
 		Icon_Offset = Vector(1, 1, 1),
 
@@ -777,7 +715,58 @@ ATT.LHIK_Priority = 2
 ATT.ModelMaterial = "models/weapons/saa/shared/unlit_transparent"
 
 ATT.Category = "eft_foregrip_small"
-ARC9.LoadAttachment(ATT, "eft_foregrip_c_clamp")
+
+ATT.Attachments = {
+    {
+        PrintName = "grip",
+        Category = {"eft_foregrip_small"},
+        Pos = Vector(0, 0, 0),
+        --Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+        Icon_Offset = Vector(0, 0, 1),
+    },
+}
+ARC9.LoadAttachment(ATT, "eft_foregrip_c_clamp_ak_picatinny")
+
+ATT = {}
+
+ATT.PrintName = "(AK)C-CLAMP"
+ATT.CompactName = "(AK)C-CLAMP"
+ATT.Icon = nil
+ATT.Description = [[A Method Of Gripping A Weapon. 
+]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.EFTErgoAdd = 1
+ATT.CustomPros = { Ergonomics = "+1" }
+ATT.RecoilMult = 0.99
+ATT.VisualRecoilMult = 0.99
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/ak_hg_magpul_moe.mdl"
+ATT.ModelAngleOffset = Angle(10,90, 90)
+ATT.ModelOffset = Vector(0.3, -03.65, 01.65)
+
+ATT.LHIK = true 
+ATT.LHIK_Priority = 2
+
+ATT.ModelMaterial = "models/weapons/saa/shared/unlit_transparent"
+
+ATT.Category = "eft_foregrip_mlok"
+
+ATT.Attachments = {
+    {
+        PrintName = "grip",
+        Category = {"eft_mount_mlok41","eft_foregrip_mlok"},
+        Pos = Vector(0, 0, 0),
+        --Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+        Icon_Offset = Vector(0, 0, 1),
+    },
+}
+
+
+ARC9.LoadAttachment(ATT, "eft_foregrip_c_clamp_mlok")
 
 ATT = {}
 
@@ -795,8 +784,8 @@ ATT.RecoilMult = 0.99
 ATT.VisualRecoilMult = 0.99
 
 ATT.Model = "models/weapons/arc9/darsu_eft/mods/ak_hg_magpul_moe.mdl"
-ATT.ModelAngleOffset = Angle(10,90, 10)
-ATT.ModelOffset = Vector(0.3, -04, 1.7)
+ATT.ModelAngleOffset = Angle(10,90, 0)
+ATT.ModelOffset = Vector(0.4, -04, 1.35)
 ATT.ModelScale = .75
 
 ATT.LHIK = true 
@@ -805,7 +794,58 @@ ATT.LHIK_Priority = 2
 ATT.ModelMaterial = "models/weapons/saa/shared/unlit_transparent"
 
 ATT.Category = "eft_foregrip_small"
-ARC9.LoadAttachment(ATT, "eft_foregrip_c_clampAR")
+
+ATT.Attachments = {
+    {
+        PrintName = "grip",
+        Category = {"eft_foregrip_small"},
+        Pos = Vector(0, 0, 0),
+        --Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+        Icon_Offset = Vector(0, 0, 1),
+    },
+}
+
+ARC9.LoadAttachment(ATT, "eft_foregrip_c_clampAR_picatiinny")
+
+ATT = {}
+
+ATT.PrintName = "(AR)C-CLAMP"
+ATT.CompactName = "(AR)C-CLAMP"
+ATT.Icon = nil
+ATT.Description = [[A Method Of Gripping A Weapon. 
+]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.EFTErgoAdd = 1
+ATT.CustomPros = { Ergonomics = "+1" }
+ATT.RecoilMult = 0.99
+ATT.VisualRecoilMult = 0.99
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/ak_hg_magpul_moe.mdl"
+ATT.ModelAngleOffset = Angle(10,90, 90)
+ATT.ModelOffset = Vector(0.4, -3.65, 1)
+ATT.ModelScale = .75
+
+ATT.LHIK = true 
+ATT.LHIK_Priority = 2
+
+ATT.ModelMaterial = "models/weapons/saa/shared/unlit_transparent"
+
+ATT.Attachments = {
+    {
+        PrintName = "grip",
+        Category = {"eft_mount_mlok41","eft_foregrip_mlok"},
+        Pos = Vector(0, 0, 0),
+        --Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+        Icon_Offset = Vector(0, 0, 1),
+    },
+}
+
+ATT.Category = "eft_foregrip_mlok"
+ARC9.LoadAttachment(ATT, "eft_foregrip_c_clampAR_mlok")
 
 ATT = {}
 
@@ -927,8 +967,6 @@ ATT.SortOrder = 0
 ATT.MenuCategory = "ARC9 - EFT Attachments"
 
 
-ATT.RecoilMult = 1.1
-ATT.VisualRecoilMult = 1.1
 
 
 ATT.Attachments = {
@@ -942,6 +980,55 @@ ATT.Attachments = {
 
 ATT.Category = {"eft_foregrip_large","eft_foregrip_small"}
 ARC9.LoadAttachment(ATT, "eft_foregrip_backsdssdsdds")
+ATT = {}
+
+ATT.PrintName = "Foregrip forward"
+ATT.CompactName = "Foregrip forward"
+ATT.Icon = nil
+ATT.Description = [[[puts your foregrip forward by a little bit. 
+]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+
+
+
+ATT.Attachments = {
+    {
+        PrintName = "grip",
+        Category = "eft_foregrip_small",
+        Pos = Vector(-1, 0, 0),
+        Ang = Angle(0, 0, 0),
+    },
+}
+
+ATT.Category = {"eft_foregrip_large","eft_foregrip_small"}
+ARC9.LoadAttachment(ATT, "eft_foregrip_forawrdasdas")
+ATT = {}
+
+ATT.PrintName = "Foregrip forward"
+ATT.CompactName = "Foregrip forward"
+ATT.Icon = nil
+ATT.Description = [[[puts your foregrip forward by a little bit. 
+]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+
+
+
+ATT.Attachments = {
+    {
+        PrintName = "grip",
+        Category = {"eft_mount_mlok41","eft_foregrip_mlok"},
+        Pos = Vector(-1, 0, 0),
+        Ang = Angle(0, 0, 0),
+    },
+}
+
+ATT.Category = {"eft_foregrip_mlok"}
+ARC9.LoadAttachment(ATT, "eft_foregrip_forawrdasdas_mlok")
+
 ATT = {}
 
 ATT.PrintName = "fold sights"
@@ -1056,62 +1143,6 @@ ATT.Attachments = {
 
 
 ARC9.LoadAttachment(ATT, "eft_m870_barrel_508_vent_rib")
-
-ATT = {}
-
-ATT.PrintName = "(AK)C-CLAMP"
-ATT.CompactName = "FIXED(AK)C-CLAMP"
-ATT.Icon = nil
-ATT.Description = [[A Method Of Gripping A Weapon. 
-]]
-ATT.SortOrder = 0
-ATT.MenuCategory = "ARC9 - EFT Attachments"
-
-ATT.EFTErgoAdd = 1
-ATT.CustomPros = { Ergonomics = "+1" }
-ATT.RecoilMult = 0.99
-ATT.VisualRecoilMult = 0.99
-
-ATT.Model = "models/weapons/arc9/darsu_eft/mods/ak_hg_magpul_moe.mdl"
-ATT.ModelAngleOffset = Angle(10,90, 0)
-ATT.ModelOffset = Vector(0.3, -04, 02)
-
-ATT.LHIK = true 
-ATT.LHIK_Priority = 2
-
-ATT.ModelMaterial = "models/weapons/saa/shared/unlit_transparent"
-
-ATT.Category = "eft_foregrip_fix"
-ARC9.LoadAttachment(ATT, "eft_foregrip_c_clampfix")
-
-ATT = {}
-
-ATT.PrintName = "(AR)C-CLAMP"
-ATT.CompactName = "FIXED(AR)C-CLAMP"
-ATT.Icon = nil
-ATT.Description = [[A Method Of Gripping A Weapon. 
-]]
-ATT.SortOrder = 0
-ATT.MenuCategory = "ARC9 - EFT Attachments"
-
-ATT.EFTErgoAdd = 1
-ATT.CustomPros = { Ergonomics = "+1" }
-ATT.RecoilMult = 0.99
-ATT.VisualRecoilMult = 0.99
-
-ATT.Model = "models/weapons/arc9/darsu_eft/mods/ak_hg_magpul_moe.mdl"
-ATT.ModelAngleOffset = Angle(10,-90, 10)
-ATT.ModelOffset = Vector(0.3, -04, 01.5)
-ATT.ModelScale = .75
-
-ATT.LHIK = true 
-ATT.LHIK_Priority = 2
-
-ATT.ModelMaterial = "models/weapons/saa/shared/unlit_transparent"
-
-ATT.Category = "eft_foregrip_fix"
-ARC9.LoadAttachment(ATT, "eft_foregrip_c_clampARfix")
-
 ATT = {}
 
 ATT.PrintName = "Glock rear sight mount"
@@ -1139,7 +1170,7 @@ ATT.Attachments = {
         Pos = Vector(-2, 0, .1),
         --Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-        Icon_Offset = Vector(0, 0, 1),
+        Icon_Offset = Vector(-2, 0, .5),
         ExtraSightDistance = -4    },
 }
 
@@ -1172,7 +1203,7 @@ ATT.Attachments = {
         Pos = Vector(4.5, 0, .06),
         --Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-        Icon_Offset = Vector(0, 0, 1),
+        Icon_Offset = Vector(3, 0, .5),
         ExtraSightDistance = -4    },
 }
 
@@ -1354,11 +1385,11 @@ ATT = {}
 ATT.PrintName = "Universal picatinny"
 ATT.CompactName = "Universal picatinny"
 ATT.Icon = nil
-ATT.Description = [[Use virtually all picatinny attachments.]]
+ATT.Description = [[Use virtually all picatinny attachments(no grips), yes this is stupid i know.]]
 ATT.SortOrder = 1
 
 
-ATT.Category = {"eft_rearsight","eft_frontsight","eft_tactical","eft_tactical_big","eft_tactical_top_big","eft_tactical_top","eft_foregrip_small","eft_foregrip_big","eft_optic_small","eft_offset_mount","eft_optic_large","eft_optic_medium"}
+ATT.Category = {"eft_rearsight","eft_frontsight","eft_tactical","eft_tactical_big","eft_tactical_top_big","eft_tactical_top","eft_optic_small","eft_offset_mount","eft_optic_large","eft_optic_medium"}
 ATT.MenuCategory = "ARC9 - EFT Attachments"
 
 
@@ -1370,7 +1401,7 @@ ATT.ModelOffset = Vector(0, 0, -0)
 ATT.Attachments = {
     {
         PrintName = "Picatinny",
-        Category = {"eft_rearsight","eft_frontsight","eft_tactical","eft_tactical_big","eft_tactical_top_big","eft_tactical_top","eft_foregrip_small","eft_foregrip_big","eft_optic_small","eft_offset_mount","eft_optic_large","eft_optic_medium"},
+        Category = {"eft_rearsight","eft_frontsight","eft_tactical","eft_tactical_big","eft_tactical_top_big","eft_tactical_top","eft_optic_small","eft_offset_mount","eft_optic_large","eft_optic_medium"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(0, -1, 1),
@@ -1432,7 +1463,7 @@ ATT.MenuCategory = "ARC9 - EFT Attachments"
 ATT.Model = "models/weapons/arc9/darsu_eft/mods/tti_rmr_cover.mdl"
 ATT.ModelOffset = Vector(0.04, 0, 0.039)
 
-ATT.Category = {"eft_rmr"}
+ATT.Category = {"eft_g17_zt_cap"}
 
 
 ARC9.LoadAttachment(ATT, "eft_tac_g17_tti_cap")
@@ -1482,15 +1513,6 @@ ATT.SortOrder = 0
 ATT.MenuCategory = "ARC9 - EFT Attachments"
 
 ATT.Category = {"eft_g17_barrel"}
-ATT.Attachments = {
-    {
-        PrintName = "Muzzle",
-        Category = {"eft_glock_muzzle", "eft_g17_muzzle"},
-        ExcludeElements = {"eft_silencer_fd917", "eft_muzzle_g17_g4"},
-        Pos = Vector(0, 4.18, -0.55),
-        Ang = Angle(0, -90, 0),
-    },
-}
 
 
 ARC9.LoadAttachment(ATT, "eft_barrel_g34_tti")
@@ -1539,9 +1561,8 @@ ATT.Icon = nil
 
 ATT.Model = "models/weapons/arc9/darsu_eft/mods/fg_fortisshift.mdl"
 ATT.ModelMaterial = "models/weapons/saa/shared/unlit_transparent"
-ATT.ModelOffset = Vector (-15,-13,-30)
-ATT.ModelAngleOffset = Angle(180, 180, 0)
-ATT.LHIK_Priority = 2
+ATT.ModelOffset = Vector (26,-20,-20)
+ATT.LHIK_Priority = 20000
 ATT.LHIK = true
 
 ATT.EFTErgoAdd = 3
@@ -1564,6 +1585,21 @@ ATT.Attachments = {
         Icon_Offset = Vector(-1, 0, 0)
     }
 
+}
+
+
+ATT.ToggleStats = {
+    {
+        PrintName = "idk",
+        ModelAngleOffset = Angle(-90, 180, 0)
+
+    },
+    {
+        PrintName = "idk",
+        ModelAngleOffset = Angle(-90, 0, 0)
+
+
+    },
 }
 
 ARC9.LoadAttachment(ATT, "eft_pistol_grip21111")
@@ -1660,6 +1696,31 @@ ATT.Category = {"eft_g17_barrel"}
 
 
 ARC9.LoadAttachment(ATT, "eft_barrel_g17l_std")
+ATT = {}
+
+ATT.PrintName = "BCM GUNFIGHTER MOD 3 vertical foregrip (backwards)"
+ATT.CompactName = "MOD3(backwards)"
+ATT.Description = [[Lightweight polymer tactical grip produced by BCM.Mounted backwards]]
+ATT.Icon = Material("entities/eft_attachments/foregrips/bcm.png", "mips smooth")
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/fg_mlok_bcm3.mdl"
+ATT.ModelAngleOffset = Angle(0, 0,90)
+
+ATT.LHIK_Priority = 2
+ATT.LHIK = true
+ATT.ModelBodygroups = "3"
+
+ATT.EFTErgoAdd = 6
+ATT.CustomPros = { Ergonomics = "+6" }
+ATT.RecoilMult = 0.99
+ATT.VisualRecoilMult = 0.99
+
+ATT.SortOrder = 0
+ATT.Category = "eft_grip_keymod"
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+
+ARC9.LoadAttachment(ATT, "eft_foregrip_bcm_keymod_flipped")
 
 ATT = {}
 
@@ -1669,6 +1730,7 @@ ATT.Description = [[Lightweight polymer tactical grip produced by BCM.]]
 ATT.Icon = Material("entities/eft_attachments/foregrips/bcm.png", "mips smooth")
 
 ATT.Model = "models/weapons/arc9/darsu_eft/mods/fg_mlok_bcm3.mdl"
+ATT.ModelAngleOffset = Angle(0, 0,90)
 
 ATT.LHIK_Priority = 2
 ATT.LHIK = true
@@ -1708,52 +1770,57 @@ ATT.MenuCategory = "ARC9 - EFT Attachments"
 
 
 ARC9.LoadAttachment(ATT, "eft_foregrip_bcm_mlok")
-
 ATT = {}
 
-ATT.PrintName = "AR-15 BCM GUNFIGHTER MOD 3 Beavertail pistol grip"
-ATT.CompactName = "MOD3"
-ATT.Description = [[BCM MOD3 pistol grip with Beavertail can be installed on any weapon compatible with AR-15 "beavertail" style grips ,produced by BCM.]]
-ATT.Icon = nil
+ATT.PrintName = "BCM GUNFIGHTER MOD 3 vertical foregrip(backwards)"
+ATT.CompactName = "MOD3(backward)"
+ATT.Description = [[Lightweight polymer tactical grip produced by BCM.mounted backwards]]
+ATT.Icon = Material("entities/eft_attachments/foregrips/bcm.png", "mips smooth")
 
-ATT.Model = "models/weapons/arc9/darsu_eft/mods/pistolgrip_ar15_bcm_mod3.mdl"
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/fg_mlok_bcm3.mdl"
+ATT.ModelAngleOffset = Angle(0, 0,90)
+ATT.LHIK_Priority = 2
+ATT.LHIK = true
+ATT.ModelBodygroups = "4"
 
-ATT.HasGrip = true
-
-ATT.EFTErgoAdd = 7
-ATT.CustomPros = { Ergonomics = "+7" }
+ATT.EFTErgoAdd = 6
+ATT.CustomPros = { Ergonomics = "+6" }
+ATT.RecoilMult = 0.99
+ATT.VisualRecoilMult = 0.99
 
 ATT.SortOrder = 0
-ATT.Category = "eft_ar15_pgrip_m4"
+ATT.Category = "eft_foregrip_mlok"
 ATT.MenuCategory = "ARC9 - EFT Attachments"
 
 
-ARC9.LoadAttachment(ATT, "eft_ar_pgrip_bcm3")
+ARC9.LoadAttachment(ATT, "eft_foregrip_bcm_mlok_backwards")
 
 ATT = {}
 
-ATT.PrintName = "Magpul MOE SL Carbine stock"
-ATT.CompactName = "MOE SL"
-ATT.Description = [[A drop-in replacement buttstock for AR-15/M16 carbines. It uses mil-spec sized receiver extension tubes. Designed for the modern battlefield, the sleek profile, dual-side release latches, rolled toe, and angled rubber butt-pad are optimized for use with body armor or modular gear and provides for efficient shoulder transitions.]]
-ATT.Icon = Material("entities/eft_attachments/stocks/ds150.png", "mips smooth")
+ATT.PrintName = "BCM GUNFIGHTER MOD 3 vertical foregrip(backwards)"
+ATT.CompactName = "MOD3(backward)"
+ATT.Description = [[Lightweight polymer tactical grip produced by BCM.Mounted backwards.]]
+ATT.Icon = Material("entities/eft_attachments/foregrips/bcm.png", "mips smooth")
+ATT.ModelBodygroups = "5"
 
-ATT.Model = "models/weapons/arc9/darsu_eft/mods/stock_ar15_bcm_mod1.mdl"
-// i know its not bcm 
-ATT.HasStock = true
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/fg_mlok_bcm3.mdl"
+ATT.ModelAngleOffset = Angle(0, 0,0)
 
-ATT.RecoilMult = 0.68
-ATT.VisualRecoilMult = 0.68
-ATT.Folder = "Magpul"
+ATT.LHIK_Priority = 2
+ATT.LHIK = true
 
-ATT.EFTErgoAdd = 12
-ATT.CustomPros = { Ergonomics = "+12" }
+ATT.EFTErgoAdd = 6
+ATT.CustomPros = { Ergonomics = "+6" }
+ATT.RecoilMult = 0.99
+ATT.VisualRecoilMult = 0.99
 
 ATT.SortOrder = 0
-ATT.Category = "eft_ar_stock"
+ATT.Category = "eft_foregrip_small"
 ATT.MenuCategory = "ARC9 - EFT Attachments"
 
 
-ARC9.LoadAttachment(ATT, "eft_ar_stock_moe_sl")
+ARC9.LoadAttachment(ATT, "eft_foregrip_bcm_backwards")
+
 
 ATT = {}
 
@@ -1840,17 +1907,1313 @@ ATT.Category = {"eft_rearsight"}
 ATT.MenuCategory = "ARC9 - EFT Attachments"
 
 
-
-ATT.Sights = {
+ATT.ToggleStats = {
     {
-        Pos = Vector(0, 10, -0.50),
-        Ang = Angle(0, -0.65, 0),
+        PrintName = "sight pos",
+	   Sights = {
+    {
+        Pos = Vector(0, 10, -0.48),
+        Ang = Angle(0, -.62, 0),
         Magnification = 1.1,
-        ViewModelFOV = 63,
-        IsIronSight = true
+        ViewModelFOV = 33,
+        // IsIronSight = true
     }
 }
+
+    },
+    {
+        PrintName = "no sight pos",
+
+
+    },
+}
+
 
 ATT.FoldSights = true
 
 ARC9.LoadAttachment(ATT, "eft_rearsight_TWS")
+ATT = {}
+
+ATT.PrintName = "Foregrip back"
+ATT.CompactName = "Foregrip back"
+ATT.Icon = nil
+ATT.Description = [[[puts your foregrip back by a little bit. 
+]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+
+
+
+ATT.Attachments = {
+    {
+        PrintName = "grip",
+        Category = {"eft_mount_mlok41","eft_foregrip_mlok"},
+        Pos = Vector(1, 0, 0),
+        Ang = Angle(0, 0, 0),
+    },
+}
+
+ATT.Category = {"eft_mount_mlok41","eft_foregrip_mlok"}
+
+ARC9.LoadAttachment(ATT, "eft_foregrip_back_mlok")
+
+
+ATT = {}
+
+ATT.PrintName = "Zenit basis 4.1 inch rail"
+ATT.CompactName = "Zenit"
+ATT.Icon = Material("entities/eft_attachments/mount/mlok41.png", "mips smooth")
+ATT.Description = [[allows installation of additional equipment on the handguards with the Zenit basis rails .]]
+
+ATT.Model = "models/weapons/arc9_eft_shared/atts/mounts/mlok.mdl"
+ATT.ModelBodygroups = "1"
+ATT.ModelOffset = Vector(1, -.36, 0)
+ATT.ModelAngleOffset = Angle(0, 0, -90)
+
+ATT.Category = {"eft_zenitb"}
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+
+ATT.Attachments = {
+    {
+        PrintName = "Grip",
+        Category = {"eft_foregrip_small"},
+        Pos = Vector(0, 0, .71),
+        Ang = Angle(0, 0, 0),
+        Icon_Offset = Vector(0, 0, -1),
+    },
+}
+
+
+ARC9.LoadAttachment(ATT, "eft_mount_zen")
+
+ATT = {}
+
+ATT.PrintName = "Tan"
+ATT.CompactName = "Tan"
+ATT.Icon = nil
+ATT.Description = [[Tan colored receiver.]]
+
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.Category = {"eft_novesken4_color"}
+
+
+
+ARC9.LoadAttachment(ATT, "eft_novesken4gen3_tan")
+
+ATT = {}
+
+ATT.PrintName = "Black"
+ATT.CompactName = "Black"
+ATT.Icon = nil
+ATT.Description = [[Black colored receiver.]]
+
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.Category = {"eft_hbadger_color"}
+
+
+
+ARC9.LoadAttachment(ATT, "eft_hbadger_black")
+
+
+ATT = {}
+
+ATT.PrintName = "Magpul MBUS Gen2 flip-up front sight(heart front post)"
+ATT.CompactName = "MBUS(heart)"
+ATT.Icon = Material("entities/eft_attachments/ironsights/mbusf.png", "mips smooth")
+ATT.Description = [[The MBUS Gen2 removable flip-up front sight, installed on the mount. Manufactured by Magpul.front post has a heart.]]
+ATT.SortOrder = 1
+
+ATT.Model = "models/weapons/arc9_eft_shared/atts/ironsight/eft_frontsight_mbuslove.mdl"
+
+ATT.Category = {"eft_frontsight"}
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+
+ATT.EFTErgoAdd = 1
+ATT.CustomPros = { Ergonomics = "+1" }
+
+
+ATT.DrawFunc = function(swep, model)
+    if swep:GetValue("FoldSights") then
+    model:SetBodygroup(0, 1)
+    else
+    model:SetBodygroup(0, 0)
+    end
+end
+
+ATT.ModelOffset = Vector(0, 0, -0)
+ATT.ModelAngleOffset = Angle(0, 0, 0)
+
+
+ARC9.LoadAttachment(ATT, "eft_frontsight_mbus_love")
+
+
+///////////////////////////////////////      eft_frontsight_mbus_fde
+
+
+ATT = {}
+
+ATT.PrintName = "Magpul MBUS Gen2 flip-up front sight FDE(heart front post)"
+ATT.CompactName = "MBUS(heart)"
+ATT.Icon = Material("entities/eft_attachments/ironsights/mbusfdef.png", "mips smooth")
+ATT.Description = [[The MBUS Gen2 removable flip-up front sight, installed on the mount. Manufactured by Magpul.front post has a heart.]]
+ATT.SortOrder = 1
+
+ATT.Model = "models/weapons/arc9_eft_shared/atts/ironsight/eft_frontsight_mbuslove.mdl"
+ATT.ModelSkin = 1
+
+ATT.Category = {"eft_frontsight"}
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+
+ATT.EFTErgoAdd = 1
+ATT.CustomPros = { Ergonomics = "+1" }
+
+
+ATT.DrawFunc = function(swep, model)
+    if swep:GetValue("FoldSights") then
+        model:SetBodygroup(0, 1)
+    else
+        model:SetBodygroup(0, 0)
+    end
+end
+
+ATT.ModelOffset = Vector(0, 0, -0)
+ATT.ModelAngleOffset = Angle(0, 0, 0)
+
+
+ARC9.LoadAttachment(ATT, "eft_frontsight_mbus_fde_love")
+
+ATT = {}
+
+ATT.PrintName = "AR-15 5.56x45 7 inch	 barrel"
+ATT.CompactName = "AR-15 7\""
+ATT.Icon = Material("entities/eft_ar15_attachments/barrel/ar15_556x45_260mm_barrel.png", "mips smooth")
+ATT.Description = [[A 7 inch barrel for AR-15 based weapons for 5.56x45 NATO ammo. ]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+ATT.HasBarrel = true
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/barrel_ar15_hbadger.mdl"
+ATT.ModelBodygroups = "2"
+ATT.MuzzleDevice = true
+ATT.MuzzleDevice_Priority = 2
+ATT.BarrelLengthAdd = 1
+
+ATT.Category = {"eft_m4a1_barrel"}
+
+ATT.EFTErgoAdd = -4
+ATT.CustomCons = { Ergonomics = "-4" }
+ATT.RecoilMult = 0.99
+ATT.VisualRecoilMult = 0.99
+ATT.HeatCapacityMult = 1.1
+ATT.PhysBulletMuzzleVelocityMult = 0.75
+ATT.Spread = 3.61 * ARC9.MOAToAcc
+
+ATT.ActivateElements = {"barrel_260mm"}
+
+ATT.Attachments = {
+    {
+        PrintName = "Gas block",
+        Category = "eft_ar15_gasblock",
+        ExcludeElements = {"nostdgasblockpls"},
+        Pos = Vector(-4.59, 0, 0.25),
+        Ang = Angle(0, 0, 0),
+    },
+    {
+        PrintName = "Muzzle",
+        Category = "eft_ar15_muzzle",
+        Pos = Vector(-6.05),
+        Ang = Angle(0, 0, 0),
+    },
+}
+
+ARC9.LoadAttachment(ATT, "eft_barrel_ar15_9IN")
+
+ATT = {}
+
+ATT.PrintName = "AR-15 5.56x45 Integrally supressed 13inch"
+ATT.CompactName = "AR-15 13\" is"
+ATT.Icon = Material("entities/eft_ar15_attachments/barrel/ar15_556x45_260mm_barrel.png", "mips smooth")
+ATT.Description = [[A 9 inch barrel for AR-15 based weapons for 5.56x45 NATO ammo. ]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+ATT.HasBarrel = true
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/barrel_ar15_hbadger.mdl"
+ATT.ModelBodygroups = "1"
+ATT.BarrelLengthAdd = 2.5
+
+ATT.Category = {"eft_m4a1_barrel"}
+ATT.Silencer = true
+ATT.MuzzleParticle = "muzzleflash_suppressed"
+ATT.NoFlash = true
+ATT.EFTErgoAdd = -10
+ATT.CustomCons = { Ergonomics = "-10" }
+ATT.RecoilMult = 0.89
+ATT.VisualRecoilMult = 0.89
+ATT.HeatCapacityMult = 1.2
+ATT.PhysBulletMuzzleVelocityMult = 0.76
+ATT.Spread = 3 * ARC9.MOAToAcc
+
+ATT.ActivateElements = {"barrel_260mm"}
+
+ATT.Attachments = {
+    {
+        PrintName = "Gas block",
+        Category = "eft_ar15_gasblock",
+        ExcludeElements = {"nostdgasblockpls"},
+        Pos = Vector(-4.59, 0, 0.25),
+        Ang = Angle(0, 0, 0),
+    }
+}
+
+ARC9.LoadAttachment(ATT, "eft_barrel_ar15_int_supressed")
+
+ATT = {}
+
+ATT.PrintName = "zoomed in aiming"
+ATT.CompactName = "zoomed in"
+ATT.Icon = nil
+ATT.Description = [[makes your charachter aim in more when aiming]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+
+
+
+ATT.Category = {"eft_tactical_top","eft_tactical_top_big","eft_optic_small","eft_optic_large","eft_rearsight"}
+
+ATT.Attachments = {
+		{
+        PrintName = "Tactical",
+        Category = {"eft_tactical_top","eft_tactical_top_big","eft_optic_small","eft_optic_large","eft_optic_medium","eft_rearsight"},
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0,0),
+        Icon_Offset = Vector(1, 0, 0),
+        ExtraSightDistance = -2,
+
+    },
+}
+
+ARC9.LoadAttachment(ATT, "eft_optic_distance_minus")
+ATT = {}
+
+ATT.PrintName = "AR-15 5.56x45 12\" barrel"
+ATT.CompactName = "AR-15 12\""
+ATT.Icon = Material("entities/eft_ar15_attachments/barrel/ar15_556x45_260mm_barrel.png", "mips smooth")
+ATT.Description = [[A 12 inch barrel for AR-15 based weapons for 5.56x45 NATO ammo.]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+ATT.HasBarrel = true
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/barrel_ar15_hbadger.mdl"
+ATT.ModelBodygroups = "0"
+ATT.MuzzleDevice = true
+ATT.MuzzleDevice_Priority = 2
+ATT.BarrelLengthAdd = 2.75
+
+ATT.Category = {"eft_m4a1_barrel"}
+
+ATT.EFTErgoAdd = -9.5
+ATT.CustomCons = { Ergonomics = "-9.5" }
+ATT.RecoilMult = 0.975
+ATT.VisualRecoilMult = 0.975
+ATT.HeatCapacityMult = 1.045
+ATT.PhysBulletMuzzleVelocityMult = 0.89
+ATT.Spread = 3.19 * ARC9.MOAToAcc
+
+ATT.ActivateElements = {"barrel_260mm"}
+
+
+ATT.Attachments = {
+    {
+        PrintName = "Gas block",
+        Category = "eft_ar15_gasblock",
+        ExcludeElements = {"nostdgasblockpls"},
+        Pos = Vector(-4.59, 0, 0.25),
+        Ang = Angle(0, 0, 0),
+    },
+
+    {
+        PrintName = "Muzzle",
+        Category = "eft_ar15_muzzle",
+        Pos = Vector(-12.32, 0, 0),
+        Ang = Angle(0, 0, 0),
+    },
+}
+
+ARC9.LoadAttachment(ATT, "eft_barrel_ar15_12inches")
+
+ATT = {}
+
+ATT.PrintName = "Magpul MBUS Gen2 flip-up front sight PINK(heart front post)"
+ATT.CompactName = "MBUS PINK(heart)"
+ATT.Icon = nil
+ATT.Description = [[The MBUS Gen2 removable flip-up front sight, installed on the mount. Manufactured by Magpul.front post has a heart.]]
+ATT.SortOrder = 1
+
+ATT.Model = "models/weapons/arc9_eft_shared/atts/ironsight/eft_frontsight_mbuslove.mdl"
+ATT.ModelSkin = 2
+
+ATT.Category = {"eft_frontsight"}
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+
+ATT.EFTErgoAdd = 1
+ATT.CustomPros = { Ergonomics = "+1" }
+
+
+ATT.DrawFunc = function(swep, model)
+    if swep:GetValue("FoldSights") then
+        model:SetBodygroup(0, 1)
+    else
+        model:SetBodygroup(0, 0)
+    end
+end
+
+ATT.ModelOffset = Vector(0, 0, -0)
+ATT.ModelAngleOffset = Angle(0, 0, 0)
+
+
+ARC9.LoadAttachment(ATT, "eft_frontsight_mbus_fde_love_pink_megagay")
+
+ATT = {}
+
+ATT.PrintName = "Magpul MBUS Gen2 flip-up rear sight Pink"
+ATT.CompactName = "MBUS PINK"
+ATT.Icon = nil
+ATT.Description = [[The MBUS Gen2 removable flip-up rear sight, installed on the mount. Manufactured by Magpul.]]
+ATT.SortOrder = 1
+
+ATT.Model = "models/weapons/arc9_eft_shared/atts/ironsight/eft_rearsight_mbus.mdl"
+
+ATT.ModelMaterial = "models/weapons/arc9/darsu_eft/mods/eft_rearsight_mbus_pink"
+
+
+ATT.Category = {"eft_rearsight"}
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.Scale = 1
+ATT.ModelOffset = Vector(0, 0, -0)
+ATT.ModelAngleOffset = Angle(0, 0, 0)
+
+
+ATT.EFTErgoAdd = 1
+ATT.CustomPros = { Ergonomics = "+1" }
+
+
+ATT.DrawFunc = function(swep, model)
+    if swep:GetValue("FoldSights") then
+    model:SetBodygroup(0, 1)
+    else
+    model:SetBodygroup(0, 0)
+    end
+end
+
+ATT.Sights = {
+    {
+        Pos = Vector(0, 7.5, -1.345),
+        Ang = Angle(0, -0, 0),
+        Magnification = 1.1,
+        ViewModelFOV = 53,
+        IsIronSight = true
+    }
+}
+
+
+ARC9.LoadAttachment(ATT, "eft_rearsight_mbus_pink")
+
+
+ATT = {}
+
+ATT.PrintName = "Magpul MBUS Gen2 flip-up front sight Pink"
+ATT.CompactName = "MBUS PINK"
+ATT.Icon = nil
+ATT.Description = [[The MBUS Gen2 removable flip-up front sight, installed on the mount. Manufactured by Magpul.]]
+ATT.SortOrder = 1
+
+ATT.Model = "models/weapons/arc9_eft_shared/atts/ironsight/eft_frontsight_mbus.mdl"
+ATT.ModelMaterial = "models/weapons/arc9/darsu_eft/mods/eft_frontsight_mbus_pink"
+
+ATT.Category = {"eft_frontsight"}
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+
+ATT.EFTErgoAdd = 1
+ATT.CustomPros = { Ergonomics = "+1" }
+
+
+ATT.DrawFunc = function(swep, model)
+    if swep:GetValue("FoldSights") then
+    model:SetBodygroup(0, 1)
+    else
+    model:SetBodygroup(0, 0)
+    end
+end
+
+ATT.ModelOffset = Vector(0, 0, -0)
+ATT.ModelAngleOffset = Angle(0, 0, 0)
+
+
+ARC9.LoadAttachment(ATT, "eft_frontsight_mbus_pink")
+
+ATT = {}
+
+ATT.PrintName = "tactical forward"
+ATT.CompactName = "tactical forward"
+ATT.Icon = nil
+ATT.Description = [[moves tactical forward]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+
+
+
+ATT.Category = {"eft_tactical_top","eft_tactical_top_big","eft_optic_large","eft_rearsight","eft_ar_rearsight","eft_rearsight_hk416"}
+
+ATT.Attachments = {
+		{
+        PrintName = "Tactical",
+        Category = {"eft_tactical_top","eft_tactical_top_big","eft_optic_large","eft_rearsight","eft_ar_rearsight","eft_rearsight_hk416"},
+        Pos = Vector(-1, 0, 0),
+        Ang = Angle(0, 0,0),
+        Icon_Offset = Vector(0, 0, 0),
+        -- ExtraSightDistance = 8
+    },
+}
+
+ARC9.LoadAttachment(ATT, "eft_tactical_forward")
+ATT = {}
+
+ATT.PrintName = "tactical back"
+ATT.CompactName = "tactical back"
+ATT.Icon = nil
+ATT.Description = [[moves tactical back]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+
+
+
+ATT.Category = {"eft_tactical_top","eft_tactical_top_big","eft_optic_large","eft_rearsight","eft_ar_rearsight","eft_rearsight_hk416"}
+
+ATT.Attachments = {
+		{
+        PrintName = "Tactical",
+        Category = {"eft_tactical_top","eft_tactical_top_big","eft_optic_large","eft_rearsight","eft_ar_rearsight","eft_rearsight_hk416"},
+
+        Pos = Vector(1, 0, 0),
+        Ang = Angle(0, 0,0),
+        Icon_Offset = Vector(0, 0, 0),
+        -- ExtraSightDistance = 8
+    },
+}
+
+ARC9.LoadAttachment(ATT, "eft_tactical_back")
+ATT = {}
+
+ATT.PrintName = "Paheal light"
+ATT.CompactName = "paheal"
+ATT.Icon = Material("models/weapons/arc9/camo/rooney/paheallight.png")
+ATT.Category = "universal_camo"
+ATT.Description = [[paheal.]]
+ATT.MenuCategory = "ARC9 - Camos"
+ATT.CustomCamoTexture = "models/weapons/arc9/camo/rooney/paheallight"
+ATT.CustomCamoScale = 1
+ATT.SortOrder = 10
+ATT.Folder = "rooney"
+
+ARC9.LoadAttachment(ATT, "camo_arc9_base_flat_paheallight")
+ATT = {}
+
+ATT.PrintName = "Paheal Dark"
+ATT.CompactName = "paheal dark"
+ATT.Icon = Material("models/weapons/arc9/camo/rooney/pahealdark.png")
+ATT.Category = "universal_camo"
+ATT.Description = [[Paheal(Dark).]]
+ATT.MenuCategory = "ARC9 - Camos"
+ATT.CustomCamoTexture = "models/weapons/arc9/camo/rooney/pahealdark"
+ATT.CustomCamoScale = 1
+ATT.SortOrder = 10
+ATT.Folder = "rooney"
+
+ARC9.LoadAttachment(ATT, "camo_arc9_base_flat_pahealdark")
+
+ATT = {}
+
+ATT.PrintName = "zoomed out aiming"
+ATT.CompactName = "zoomed out"
+ATT.Icon = nil
+ATT.Description = [[makes your charachter not aim in as much when aiming]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+
+
+
+ATT.Category = {"eft_rmr"}
+
+
+ATT.Attachments = {
+		{
+        PrintName = "Tactical",
+        Category = {"eft_rmr"},
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0,0),
+        Icon_Offset = Vector(1, 0, 0),
+        ExtraSightDistance = 4,
+
+    },
+}
+
+ARC9.LoadAttachment(ATT, "eft_optic_distance_RMR")
+
+ATT = {}
+
+ATT.PrintName = "M16A2 Colt Rear Sight"
+ATT.CompactName = "M16A2"
+ATT.Icon = nil
+ATT.Description = [[Standard Rear sight for the M16A2.]]
+
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/m16a2_rear_sight.mdl"
+ATT.ModelBodygroups = "0"
+
+
+ATT.Category = {"eft_roo_a2_rs"}
+
+
+ARC9.LoadAttachment(ATT, "eft_M16A2_RS")
+ATT = {}
+
+ATT.PrintName = "M4 Colt Rear Sight"
+ATT.CompactName = "M4"
+ATT.Icon = nil
+ATT.Description = [[Standard Rear sight for the M4 carry handle.]]
+
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/m16a2_rear_sight.mdl"
+ATT.ModelBodygroups = "2"
+
+
+ATT.Category = {"eft_roo_a2_rs"}
+
+
+ARC9.LoadAttachment(ATT, "eft_M4A1_RS")
+
+ATT = {}
+
+ATT.PrintName = "Trijicon Rear night Sight"
+ATT.CompactName = "night"
+ATT.Icon = nil
+ATT.Description = [[Replacement sight for the M16A2 for use in night time conditions.]]
+
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/m16a2_rear_sight.mdl"
+ATT.ModelBodygroups = "1"
+
+
+ATT.Category = {"eft_roo_a2_rs"}
+
+
+ARC9.LoadAttachment(ATT, "eft_TRIJICON_RS")
+
+ATT = {}
+
+ATT.PrintName = "PF940 rear sight"
+ATT.CompactName = "PF940 RS"
+ATT.Icon = Material("entities/eft_glock_attachments/rs.png", "mips smooth")
+ATT.Description = [[A standard-issue rear sight for The PF940 Glock Parts kit.]]
+
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/pf940c_rs.mdl"
+ATT.ModelBodygroups = "0"
+ATT.ModelOffset = Vector(0, 0, -.01)
+
+ATT.Sights = {
+    {
+        Pos = Vector(0, 12, -0.55),
+        Ang = Angle(0, -0.05, 0),
+        Magnification = 1.1,
+        IsIronSight = false
+    }
+}
+
+
+ATT.Category = {"eft_g17_rs"}
+
+
+ARC9.LoadAttachment(ATT, "eft_rs_pf940_std")
+
+ATT = {}
+
+ATT.PrintName = "PF940 front sight"
+ATT.CompactName = "PF940 FS"
+ATT.Icon = Material("entities/eft_glock_attachments/fs.png", "mips smooth")
+ATT.Description = [[A standard-issue front sight for the PF940 Glock Parts Kit.]]
+
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+ATT.Category = {"eft_g17_fs"}
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/pf940c_fs.mdl"
+ATT.ModelBodygroups = "0"
+ATT.ModelAngleOffset = Angle(0, 90, 0)
+ATT.ModelOffset = Vector(0, -.053, -0.02)
+
+
+ARC9.LoadAttachment(ATT, "eft_fs_pf940_std")
+
+ATT = {}
+
+ATT.PrintName = "AR-15 Colt Triangular Carbine Length handguard"
+ATT.CompactName = "3Angle"
+ATT.Icon = nil
+ATT.Description = [[A carbine length handguard manufactured by Colt, a standard-issue handguard for the M4A1 assault rifles.]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+ATT.HasHG = true
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/handguard_ar15_colt_car15_tri_std.mdl"
+ATT.LHIK = true 
+-- ATT.LHIK_Priority = -22 -- needs lower hg
+ATT.EFTErgoAdd = 2
+ATT.CustomPros = { Ergonomvics = "+2" }
+ATT.HeatCapacityMult = 1.032
+ATT.Category = {"eft_ar15_hguard"}
+
+
+ARC9.LoadAttachment(ATT, "eft_hg_ar15_triangular_car15")
+ATT = {}
+
+ATT.PrintName = [[M203 quadrant sight mount ]]
+ATT.CompactName = [[quadrant sight mount]]
+ATT.Icon = nil
+ATT.Description = [[Quadrant Sight mount for for the M203 Grenade Launcher (ONLY WORKS ON LEFT RAIL).]]
+ATT.Pros = {}
+ATT.Cons = {}
+ATT.SortOrder = 0
+
+ATT.EFTErgoAdd = -1
+ATT.CustomCons = { Ergonomics = "-1" }
+ATT.Max = 1
+
+ATT.Category = {"eft_scope_trijicon", }
+
+ATT.Model = "models/weapons/arc9_eft_shared/atts/muzzle/m16a2_glsight_mount.mdl"
+ATT.ModelOffset = Vector(4.3, -15.4,1.04)
+ATT.ModelAngleOffset = Angle(0, 90, 0)
+ATT.Attachments = {
+    {
+        PrintName = "Quadrant Sight",
+        Category = {"ar15_glsight"},
+        Bone = "weapon",
+        Pos = Vector(.4, -.59, 1),
+        Ang = Angle(0, 0, -90),
+		Icon_Offset = Vector(1, 1, 1),
+
+    },
+    {
+        PrintName = "Scope",
+        Category = {"eft_scope_trijicon","eft_scope_compact"},
+        Bone = "weapon",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+		Icon_Offset = Vector(1, 1, 1),
+
+    },
+
+}
+
+ARC9.LoadAttachment(ATT, "eft_m203_trijimount")
+ATT = {}
+
+ATT.PrintName = "HRF Concepts RCM Magwell"
+ATT.CompactName = "HRF RCM"
+ATT.Icon = Material("entities/eft_ak_attachments/grip/HRF_RCM.png", "mips smooth")
+ATT.Description = [[The HRF Concepts RCM(Rifle Combat Magwell) is a magwell designed to speed up reloads for mil-spec ar15 receivers.]]
+ATT.Free = true
+ATT.Max = 1
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/magwell_rcm.mdl"
+ATT.BoneMerge = true
+ATT.Category = {"eft_custom_slot_m4a1","eft_custom_slot_mcx"}
+ATT.SortOrder = -99
+ATT.Folder = "Parts"
+
+ATT.EFTErgoAdd = 5
+ATT.CustomPros = { Ergonomics = "+5"}
+
+ATT.Attachments = {
+    {
+        PrintName = "Custom slot",
+        Pos = Vector(0, 0, 1),
+        Ang = Angle(0, 0, 0),
+        Category = {"eft_custom_slot","eft_custom_slot_m4a1"},
+    },
+}
+ARC9.LoadAttachment(ATT, "eft_ar15_magwell")
+ATT = {}
+
+ATT.PrintName = "cat fire selector"
+ATT.CompactName = "cat"
+ATT.Description = [[adds cat ears to your eft ar15 fire selector
+Design by rooneyviz.
+
+Sticker included in ARC9_AATT_PACK.]]
+ATT.Icon = Material("models/weapons/arc9/camo/rooney/FCG")
+
+ATT.Free = true
+
+ATT.Category = "stickers"
+ATT.Folder = "rooney"
+
+ATT.StickerMaterial = "models/weapons/arc9/camo/rooney/FCG"
+
+ARC9.LoadAttachment(ATT, "sticker_catears_fcg_m4a1_rooney")
+
+
+ATT = {}
+
+ATT.PrintName = "ATLAS BT10 bipod"
+ATT.CompactName = "B10"
+ATT.Icon = Material("entities/eft_pkm_attachments/bipod.png", "mips smooth")
+ATT.Description = [[A bipod for picatinny rails made by ATLAS.
+
+Note: bipods not function in EFT! (yet)
+But here they are using non official arc9 magic. Do not place them if you want original suffering experience]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.EFTErgoAdd = 2
+ATT.CustomPros = { Ergonomics = "+2" }
+ATT.VisualRecoilMult = 0.99
+ATT.RecoilMult = 0.99
+ATT.BipodPos = Vector(-2, -3, 1.5)
+ATT.BipodAng = Angle(0, 0, 0)
+ATT.SwayBipodMult = 0.5
+ATT.RecoilMultBipod = 0.75
+ATT.VisualRecoilMultBipod = 0.75
+ATT.SpreadAddBipod = -0.02
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/bipod_atlas_roo.mdl"
+ATT.ModelAngleOffset = Angle(0, 90, 0)
+ATT.ToggleStats = {
+    {
+        PrintName = "unfolded",
+        ModelBodygroups = "01",
+		Bipod = true
+    },
+    {
+        PrintName = "folded",
+        ModelBodygroups = "00",
+		Bipod = false
+    }
+}
+ATT.Category = {"eft_foregrip_small"}
+
+ARC9.LoadAttachment(ATT, "eft_atlas_bipod")
+
+ATT = {}
+
+ATT.PrintName = "AR-15 Q Sugar Weasel charging handle"
+ATT.CompactName = "Q SW"
+ATT.Icon = Material("entities/eft_ar15_attachments/charge/ar15_colt_charging_handle.png", "mips smooth")
+ATT.Description = [[Standard charging handle for the Q sugar weasel.]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+ATT.HasBolt = true
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/charge_ar15_colt_charging_handle.mdl"
+ATT.ModelMaterial = "models/weapons/arc9/darsu_eft/mods/sweasel_charge"
+
+ATT.Category = {"eft_ar15_charge"}
+
+ARC9.LoadAttachment(ATT, "eft_charge_ar15_Q_SW")
+
+ATT = {}
+
+ATT.PrintName = "AR-15 Radian Weapons Raptor charging handle Q"
+ATT.CompactName = "Q Raptor"
+ATT.Icon = Material("entities/eft_ar15_attachments/charge/ar15_radian_weapons_raptor_charging_handle.png", "mips smooth")
+ATT.Description = [[Raptor charging handle for AR-15 and compatible systems.
+Version shipped with the Q honey badger]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+ATT.HasBolt = true
+ATT.ModelMaterial = "models/weapons/arc9/darsu_eft/mods/hbadger_charge"
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/charge_ar15_radian_raptor_ambidextrous_charging_handle.mdl"
+ATT.EFTErgoAdd = 3
+ATT.CustomPros = { Ergonomics = "+3" }
+ATT.Category = {"eft_ar15_charge"}
+
+ARC9.LoadAttachment(ATT, "eft_charge_ar15_raptor_q_hbadger")
+
+ATT = {}
+
+ATT.PrintName = "Generic Anti-Walk Pins"
+ATT.CompactName = "AW Pins(2)"
+ATT.Icon = nil
+ATT.Description = [[Generic Anti-Walk pins for the FCG on an AR15.
+im ngl i have no idea what these do but they look cool????]]
+ATT.Free = true
+ATT.Max = 1
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/anti_rollout.mdl"
+ATT.BoneMerge = true
+ATT.Category = {"eft_custom_slot_m4a1","eft_custom_slot_mcx","eft_custom_slot_stm9"}
+ATT.SortOrder = -99
+ATT.Folder = "Parts"
+ATT.EFTErgoAdd = 5
+ATT.CustomPros = { Ergonomics = "+5"}
+
+ATT.Attachments = {
+    {
+        PrintName = "Custom slot",
+        Pos = Vector(0, 0, 1),
+        Ang = Angle(0, 0, 0),
+        Category = {"eft_custom_slot","eft_custom_slot_m4a1"},
+    },
+}
+ARC9.LoadAttachment(ATT, "eft_ar15_anti_rollout")
+ATT = {}
+
+ATT.PrintName = "Generic Anti-Walk Pins Black"
+ATT.CompactName = "AW Pins(B)(2)"
+ATT.Icon = nil
+ATT.Description = [[Generic Anti-Walk pins for the FCG on an AR15.
+im ngl i have no idea what these do but they look cool]]
+ATT.Free = true
+ATT.Max = 1
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/anti_rollout.mdl"
+ATT.BoneMerge = true
+ATT.Category = {"eft_custom_slot_m4a1","eft_custom_slot_mcx","eft_custom_slot_stm9"}
+ATT.SortOrder = -99
+ATT.ModelSkin = 1
+ATT.Folder = "Parts"
+
+ATT.EFTErgoAdd = 5
+ATT.CustomPros = { Ergonomics = "+5"}
+
+ATT.Attachments = {
+    {
+        PrintName = "Custom slot",
+        Pos = Vector(0, 0, 1),
+        Ang = Angle(0, 0, 0),
+        Category = {"eft_custom_slot","eft_custom_slot_m4a1"},
+    },
+}
+ARC9.LoadAttachment(ATT, "eft_ar15_anti_rollout_blk")
+
+ATT = {}
+
+ATT.PrintName = "Generic Anti-Walk Pins"
+ATT.CompactName = "AW Pins"
+ATT.Icon = nil
+ATT.Description = [[Generic Anti-Walk pins for the FCG on an AR15.
+im ngl i have no idea what these do but they look cool????]]
+ATT.Free = true
+ATT.Max = 1
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/anti_rollout.mdl"
+ATT.BoneMerge = true
+ATT.Category = {"eft_custom_slot_m4a1","eft_custom_slot_mcx","eft_custom_slot_stm9"}
+ATT.SortOrder = -99
+ATT.Folder = "Parts"
+ATT.EFTErgoAdd = 5
+ATT.CustomPros = { Ergonomics = "+5"}
+ATT.ModelBodygroups = "1"
+
+ATT.Attachments = {
+    {
+        PrintName = "Custom slot",
+        Pos = Vector(0, 0, 1),
+        Ang = Angle(0, 0, 0),
+        Category = {"eft_custom_slot","eft_custom_slot_m4a1"},
+    },
+}
+ARC9.LoadAttachment(ATT, "eft_ar15_anti_rollout1")
+ATT = {}
+
+ATT.PrintName = "Generic Anti-Walk Pins Black"
+ATT.CompactName = "AW Pins(B)"
+ATT.Icon = nil
+ATT.Description = [[Generic Anti-Walk pins for the FCG on an AR15.
+im ngl i have no idea what these do but they look cool]]
+ATT.Free = true
+ATT.Max = 1
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/anti_rollout.mdl"
+ATT.BoneMerge = true
+ATT.Category = {"eft_custom_slot_m4a1","eft_custom_slot_mcx","eft_custom_slot_stm9"}
+ATT.SortOrder = -99
+ATT.ModelSkin = 1
+ATT.Folder = "Parts"
+ATT.ModelBodygroups = "1"
+
+ATT.EFTErgoAdd = 5
+ATT.CustomPros = { Ergonomics = "+5"}
+
+ATT.Attachments = {
+    {
+        PrintName = "Custom slot",
+        Pos = Vector(0, 0, 1),
+        Ang = Angle(0, 0, 0),
+        Category = {"eft_custom_slot","eft_custom_slot_m4a1"},
+    },
+}
+ARC9.LoadAttachment(ATT, "eft_ar15_anti_rollout_blk1")
+
+
+ATT = {}
+
+ATT.PrintName = "Generic Anti-Walk Pins 50"
+ATT.CompactName = "AW Pins(50)"
+ATT.Icon = nil
+ATT.Description = [[Generic Anti-Walk pins for the FCG on an AR15.
+im ngl i have no idea what these do but they look cool]]
+ATT.Free = true
+ATT.Max = 1
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/anti_rollout.mdl"
+ATT.BoneMerge = true
+ATT.Category = {"eft_custom_slot_m4a1","eft_custom_slot_mcx","eft_custom_slot_stm9"}
+ATT.SortOrder = -99
+ATT.ModelSkin = 2
+ATT.Folder = "Parts"
+ATT.ModelBodygroups = "1"
+
+ATT.EFTErgoAdd = 5
+ATT.CustomPros = { Ergonomics = "+5"}
+
+ATT.Attachments = {
+    {
+        PrintName = "Custom slot",
+        Pos = Vector(0, 0, 1),
+        Ang = Angle(0, 0, 0),
+        Category = {"eft_custom_slot","eft_custom_slot_m4a1"},
+    },
+}
+ARC9.LoadAttachment(ATT, "eft_ar15_anti_rollout_five01")
+
+ATT = {}
+
+ATT.PrintName = "Generic Anti-Walk Pins 50"
+ATT.CompactName = "AW Pins(50)(2)"
+ATT.Icon = nil
+ATT.Description = [[Generic Anti-Walk pins for the FCG on an AR15.
+im ngl i have no idea what these do but they look cool]]
+ATT.Free = true
+ATT.Max = 1
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/anti_rollout.mdl"
+ATT.BoneMerge = true
+ATT.Category = {"eft_custom_slot_m4a1","eft_custom_slot_mcx","eft_custom_slot_stm9"}
+ATT.SortOrder = -99
+ATT.ModelSkin = 2
+ATT.Folder = "Parts"
+
+ATT.EFTErgoAdd = 5
+ATT.CustomPros = { Ergonomics = "+5"}
+
+ATT.Attachments = {
+    {
+        PrintName = "Custom slot",
+        Pos = Vector(0, 0, 1),
+        Ang = Angle(0, 0, 0),
+        Category = {"eft_custom_slot","eft_custom_slot_m4a1"},
+    },
+}
+ARC9.LoadAttachment(ATT, "eft_ar15_anti_rollout_five0")
+
+
+ATT = {}
+
+ATT.PrintName = "AR-15 Five-0 charging handle"
+ATT.CompactName = "Five-0"
+ATT.Icon = Material("entities/eft_ar15_attachments/charge/ar15_colt_charging_handle.png", "mips smooth")
+ATT.Description = [[Standard charging handle for the Five-0.]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+ATT.HasBolt = true
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/charge_ar15_colt_charging_handle.mdl"
+ATT.ModelMaterial = "models/weapons/arc9/darsu_eft/mods/five0charge"
+
+ATT.Category = {"eft_ar15_charge"}
+
+ARC9.LoadAttachment(ATT, "eft_charge_ar15_five0")
+ATT = {}
+
+ATT.PrintName = "(AR)C-CLAMP2"
+ATT.CompactName = "(AR)C-CLAMP2"
+ATT.Icon = nil
+ATT.Description = [[A Method Of Gripping A Weapon. 
+]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.EFTErgoAdd = 1
+ATT.CustomPros = { Ergonomics = "+1" }
+ATT.RecoilMult = 0.99
+ATT.VisualRecoilMult = 0.99
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/handguard_ar15_stmarms_9_inch_m_lok.mdl"
+ATT.ModelAngleOffset = Angle(10,90, 0)
+ATT.ModelOffset = Vector(0, -6, 1.5)
+ATT.ModelScale = 1.2
+
+ATT.LHIK = true 
+ATT.LHIK_Priority = 2
+
+ATT.ModelMaterial = "models/weapons/saa/shared/unlit_transparent"
+
+ATT.Category = "eft_foregrip_small"
+
+ATT.Attachments = {
+    {
+        PrintName = "grip",
+        Category = {"eft_foregrip_small"},
+        Pos = Vector(0, 0, 0),
+        --Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+        Icon_Offset = Vector(0, 0, 1),
+    },
+}
+
+ARC9.LoadAttachment(ATT, "eft_foregrip_c_clampAR2_picatiinny")
+
+ATT = {}
+
+ATT.PrintName = "(AR)C-CLAMP2"
+ATT.CompactName = "(AR)C-CLAMP2"
+ATT.Icon = nil
+ATT.Description = [[A Method Of Gripping A Weapon. 
+]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.EFTErgoAdd = 1
+ATT.CustomPros = { Ergonomics = "+1" }
+ATT.RecoilMult = 0.99
+ATT.VisualRecoilMult = 0.99
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/handguard_ar15_stmarms_9_inch_m_lok.mdl"
+ATT.ModelAngleOffset = Angle(10,90, 90)
+ATT.ModelOffset = Vector(0, -6, 1.5)
+ATT.ModelScale = 1.2
+
+ATT.LHIK = true 
+ATT.LHIK_Priority = 2
+
+ATT.ModelMaterial = "models/weapons/saa/shared/unlit_transparent"
+
+ATT.Category = "eft_foregrip_mlok"
+
+ATT.Attachments = {
+    {
+        PrintName = "grip",
+        Category = {"eft_mount_mlok41","eft_foregrip_mlok"},
+        Pos = Vector(0, 0, 0),
+        --Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+        Icon_Offset = Vector(0, 0, 1),
+    },
+}
+
+
+ARC9.LoadAttachment(ATT, "eft_foregrip_c_clampAR2_mlok")
+
+
+ATT = {}
+
+ATT.PrintName = "AR-15 Scalarworks rear sight"
+ATT.CompactName = "Scalarworks"
+ATT.Icon = nil
+ATT.Description = [[The Scalarworks detachable rear sight.]]
+ATT.SortOrder = 1
+
+ATT.Model = "models/weapons/arc9_eft_shared/atts/ironsight/eft_rearsight_scal.mdl"
+
+ATT.Category = {"eft_rearsight"}
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.Scale = 1
+ATT.ModelOffset = Vector(0, 0, -0)
+ATT.ModelAngleOffset = Angle(0, 90, 0)
+
+
+ATT.Sights = {
+    {
+        Pos = Vector( 7.5,0, -1.46),
+        Ang = Angle(0, -90, 0),
+        Magnification = 1.1,
+        ViewModelFOV = 53,
+    }
+}
+
+
+
+ARC9.LoadAttachment(ATT, "eft_rearsight_scal")
+
+ATT = {}
+
+ATT.PrintName = "AR-15 Scalarworks front sight"
+ATT.CompactName = "Scalarworks"
+ATT.Icon = nil
+ATT.Description = [[The Scalarworks detachable rear sight.]]
+ATT.SortOrder = 1
+
+ATT.Model = "models/weapons/arc9_eft_shared/atts/ironsight/eft_frontsight_scal.mdl"
+
+ATT.Category = {"eft_frontsight"}
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.Scale = 1
+ATT.ModelOffset = Vector(0, -.5, .025)
+ATT.ModelAngleOffset = Angle(0, 90, 0)
+
+
+
+
+ARC9.LoadAttachment(ATT, "eft_frontsight_scal")
+
+
+ATT = {}
+
+ATT.PrintName = "FN P90 Sling Harness(Orange)"
+ATT.CompactName = "sling(O)"
+ATT.Icon = nil
+ATT.Description = [[A Sling Harness for the FN P90 for quicker handling.]]
+ATT.Free = true
+ATT.Max = 1
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/p90_custom_atts.mdl"
+ATT.ModelBodygroups = "02"
+ATT.BoneMerge = true
+ATT.Category = {"eft_custom_slot_p90"}
+ATT.SortOrder = -99
+ATT.EFTErgoAdd = 2
+ATT.RequireElements = {"eft_p90_butt_di"}
+ATT.CustomPros = { Ergonomics = "+2"}
+ATT.DeployTimeMult = 0.8
+ATT.Attachments = {
+    {
+        PrintName = "Custom slot",
+        Pos = Vector(0, 0, 1),
+        Ang = Angle(0, 0, 0),
+        Category = {"eft_custom_slot","eft_custom_slot_p90"},
+    },
+}
+ARC9.LoadAttachment(ATT, "eft_p90_sling_di_o")
+
+ATT = {}
+
+ATT.PrintName = "FN P90 Sling Harness(Orange)"
+ATT.CompactName = "sling(O)"
+ATT.Icon = nil
+ATT.Description = [[A Sling Harness for the FN P90 for quicker handling.]]
+ATT.Free = true
+ATT.Max = 1
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/p90_custom_atts.mdl"
+ATT.ModelBodygroups = "01"
+ATT.BoneMerge = true
+ATT.Category = {"eft_custom_slot_p90"}
+ATT.SortOrder = -99
+ATT.EFTErgoAdd = 2
+ATT.RequireElements = {"eft_p90_butt_std"}
+ATT.CustomPros = { Ergonomics = "+2"}
+ATT.DeployTimeMult = 0.8
+ATT.Attachments = {
+    {
+        PrintName = "Custom slot",
+        Pos = Vector(0, 0, 1),
+        Ang = Angle(0, 0, 0),
+        Category = {"eft_custom_slot","eft_custom_slot_p90"},
+    },
+}
+ARC9.LoadAttachment(ATT, "eft_p90_sling_std_O")
+
+ATT = {}
+
+ATT.PrintName = "FN P90 Sling Harness(Black)"
+ATT.CompactName = "sling(B)"
+ATT.Icon = nil
+ATT.Description = [[A Sling Harness for the FN P90 for quicker handling.]]
+ATT.Free = true
+ATT.Max = 1
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/p90_custom_atts.mdl"
+ATT.ModelBodygroups = "02"
+ATT.BoneMerge = true
+ATT.Category = {"eft_custom_slot_p90"}
+ATT.SortOrder = -99
+ATT.EFTErgoAdd = 2
+ATT.RequireElements = {"eft_p90_butt_di"}
+ATT.CustomPros = { Ergonomics = "+2"}
+ATT.ModelSkin = 1
+ATT.DeployTimeMult = 0.8
+ATT.Attachments = {
+    {
+        PrintName = "Custom slot",
+        Pos = Vector(0, 0, 1),
+        Ang = Angle(0, 0, 0),
+        Category = {"eft_custom_slot","eft_custom_slot_p90"},
+    },
+}
+ARC9.LoadAttachment(ATT, "eft_p90_sling_di_B")
+
+ATT = {}
+
+ATT.PrintName = "FN P90 Sling Harness(Black)"
+ATT.CompactName = "sling(B)"
+ATT.Icon = nil
+ATT.Description = [[A Sling Harness for the FN P90 for quicker handling.]]
+ATT.Free = true
+ATT.Max = 1
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/p90_custom_atts.mdl"
+ATT.ModelBodygroups = "01"
+ATT.BoneMerge = true
+ATT.Category = {"eft_custom_slot_p90"}
+ATT.SortOrder = -99
+ATT.EFTErgoAdd = 2
+ATT.RequireElements = {"eft_p90_butt_std"}
+ATT.CustomPros = { Ergonomics = "+2"}
+ATT.DeployTimeMult = 0.8
+ATT.ModelSkin = 1
+ATT.Attachments = {
+		{
+        PrintName = "Custom slot",
+        Pos = Vector(0, 0, 1),
+        Ang = Angle(0, 0, 0),
+        Category = {"eft_custom_slot","eft_custom_slot_p90"},
+		},
+	}
+ARC9.LoadAttachment(ATT, "eft_p90_sling_std_B")
+
+ATT = {}
+
+ATT.PrintName = "Can Cannon Barrel"
+ATT.CompactName = "cancan"
+ATT.Icon = Material("entities/eft_ar15_attachments/barrel/ar15_556x45_260mm_barrel.png", "mips smooth")
+ATT.Description = [[barrel for shooting cans.]]
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+ATT.HasBarrel = true
+ATT.HasHG = true
+ATT.ModelOffset = Vector(-0.175, 0, -0.9)
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/cancan_barrel.mdl"
+
+ATT.Category = {"eft_m4a1_barrel"}
+
+
+ARC9.LoadAttachment(ATT, "eft_barrel_ar15_cancannon")
+
+

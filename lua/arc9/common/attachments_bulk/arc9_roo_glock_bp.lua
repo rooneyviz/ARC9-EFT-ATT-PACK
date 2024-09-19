@@ -119,8 +119,14 @@ ATT.Firemodes = {
     { Mode = 1, PoseParam = 1 }
 }
 ATT.RPM = 1160
-
-
+ATT.RecoilUpMult = 2
+ATT.VisualRecoilUpMult = 1.36
+ATT.RecoilSideMult = 3
+ATT.RecoilKickMult = 3
+ATT.RecoilRandomSideMult = 2
+ATT.RecoilAutoControlMult = 0.8
+ATT.VisualRecoilSideMult = 16
+ATT.VisualRecoilPositionBumpUpMult = .32
 ATT.Category = {"eft_g17_bp"}
 
 
@@ -420,7 +426,7 @@ ATT.PrintName = "Glock KRISS +23 Magazine Plate"
 ATT.CompactName = "Glock KRISS +23"
 ATT.Icon = Material("entities/eft_glock_attachments/mag.png", "mips smooth")
 ATT.Description = [[An Aftermarket Glock Magazine Plate for Glock pistols That Adds 23 Rounds.]]
-ATT.ActivateElements = {"eft_mag_g17_bigstick31"}
+ATT.ActivateElements = {"eft_mag_g17_bigstick_33"}
 
 ATT.MenuCategory = "ARC9 - EFT Attachments"
 ATT.EFTErgoAdd = -4
@@ -1407,7 +1413,7 @@ ATT.Firemodes = {
     { Mode = -1, PoseParam = 2},
     { Mode = 1, PoseParam = 1 }
 }
-ATT.RPM = 1160
+ATT.RPM = 1200
 
 
 ATT.Category = {"eft_g19_bp"}
@@ -1552,27 +1558,7 @@ ATT.Firemodes = {
     { Mode = -1, PoseParam = 2},
     { Mode = 1, PoseParam = 1 }
 }
-ATT.RPM = 1160
-
-ATT.RecoilUp = 44
-
-ATT.VisualRecoilThinkFunc = function(springconstant, VisualRecoilSpringMagnitude, PUNCH_DAMPING, recamount)
-    if recamount > 2 then
-        recamount = math.Clamp((recamount - 2) / 20, 0, 1)
-        return springconstant * math.max(1, 1 * recamount), VisualRecoilSpringMagnitude * 10, PUNCH_DAMPING * 0.74
-    end
-    return springconstant, VisualRecoilSpringMagnitude, PUNCH_DAMPING
-end
-
-
-ATT.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
-    if recamount > 1 then
-        recamount = 1.25 - math.Clamp((recamount - 1) / 7, 0, 1)
-        
-        return up * math.max(0.45, recamount), side * 2.5, roll, punch * 3
-    end
-    return up, side, roll, punch
-end
+ATT.RPM = 1200
 
 ATT.Category = {"eft_g19_bp"}
 
@@ -1677,29 +1663,16 @@ ATT.Firemodes = {
     { Mode = -1, PoseParam = 2},
     { Mode = 1, PoseParam = 1 }
 }
-ATT.RPM = 1160
-ATT.RecoilUp = 44
-
-ATT.VisualRecoilThinkFunc = function(springconstant, VisualRecoilSpringMagnitude, PUNCH_DAMPING, recamount)
-    if recamount > 2 then
-        recamount = math.Clamp((recamount - 2) / 20, 0, 1)
-        return springconstant * math.max(1, 1 * recamount), VisualRecoilSpringMagnitude * 10, PUNCH_DAMPING * 0.74
-    end
-    return springconstant, VisualRecoilSpringMagnitude, PUNCH_DAMPING
-end
-
-
-ATT.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
-    if recamount > 1 then
-        recamount = 1.25 - math.Clamp((recamount - 1) / 7, 0, 1)
-        
-        return up * math.max(0.45, recamount), side * 2.5, roll, punch * 3
-    end
-    return up, side, roll, punch
-end
-
-
+ATT.RPM = 1200
 ATT.Category = {"eft_g17_bp"}
+ATT.RecoilUpMult = 2
+ATT.VisualRecoilUpMult = 1.36
+ATT.RecoilSideMult = 3
+ATT.RecoilKickMult = 3
+ATT.RecoilRandomSideMult = 2
+ATT.RecoilAutoControlMult = 0.8
+ATT.VisualRecoilSideMult = 16
+ATT.VisualRecoilPositionBumpUpMult = .32
 
 
 ARC9.LoadAttachment(ATT, "eft_roosys_backplate_auto")
@@ -1741,4 +1714,36 @@ ATT.Category = {"eft_g19_bp"}
 
 
 ARC9.LoadAttachment(ATT, "eft_roosys_backplate_tti_19")
+
+
+ATT = {}
+
+ATT.PrintName = "KRISS 9x19 40-round magazine"
+ATT.CompactName = "KRISS 40 9x19"
+ATT.Icon = Material("entities/eft_glock_attachments/mag.png", "mips smooth")
+ATT.Description = [[A 40-round 9x19 magazine for the 9x19 KRISS Vector.]]
+
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.EFTErgoAdd = -5
+ATT.CustomPros = { ["Improved check accuracy"] = "Yes" }
+ATT.CustomCons = { Ergonomics = "-5" }
+-- ATT.MalfunctionMeanShotsToFailMult = 0.85
+ATT.MalfunctionMeanShotsToFailMult = 0.9
+
+ATT.Model = "models/weapons/arc9/darsu_eft/mods/roomag_sys.mdl"
+
+ATT.DropMagazineModel = "models/weapons/arc9/darsu_eft/mods/roomag_sys.mdl"
+
+ATT.ChamberSize = 1
+ATT.ModelBodygroups = "16"
+ATT.ClipSize = 40
+ATT.DropMagazineAmount = 1
+ATT.SuppressEmptySuffix = false 
+ATT.ActivateElements = {"hasmag"}
+
+ATT.Category = {"eft_g17_mag","eft_mag_g17_bigstick_33"}
+
+
+ARC9.LoadAttachment(ATT, "eft_roosys_mag_g17_std_40kriss")
 
